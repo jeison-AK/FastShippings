@@ -51,6 +51,7 @@ function Home() {
   return (
     <div>
       <h1>HOME ROUTE</h1>
+      <Link to="/learn" className="btn btn-primary">😎🎬</Link>
     </div>
   )
 }
