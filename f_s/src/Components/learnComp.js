@@ -1,7 +1,8 @@
 import React from 'react'
 import {
     Link,
-    Outlet,
+    Outlet, NavLink,
+    useNavigate,useParams
 } from "react-router-dom";
 
 function learn() {
@@ -48,5 +49,21 @@ function Bundles() {
     </div>
   )
 }
+function CourseId() {
+  const navigate =  useNavigate()
+  const {courseId} = useParams() //-courseId porque asi es como se puso en el Route
+  return (
+    <div>
+      <h1>El parametro de la URL es: {courseId}</h1>
+      <button
+        onClick={() => {
+          navigate("/dashboard",{state:"399"})
+        }}
+        className="btn btn-warning">Price
+      </button>
+      <Link to="/dashboard" state={"StateFromLink"}>Test-Link</Link>
+    </div>
+  )
+}
 
-export default {learn, Courses, Bundles}
+export default {learn,Courses,Bundles}

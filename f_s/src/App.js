@@ -8,8 +8,11 @@ import {
 } from "react-router-dom";
 
 //Component imports
-import Home from "./Components/homeComp"
-import { learn, Courses, Bundles } from "./Components/learnComp"
+import Home from "./Components/homeComp";
+import learn from "./Components/learnComp";
+import Courses from "./Components/learnComp";
+import Bundles from "./Components/learnComp";
+import CourseId from "./Components/learnComp";
 
 function App() {
   return (
@@ -17,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/myapps" element={<Navigate replace to="/learn" />} />
-        <Route path="/learn" element={<Learn />}>
+        <Route path="/learn" element={<learn />}>
           <Route path="courses" element={<Courses />}>
             <Route path=":courseId" element={<CourseId />} />
           </Route>
