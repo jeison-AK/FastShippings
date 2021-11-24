@@ -1,8 +1,5 @@
 Test
-<<<<<<< HEAD
 probando push al test ABD
-=======
 
 sdasdadasd
 
->>>>>>> fdf9ced2b20a91bcbf3d364c2806db7db1482288
