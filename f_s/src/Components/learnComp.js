@@ -16,54 +16,54 @@ function learn() {
         </div>
     )
 }
-function Courses() {
-  const courseList = ["React", "Angula", "Vue", "Nodejs"]
-  const ramdomCourseName = courseList[Math.floor(Math.random()*courseList.length)]
-  return (
-    <div>
-      <h1>Curses list</h1>
-      <h4>Courses card</h4>
-      <hr />
-      <h4>NavLink</h4>
-      <NavLink to={`/learn/courses/${ramdomCourseName}`}
-        style={({ isActive }) => {
-          return {
-          backgroundColor: isActive ? "pink" : ''
-        }
-      }}>
-        {ramdomCourseName}
-      </NavLink>
-      <NavLink to={`/learn/courses/💩`} className="btn btn-light">
-        💩💩
-      </NavLink>
-      <Outlet />
-      {/* autlet a CourseId() */}
-    </div>
-  )
-}
-function Bundles() {
-  return (
-    <div>
-      <h1>Bundle list</h1>
-      <h4>Bundle card</h4>
-    </div>
-  )
-}
-function CourseId() {
-  const navigate =  useNavigate()
-  const {courseId} = useParams() //-courseId porque asi es como se puso en el Route
-  return (
-    <div>
-      <h1>El parametro de la URL es: {courseId}</h1>
-      <button
-        onClick={() => {
-          navigate("/dashboard",{state:"399"})
-        }}
-        className="btn btn-warning">Price
-      </button>
-      <Link to="/dashboard" state={"StateFromLink"}>Test-Link</Link>
-    </div>
-  )
-}
+// function Courses() {
+//   const courseList = ["React", "Angula", "Vue", "Nodejs"]
+//   const ramdomCourseName = courseList[Math.floor(Math.random()*courseList.length)]
+//   return (
+//     <div>
+//       <h1>Curses list</h1>
+//       <h4>Courses card</h4>
+//       <hr />
+//       <h4>NavLink</h4>
+//       <NavLink to={`/learn/courses/${ramdomCourseName}`}
+//         style={({ isActive }) => {
+//           return {
+//           backgroundColor: isActive ? "pink" : ''
+//         }
+//       }}>
+//         {ramdomCourseName}
+//       </NavLink>
+//       <NavLink to={`/learn/courses/💩`} className="btn btn-light">
+//         💩💩
+//       </NavLink>
+//       <Outlet />
+//       {/* autlet a CourseId() */}
+//     </div>
+//   )
+// }
+// function Bundles() {
+//   return (
+//     <div>
+//       <h1>Bundle list</h1>
+//       <h4>Bundle card</h4>
+//     </div>
+//   )
+// }
+// function CourseId() {
+//   const navigate =  useNavigate()
+//   const {courseId} = useParams() //-courseId porque asi es como se puso en el Route
+//   return (
+//     <div>
+//       <h1>El parametro de la URL es: {courseId}</h1>
+//       <button
+//         onClick={() => {
+//           navigate("/dashboard",{state:"399"})
+//         }}
+//         className="btn btn-warning">Price
+//       </button>
+//       <Link to="/dashboard" state={"StateFromLink"}>Test-Link</Link>
+//     </div>
+//   )
+// }
 
-export default {learn,Courses,Bundles}
+export default learn
