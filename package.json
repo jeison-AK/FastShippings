@@ -1,0 +1,21 @@
+{
+  "name": "fastshippings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeison-AK/FastShippings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeison-AK/FastShippings/issues"
+  },
+  "homepage": "https://github.com/jeison-AK/FastShippings#readme"
+}
