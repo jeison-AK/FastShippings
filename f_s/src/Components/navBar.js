@@ -1,8 +1,9 @@
 import React from 'react';
-
-const navbar = () => {
+import "./navBar.css"
+function NavBar () {
     return (
-        
+    
+ <nav class="navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Sixth navbar example">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Expand at xl</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,12 +31,13 @@ const navbar = () => {
           </li>
         </ul>
         <form>
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search"/>
         </form>
       </div>
     </div>
+  </nav>
   
     );
 }
 
-export default navbar;
+export default NavBar;

@@ -9,14 +9,15 @@ import {
 
 //Component imports
 import Home from "./Components/homeComp";
-import learn from "./Components/learnComp";
-
+import NavBar from './Components/navBar';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}/>
+   
+        <Route path="/nav" element={<NavBar /> }/>
         
       </Routes>
     </Router>
