@@ -10,24 +10,14 @@ import {
 //Component imports
 import Home from "./Components/homeComp";
 import learn from "./Components/learnComp";
-import Courses from "./Components/learnComp";
-import Bundles from "./Components/learnComp";
-import CourseId from "./Components/learnComp";
+
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/myapps" element={<Navigate replace to="/learn" />} />
-        <Route path="/learn" element={<learn />}>
-          <Route path="courses" element={<Courses />}>
-            <Route path=":courseId" element={<CourseId />} />
-          </Route>
-          <Route path="bundles" element={<Bundles />} />
-        </Route>
-        {/* <Route path='/welcome' element={<App />} />
-        <Route path="/dashboard" element={<Dashboard />} /> */}
+        
       </Routes>
     </Router>
   );
