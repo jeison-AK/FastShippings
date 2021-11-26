@@ -2,7 +2,7 @@ import React from 'react';
 import "./navBar.css"
 function NavBar () {
     return (
-    
+
  <nav class="navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Sixth navbar example">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Expand at xl</a>
