@@ -10,15 +10,14 @@ import {
 //Component imports
 import Home from "./Components/homeComp";
 import NewNavBar from './Components/newNavbar';
-import AboutUSmain from './Components/about_us';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="" element={<NewNavBar /> }/>
-          <Route path="" element={<AboutUSmain /> }/> 
+          <Route path="" element={<NewNavBar /> }/> 
+
         </Route>
    
         

@@ -1,10 +1,13 @@
 import React from 'react';
 import "./carrucel.css";
 import {Outlet} from "react-router-dom";
+import AboutUSmain from '../Components/about_us';
+import Ft_services from '../Components/features_services';
+import Services_Cards from './services';
 
 function Home() {
   return (
-    <div>
+    <div >
       <Outlet />
     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
       
@@ -37,13 +40,9 @@ function Home() {
         <span class="visually-hidden">Next</span>
       </button>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col">1</div>
-          <div class="col">2</div>
-        </div>
-      </div>
-      
+      <AboutUSmain />
+      <Ft_services />
+      <Services_Cards />      
     </div>
 
   )
