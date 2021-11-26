@@ -10,7 +10,7 @@ import {
 //Component imports
 import Home from "./Components/homeComp";
 import NewNavBar from './Components/newNavbar';
-// import Footer from './Components/footer';
+import AboutUSmain from './Components/about_us';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="" element={<NewNavBar /> }/>
-          {/* <Route path="" element={<Footer /> }/> */}
+          <Route path="" element={<AboutUSmain /> }/> 
         </Route>
    
         
