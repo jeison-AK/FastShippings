@@ -5,9 +5,9 @@ import {Outlet} from "react-router-dom";
 function Home() {
   return (
     <div>
-    
+      <Outlet />
     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <Outlet/>
+      
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -37,7 +37,15 @@ function Home() {
         <span class="visually-hidden">Next</span>
       </button>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">1</div>
+          <div class="col">2</div>
+        </div>
       </div>
+      
+    </div>
+
   )
 }
 
