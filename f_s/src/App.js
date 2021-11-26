@@ -37,3 +37,11 @@ export default App;
 //useNavigate te puedes traer información de alguna pagina pasando el valor en el 2do argumento {state:"value"}, ver CourseId(), Dashboard()
     //no tiene que ser un string {state: value} siempre
     //Podemos usar Link en lugar de useNavigate, aqui el state siempre sera un string
+
+//npm i localtunnel
+//en package.json  https://www.youtube.com/watch?v=MgZyDOYQGa8
+    /*"scripts": {
+      "start": "nodemon index.js",
+      "golive": "lt --port 3000"
+     },*/
+     //npm run golive
