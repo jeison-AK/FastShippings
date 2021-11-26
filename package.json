@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
-    "golive": "lt --port 3000"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
