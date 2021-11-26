@@ -9,14 +9,16 @@ import {
 
 //Component imports
 import Home from "./Components/homeComp";
-import NavBar from './Components/navBar';
+import NewNavBar from './Components/newNavbar';
+// import Footer from './Components/footer';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="" element={<NavBar /> }/>
+          <Route path="" element={<NewNavBar /> }/>
+          {/* <Route path="" element={<Footer /> }/> */}
         </Route>
    
         
