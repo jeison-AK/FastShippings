@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/jeison-AK/FastShippings/issues"
   },
-  "homepage": "https://github.com/jeison-AK/FastShippings#readme"
+  "homepage": "https://github.com/jeison-AK/FastShippings#readme",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
 }

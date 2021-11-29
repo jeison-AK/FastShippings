@@ -9,14 +9,16 @@ import {
 
 //Component imports
 import Home from "./Components/homeComp";
-import NavBar from './Components/navBar';
- 
+import NewNavBar from './Components/newNavbar';
+import AboutUSmain from './Components/about_us';
+
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="" element={<NavBar /> }/>
+          <Route path="" element={<NewNavBar /> }/>
+          <Route path="" element={<AboutUSmain /> }/> 
         </Route>
    
         
@@ -37,11 +39,3 @@ export default App;
 //useNavigate te puedes traer información de alguna pagina pasando el valor en el 2do argumento {state:"value"}, ver CourseId(), Dashboard()
     //no tiene que ser un string {state: value} siempre
     //Podemos usar Link en lugar de useNavigate, aqui el state siempre sera un string
-
-//npm i localtunnel
-//en package.json  https://www.youtube.com/watch?v=MgZyDOYQGa8
-    /*"scripts": {
-      "start": "nodemon index.js",
-      "golive": "lt --port 3000"
-     },*/
-     //npm run golive
