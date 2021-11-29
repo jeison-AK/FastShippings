@@ -10,7 +10,7 @@ import {
 //Component imports
 import Home from "./Components/homeComp";
 import NavBar from './Components/navBar';
-
+ 
 function App() {
   return (
     <Router>
