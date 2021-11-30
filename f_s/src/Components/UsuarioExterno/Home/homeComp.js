@@ -11,7 +11,7 @@ function Home() {
           <NewNavBar />
         </nav>
 
-        <body>
+        <section id="mid">
           <div class="grid">
             <div class="g-col">1</div>
             <div class="g-col">2</div>
@@ -28,7 +28,7 @@ function Home() {
             <div class="g-col">2</div>
             <div class="g-col">2</div>
           </div>
-        </body>
+        </section>
       </main>
       <div
         id="carouselExampleIndicators"
