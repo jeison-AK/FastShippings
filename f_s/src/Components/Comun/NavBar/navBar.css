@@ -7,3 +7,6 @@ nav {
 .container-fluid > a:nth-child(1) > img:nth-child(1) {
   height: 45px;
 }
+.navbar-brand {
+  padding: 0;
+}
