@@ -3,7 +3,7 @@ import "./navBar.css";
 export default function NavBar_JM() {
   return (
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light grid">
-      <div class="container-fluid">
+      <div class="container-fluid nav-tabs">
         <a class="navbar-brand" href="#">
           <img clas="" src="https://i.ibb.co/2FSrXtq/LOGO-82x64.jpg" />
         </a>
@@ -22,7 +22,7 @@ export default function NavBar_JM() {
         <div class="collapse navbar-collapse" id="navbarsExample04">
           <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <a class="nav-link active" aria-current="page" href="HomeUsExt">
                 Home
               </a>
             </li>
