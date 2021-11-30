@@ -6,11 +6,10 @@ import "../../Comun/NavBar/navBar.css";
 function Home() {
   return (
     <div class="grid">
+      <nav>
+        <NewNavBar />
+      </nav>
       <main>
-        <nav>
-          <NewNavBar />
-        </nav>
-
         <section id="mid">
           <div class="grid">
             <div class="g-col">1</div>
