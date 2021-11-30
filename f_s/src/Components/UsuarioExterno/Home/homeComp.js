@@ -1,14 +1,38 @@
 import React from "react";
 import "./carrucel.css";
 import { Outlet } from "react-router-dom";
+import NewNavBar from "../../Comun/NavBar/NavBar_JM";
 
 function Home() {
   return (
-    <div>
-      <Outlet />
+    <div class="grid">
+      <main>
+        <nav>
+          <NewNavBar />
+        </nav>
+
+        <div>
+          <div class="grid">
+            <div class="g-col">1</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+            <div class="g-col">2</div>
+          </div>
+        </div>
+      </main>
       <div
         id="carouselExampleIndicators"
-        class="carousel carousel-dark slide"
+        class="carousel carousel-dark slide grid"
         data-bs-ride="carousel"
       >
         <div class="carousel-indicators">
@@ -87,12 +111,6 @@ function Home() {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col">1</div>
-          <div class="col">2</div>
-        </div>
       </div>
     </div>
   );
