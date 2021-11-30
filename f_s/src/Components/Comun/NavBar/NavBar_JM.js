@@ -5,10 +5,7 @@ export default function NavBar_JM() {
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light grid">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img
-            clas="img-responsive"
-            src="https://i.ibb.co/2FSrXtq/LOGO-82x64.jpg"
-          />
+          <img clas="" src="https://i.ibb.co/2FSrXtq/LOGO-82x64.jpg" />
         </a>
         <button
           class="navbar-toggler"
@@ -31,13 +28,22 @@ export default function NavBar_JM() {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Link
+                Cotizar servicio
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
+              <a class="nav-link" href="#">
+                Sobre Nosotros
+              </a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Contactenos
+              </a>
+            </li>
+
+            {/* DropDown */}
+            {/* <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -64,8 +70,9 @@ export default function NavBar_JM() {
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> */}
           </ul>
+
           <div>
             <button
               type="button"

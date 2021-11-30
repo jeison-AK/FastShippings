@@ -3,6 +3,8 @@ import "./carrucel.css";
 import { Outlet } from "react-router-dom";
 import NewNavBar from "../../Comun/NavBar/NavBar_JM";
 import "../../Comun/NavBar/navBar.css";
+import "../../Comun/footer/footer";
+import Footer from "../../Comun/footer/footer";
 function Home() {
   return (
     <div class="grid">
@@ -63,7 +65,7 @@ function Home() {
           ></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active ">
             <img
               src="https://images.pexels.com/photos/1666067/pexels-photo-1666067.jpeg?cs=srgb&dl=pexels-george-dolgikh-giftpunditscom-1666067.jpg&fm=jpg"
               class="d-block w-100 img-fluid"
@@ -111,6 +113,9 @@ function Home() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
