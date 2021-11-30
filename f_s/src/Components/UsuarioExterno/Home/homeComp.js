@@ -2,7 +2,7 @@ import React from "react";
 import "./carrucel.css";
 import { Outlet } from "react-router-dom";
 import NewNavBar from "../../Comun/NavBar/NavBar_JM";
-
+import "../../Comun/NavBar/navBar.css";
 function Home() {
   return (
     <div class="grid">
@@ -11,7 +11,7 @@ function Home() {
           <NewNavBar />
         </nav>
 
-        <div>
+        <body>
           <div class="grid">
             <div class="g-col">1</div>
             <div class="g-col">2</div>
@@ -28,7 +28,7 @@ function Home() {
             <div class="g-col">2</div>
             <div class="g-col">2</div>
           </div>
-        </div>
+        </body>
       </main>
       <div
         id="carouselExampleIndicators"
