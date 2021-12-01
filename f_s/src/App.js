@@ -14,16 +14,16 @@ import {
 
 //Component imports
 import Home from "./Components/UsuarioExterno/Home/homeComp";
-import NewNavBar from "./Components/Comun/NavBar/newNavbar";
+import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="" element={<NewNavBar />} />
-          <Route path="" element={<AboutUSmain />} />
+        <Route path="/HomeUsExt" element={<Home />}>
+          <Route index element={<NewNavBar />} />
+          <Route index element={<AboutUSmain />} />
         </Route>
       </Routes>
     </Router>
