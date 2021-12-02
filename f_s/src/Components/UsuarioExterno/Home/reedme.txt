@@ -1,0 +1,16 @@
+Datos de los productos a despachar
+
+📝 Los puntos de origen y destinos deben estar preconfigurados el usuario solo puede escoger entre estos. 
+    ❗ Deben ser como minimo 20 puntos  (estos puntos deben ser creados por el usuario interno)
+
+Al momento de generar los despachos:
+📌cantidad de vehiculos 
+📌lugar de recogida y entrega
+📌punto de origen y destino (en base a esta distancia se generara la factura)
+    👉distancia en kilometro x valor por kilometro recorrido. Example:
+        si se configura un valor de 5mil pesos por kilometro recorrido y la distancia entre un punto A y B es 200km
+        total a pagar = 1.000.000 
+
+📌Consideraciones del sistema:
+    ❗La generación de la factura debe ser automática teniendo en cuenta el valor configurado por kilómetro recorrido
+     y la distancia entre los puntos origen y destino.
