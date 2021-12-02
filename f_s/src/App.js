@@ -1,27 +1,30 @@
-import React from 'react';
+import React from "react";
 import {
   BrowserRouter as Router,
-  Routes, Route,
-  Navigate, Link, NavLink, useNavigate, useLocation,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+  NavLink,
+  useNavigate,
+  useLocation,
   Outlet,
-  useParams
+  useParams,
 } from "react-router-dom";
 
 //Component imports
-import Home from "./Components/homeComp";
-import NewNavBar from './Components/newNavbar';
-import AboutUSmain from './Components/about_us';
+import Home from "./Components/UsuarioExterno/Home/homeComp";
+import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
+import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="" element={<NewNavBar /> }/>
-          <Route path="" element={<AboutUSmain /> }/> 
+        <Route path="/HomeUsExt" element={<Home />}>
+          <Route index element={<NewNavBar />} />
+          <Route index element={<AboutUSmain />} />
         </Route>
-   
-        
       </Routes>
     </Router>
   );
@@ -37,5 +40,5 @@ export default App;
 //TEST ve al link courses/TuNombre   pon tu nombre allí, observa Courses() y CourseId()
 //NavLink similar a useParams también te redirecciona
 //useNavigate te puedes traer información de alguna pagina pasando el valor en el 2do argumento {state:"value"}, ver CourseId(), Dashboard()
-    //no tiene que ser un string {state: value} siempre
-    //Podemos usar Link en lugar de useNavigate, aqui el state siempre sera un string
+//no tiene que ser un string {state: value} siempre
+//Podemos usar Link en lugar de useNavigate, aqui el state siempre sera un string
