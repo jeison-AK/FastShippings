@@ -1,0 +1,6 @@
+Contiene la pagina de cotizar servicios
+
+El boton "generar orden" me manda  a este tab en el que va a quedar guardada la ultima orden generada hasta que no se
+complete como si fuera un carrito de compra, el usuario puede darle cancelar orden o generar una orden nueva para 
+modificar el carrito de compra
+🛒 podria modificar este tab por un icono como este

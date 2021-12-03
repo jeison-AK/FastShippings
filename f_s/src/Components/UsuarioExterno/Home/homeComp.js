@@ -149,9 +149,7 @@ function Home() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
