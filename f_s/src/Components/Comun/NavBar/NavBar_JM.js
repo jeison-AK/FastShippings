@@ -4,9 +4,9 @@ import { Outlet, useLocation, Link, NavLink } from "react-router-dom";
 export default function NavBar_JM() {
   const location = useLocation();
   const url = location.pathname;
-  console.log("My PAAAAAAAAAAAAATHHH>>>>>>", location.pathname);
+  console.log("🔥My PAATH>>>>>>", url);
   return (
-    <nav className="navbar navbar-expand-md navbar-light fixed-top bg-light grid">
+    <div className="navbar navbar-expand-md navbar-light fixed-top bg-light grid">
       <div className="container-fluid nav-tabs">
         <a className="navbar-brand" href="#">
           <img clas="" src="https://i.ibb.co/2FSrXtq/LOGO-82x64.jpg" />
@@ -28,19 +28,14 @@ export default function NavBar_JM() {
             <li className="nav-item">
               <NavLink
                 to={`/HomeUsExt`}
-                className={({ location }) =>
-                  (location =
-                    url === "/HomeUsExt" ? "nav-link active" : "nav-link")
+                className={() =>
+                  url === "/HomeUsExt" ? "nav-link active" : "nav-link"
                 }
               >
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Cotizar servicio
-              </a>
-            </li>
+
             <li className="nav-item">
               <a className="nav-link" href="#">
                 Sobre Nosotros
@@ -50,6 +45,16 @@ export default function NavBar_JM() {
               <a className="nav-link" href="#">
                 Contactenos
               </a>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to={`/OrdenarDespacho`}
+                className={({}) =>
+                  url === "/OrdenarDespacho" ? "nav-link active" : "nav-link"
+                }
+              >
+                🛒
+              </NavLink>
             </li>
 
             {/* DropDown */}
@@ -99,6 +104,6 @@ export default function NavBar_JM() {
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }

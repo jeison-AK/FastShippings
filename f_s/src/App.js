@@ -22,10 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/HomeUsExt" element={<Home />}>
-          <Route index element={<NewNavBar />} />
-          <Route index element={<AboutUSmain />} />
-        </Route>
+        <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
       </Routes>
     </Router>
