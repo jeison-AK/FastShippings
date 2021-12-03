@@ -17,6 +17,11 @@ import Home from "./Components/UsuarioExterno/Home/homeComp";
 import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 
+// Section admin
+import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/ViewUserAdm";
+import Services_Cards from "./Components/Admin/services";
+import Info_user from "./Components/Admin/VerUsuarioInterno/info_user";
+
 function App() {
   return (
     <Router>
@@ -24,6 +29,12 @@ function App() {
         <Route path="/HomeUsExt" element={<Home />}>
           <Route index element={<NewNavBar />} />
           <Route index element={<AboutUSmain />} />
+        </Route>
+        <Route path="/Admin-user-int" element={<ViewUserAdm />}>
+          <Route index element={<NewNavBar />} />
+          <Route index element={<AboutUSmain />} />
+          <Route index element={<Services_Cards />} />  
+          <Route index element={<Info_user />} />  
         </Route>
       </Routes>
     </Router>
