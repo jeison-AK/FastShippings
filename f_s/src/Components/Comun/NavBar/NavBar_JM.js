@@ -1,14 +1,18 @@
 import React from "react";
 import "./navBar.css";
+import { Outlet, useLocation, Link, NavLink } from "react-router-dom";
 export default function NavBar_JM() {
+  const location = useLocation();
+  const url = location.pathname;
+  console.log("My PAAAAAAAAAAAAATHHH>>>>>>", location.pathname);
   return (
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light grid">
-      <div class="container-fluid nav-tabs">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-md navbar-light fixed-top bg-light grid">
+      <div className="container-fluid nav-tabs">
+        <a className="navbar-brand" href="#">
           <img clas="" src="https://i.ibb.co/2FSrXtq/LOGO-82x64.jpg" />
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarsExample04"
@@ -16,36 +20,42 @@ export default function NavBar_JM() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample04">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="HomeUsExt">
+        <div className="collapse navbar-collapse" id="navbarsExample04">
+          <ul className="navbar-nav me-auto mb-2 mb-md-0 ">
+            <li className="nav-item">
+              <NavLink
+                to={`/HomeUsExt`}
+                className={({ location }) =>
+                  (location =
+                    url === "/HomeUsExt" ? "nav-link active" : "nav-link")
+                }
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Cotizar servicio
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Sobre Nosotros
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Contactenos
               </a>
             </li>
 
             {/* DropDown */}
-            {/* <li class="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 id="dropdown04"
                 data-bs-toggle="dropdown"
@@ -53,19 +63,19 @@ export default function NavBar_JM() {
               >
                 Dropdown
               </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdown04">
+              <ul className="dropdown-menu" aria-labelledby="dropdown04">
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     Action
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     Another action
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     Something else here
                   </a>
                 </li>
@@ -76,13 +86,13 @@ export default function NavBar_JM() {
           <div>
             <button
               type="button"
-              class="btn btn-outline-primary me-2 p-2 flex-fill bd-highlight"
+              className="btn btn-outline-primary me-2 p-2 flex-fill bd-highlight"
             >
               Iniciar sesión
             </button>
             <button
               type="button"
-              class="btn btn-primary p-2 flex-fill bd-highlight"
+              className="btn btn-primary p-2 flex-fill bd-highlight"
             >
               Registrarse
             </button>
