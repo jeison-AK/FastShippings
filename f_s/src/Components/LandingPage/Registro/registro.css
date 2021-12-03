@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+  padding: 0%;
+  color: gray;
+
+  background-color: black;
+}
+
+.form-select {
+  font-size: small;
+  background-color: lightgray;
+}
+
+.form-floating {
+  
+}

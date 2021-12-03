@@ -16,11 +16,13 @@ import {
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
+import Registro from "./Components/LandingPage/Registro/registro";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/registro" element={<Registro />} />
         <Route path="/HomeUsExt" element={<Home />}>
           <Route index element={<NewNavBar />} />
           <Route index element={<AboutUSmain />} />
