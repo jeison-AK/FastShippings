@@ -20,14 +20,14 @@ export default function NavBar_admin() {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample04">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="HomeUsExt">
                 Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/">
                 Cotizar servicio
               </a>
             </li>

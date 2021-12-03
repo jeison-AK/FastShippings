@@ -35,9 +35,11 @@ function App() {
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
           <Route index element={<NavBar_admin />} />
           <Route index element={<AboutUSmain />} />
-          <Route index element={<Section_cards />} />  
+          <Route index element={<Section_cards />} /> 
+            <Route path=":userID" element={<ViewUserAdm />} /> 
           <Route index element={<Info_user />} />  
           <Route index element={<Button_delete />} />  
+          
         </Route>
       </Routes>
     </Router>

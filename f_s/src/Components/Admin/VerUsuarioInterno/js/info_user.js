@@ -12,9 +12,10 @@ function Info_user () {
                 <p class="card-text"></p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
+                <li class="list-group-item"><strong>Name: </strong>Santiago Urrego</li>
+                <li class="list-group-item"><strong>CC: </strong>1995</li>
+                <li class="list-group-item"><strong>Contact: </strong>+57 300 333 0000</li>
+                <li class="list-group-item"><strong>Fecha de nacimiento: </strong>12/05/1995</li>
             </ul>
             <div class="card-body">
                 <Button_delete />
