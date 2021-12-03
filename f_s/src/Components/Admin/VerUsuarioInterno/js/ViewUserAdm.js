@@ -1,11 +1,9 @@
 import React from "react";
-import "./carrucel.css";
-import NewNavBar from "../../Comun/NavBar/NavBar_JM";
-import "../../Comun/NavBar/navBar.css";
-import "../../Comun/footer/footer";
-import Footer from "../../Comun/footer/footer";
-import Services_Cards from "../services";
+import NavBar_admin from "./NavBar_admin";
+import Section_cards from "./cards";
 import Info_user from "./info_user";
+import Footer from "../../../Comun/footer/footer";
+import "../../../Admin/VerUsuarioInterno/css/carrucel.css"
 
 //-Esta pagina cubre los siguientes requerimientos para el usuario externo:
 // ❌	Darse de alta en la plataforma (Registrarse).
@@ -19,7 +17,7 @@ function ViewUserAdm() {
   return (
     <div class="grid">
       <nav>
-        <NewNavBar />
+      <NavBar_admin />
       </nav>
       <main>
         <div
@@ -105,12 +103,12 @@ function ViewUserAdm() {
             </button>
         </div>
 
-        <section id="mid" class="container-fluid">
+        <section id="mid" class="container-fluid d-flex justify-content-center">
 
             <div class="row">
                 
-                <div class="col-md-8 ">
-                    <Services_Cards />
+                <div class="col-md-8">
+                    <Section_cards />
                 </div>
 
                 <div class="col-md-4">

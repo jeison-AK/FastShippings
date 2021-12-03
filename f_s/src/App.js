@@ -18,9 +18,11 @@ import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 
 // Section admin
-import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/ViewUserAdm";
-import Services_Cards from "./Components/Admin/services";
-import Info_user from "./Components/Admin/VerUsuarioInterno/info_user";
+import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
+import Section_cards from "./Components/Admin/VerUsuarioInterno/js/cards";
+import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
+import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
+import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
 
 function App() {
   return (
@@ -31,10 +33,11 @@ function App() {
           <Route index element={<AboutUSmain />} />
         </Route>
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
-          <Route index element={<NewNavBar />} />
+          <Route index element={<NavBar_admin />} />
           <Route index element={<AboutUSmain />} />
-          <Route index element={<Services_Cards />} />  
+          <Route index element={<Section_cards />} />  
           <Route index element={<Info_user />} />  
+          <Route index element={<Button_delete />} />  
         </Route>
       </Routes>
     </Router>
