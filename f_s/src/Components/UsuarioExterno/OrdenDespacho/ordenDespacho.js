@@ -2,6 +2,7 @@ import React from "react";
 import NewNavBar from "../../Comun/NavBar/NavBar_JM";
 import "../../Comun/NavBar/navBar.css";
 import Footer from "../../Comun/footer/footer";
+import delivery from "../OrdenDespacho/delivery-truck.png";
 export default function OrdenDespacho() {
   return (
     <div>
@@ -14,7 +15,7 @@ export default function OrdenDespacho() {
           <div class="py-5 text-center">
             <img
               class="d-block mx-auto mb-4"
-              src="https://cdn-icons.flaticon.com/png/512/3091/premium/3091609.png?token=exp=1638541292~hmac=461c711e04af9bb6e8fb951e95cb171f"
+              src={delivery}
               alt=""
               width="72"
               height="57"
