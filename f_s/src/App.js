@@ -16,6 +16,7 @@ import {
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
+import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route index element={<NewNavBar />} />
           <Route index element={<AboutUSmain />} />
         </Route>
+        <Route path="rutas" element={<Rutas />} />
       </Routes>
     </Router>
   );
