@@ -23,7 +23,7 @@ export default function NavBar_Reg() {
         <div class="collapse navbar-collapse" id="navbarsExample04">
           <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="HomeUsExt">
+              <a class="nav-link active" aria-current="page" href="/">
                 Home
               </a>
             </li>
