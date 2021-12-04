@@ -16,9 +16,7 @@ import {
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
-<<<<<<< HEAD
 import Registro from "./Components/LandingPage/Registro/registro";
-=======
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
 // Section admin
@@ -32,24 +30,20 @@ import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 
 
 
->>>>>>> Proto_v1
 
 function App() {
   return (
     <Router>
       <Routes>
-<<<<<<< HEAD
         <Route path="/registro" element={<Registro />} />
-        <Route path="/HomeUsExt" element={<Home />}>
+        <Route path="/HomeUsExt" element={<Home />}/>
           <Route index element={<NewNavBar />} />
-=======
 
         <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
           <Route index element={<NavBar_admin />} />
->>>>>>> Proto_v1
           <Route index element={<AboutUSmain />} />
           <Route index element={<Section_cards />} /> 
             <Route path=":userID" element={<ViewUserAdm />} /> 
