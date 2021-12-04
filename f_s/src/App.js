@@ -18,12 +18,31 @@ import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
+// Section admin
+import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
+import Section_cards from "./Components/Admin/VerUsuarioInterno/js/cards";
+import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
+import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
+import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
+
 function App() {
   return (
     <Router>
       <Routes>
+
         <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
+
+        <Route path="/Admin-user-int" element={<ViewUserAdm />}>
+          <Route index element={<NavBar_admin />} />
+          <Route index element={<AboutUSmain />} />
+          <Route index element={<Section_cards />} /> 
+            <Route path=":userID" element={<ViewUserAdm />} /> 
+          <Route index element={<Info_user />} />  
+          <Route index element={<Button_delete />} />  
+          
+        </Route>
+
       </Routes>
     </Router>
   );
