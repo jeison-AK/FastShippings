@@ -1,0 +1,26 @@
+import React from "react";
+import "./SLogin.css";
+import Opciones from "./Label/Label";
+import NewNavBar from "./nav/NavBar";
+import men from "../../images/camion4.jpg";
+import Footer from "../footer/footer";
+
+function Login (){
+    return (
+        <main className="principal">
+
+            <div>
+                <section className="contenedor-principal">
+                    <img className="fondo" src={men} />
+                    <NewNavBar />
+                    <h1 className="titulo">INICIAR SESIÓN</h1>
+                    <Opciones />
+                    <Footer/>
+                </section>           
+            </div>
+
+        </main>    
+    )
+};
+
+export default Login;

@@ -1,0 +1,27 @@
+.principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 240, 240);
+       
+}
+
+.contenedor-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fondo{
+    background-image: url(../../images/camion4.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.titulo{
+    margin-top: 100px;
+    font-size: 70px;
+    color: rgb(55, 109, 224);
+    text-align: center;
+}
