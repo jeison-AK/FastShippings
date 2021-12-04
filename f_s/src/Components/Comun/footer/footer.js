@@ -13,12 +13,12 @@ export default function Footer() {
               <use href="#bootstrap"></use>
             </svg>
           </a>
-          <span class="text-muted">2021 Despachos Certificados®</span>
+          <span class="text-muted">Despachos Certificados® 2021</span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3">
-            <a class="text-muted" href="#">
+            <a class="button" href="twitter.com">
               <svg class="bi" width="24" height="24">
                 <use href="#twitter"></use>
               </svg>
