@@ -29,11 +29,6 @@ export default function NavBar_Reg() {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Cotizar servicio
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
                 Sobre Nosotros
               </a>
             </li>
