@@ -13,8 +13,9 @@ import {
 } from "react-router-dom";
 
 //Component imports
-import Home from "./Components/UsuarioExterno/Home/homeComp";
-import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
+import Home from "./Components/LandingPage/Principal/home"
+import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
+/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
@@ -35,11 +36,12 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/registro" element={<Registro />} />
-        <Route path="/HomeUsExt" element={<Home />}/>
-          <Route index element={<NewNavBar />} />
+        {/* <Route path="/HomeExt" element={<HomeExt />}/>
+          <Route index element={<NewNavBar />} /> */}
 
-        <Route path="/HomeUsExt" element={<Home />} />
+        <Route path="/HomeExt" element={<HomeExt />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
@@ -53,6 +55,7 @@ function App() {
         </Route>
 
         <Route path="rutas" element={<Rutas />} />
+        <Route path="/about" element={<AboutUSmain />} />
 
 
 
