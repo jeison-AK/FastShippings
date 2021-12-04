@@ -16,6 +16,7 @@ import {
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
+import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
@@ -28,10 +29,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/HomeUsExt" element={<Home />}>
-          <Route index element={<NewNavBar />} />
-          <Route index element={<AboutUSmain />} />
-        </Route>
+
+        <Route path="/HomeUsExt" element={<Home />} />
+        <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
+
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
           <Route index element={<NavBar_admin />} />
           <Route index element={<AboutUSmain />} />
@@ -41,6 +42,7 @@ function App() {
           <Route index element={<Button_delete />} />  
           
         </Route>
+
       </Routes>
     </Router>
   );
