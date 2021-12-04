@@ -13,7 +13,7 @@ export default function Footer() {
               <use href="#bootstrap"></use>
             </svg>
           </a>
-          <span class="text-muted">© 2021 Company, Inc</span>
+          <span class="text-muted">2021 Despachos Certificados®</span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
