@@ -25,6 +25,11 @@ import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
 import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
 
+import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+
+
+
+
 function App() {
   return (
     <Router>
@@ -42,6 +47,10 @@ function App() {
           <Route index element={<Button_delete />} />  
           
         </Route>
+
+        <Route path="rutas" element={<Rutas />} />
+
+
 
       </Routes>
     </Router>
