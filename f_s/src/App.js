@@ -20,8 +20,9 @@ import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenD
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
 import Add_user from "./Components/Admin/VerUsuarioInterno/js/add_user";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
-
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import Login from "./Components/LandingPage/Login/Login";
+import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
 function App() {
   return (
@@ -37,6 +38,12 @@ function App() {
         <Route path="Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
+        <Route path="/about" element={<AboutUSmain />} />
+
+        {/* ruta login*/}
+        <Route path="/Login" element={<Login />} />
+        {/* ruta solicitudes usuario interno*/}
+        <Route path="/Solicitud" element={<Solicitud />} />
       </Routes>
     </Router>
   );
