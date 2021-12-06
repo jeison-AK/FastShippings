@@ -1,6 +1,10 @@
 a {
   max-width: 15em;
 }
+.input-add_user {
+  display: flex;
+  justify-content: space-between;
+}
 .services .icon-box {
   padding: 30px;
   margin: 10px 0;
@@ -25,6 +29,11 @@ a {
   z-index: -1;
 }
 .services .icon-box:hover::before {
+  background: #0064fa;
+  top: 0;
+  border-radius: 0px;
+}
+.icon-box.isActive {
   background: #0064fa;
   top: 0;
   border-radius: 0px;

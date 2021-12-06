@@ -43,11 +43,11 @@ let accounts = [
     name: "Andres Dickson",
     cc: 1998,
     contact: "+57 300 333 0000",
-    due: "01/27/2998",
+    due: "01/27/1998",
     rol: "Usuario interno",
     job: "Back-end developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
   },
 ];
 

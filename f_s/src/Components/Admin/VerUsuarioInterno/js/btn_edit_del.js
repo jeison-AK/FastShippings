@@ -19,7 +19,7 @@ function Button_delete() {
           //deleteAccounts(account.cc);
           navigate("/Admin-user-int");
         }}
-        to={`Add_User`}
+        to={``} // Esto para redireccionar a la edición del usuario
       >
         Editar
       </button>
@@ -29,7 +29,7 @@ function Button_delete() {
         className="btn btn-danger"
         onClick={() => {
           deleteAccounts(account.cc);
-          navigate("../Add_User");
+          navigate("/Admin-user-int");
         }}
       >
         Eliminar

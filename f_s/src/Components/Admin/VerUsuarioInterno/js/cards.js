@@ -5,12 +5,14 @@ import {
   useSearchParams,
   NavLink,
   Outlet,
+  useNavigate,
 } from "react-router-dom";
-import { getAccounts } from "./data";
+import { getAccounts, deleteAccounts } from "./data";
 
 function Section_cards() {
   let [searchParams, setSearchParams] = useSearchParams();
   let accounts = getAccounts();
+  let navigate = useNavigate();
 
   function QueryNavLink({ to, ...props }) {
     let location = useLocation();
@@ -21,18 +23,29 @@ function Section_cards() {
       <div class="container h-100 p-5 text-white bg-dark rounded-3 ">
         <div class="section-title" data-aos="fade-in" data-aos-delay="100">
           <h2 class="pb-3 border-bottom">Usuarios</h2>
-          <input
-            placeholder="Introduzca documento"
-            value={searchParams.get("filter") || ""}
-            onChange={(event) => {
-              let filter = event.target.value;
-              if (filter) {
-                setSearchParams({ filter });
-              } else {
-                setSearchParams({});
-              }
-            }}
-          />
+          <div class="input-add_user">
+            <input
+              placeholder="Introduzca documento"
+              value={searchParams.get("filter") || ""}
+              onChange={(event) => {
+                let filter = event.target.value;
+                if (filter) {
+                  setSearchParams({ filter });
+                } else {
+                  setSearchParams({});
+                }
+              }}
+            />
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                deleteAccounts(accounts.cc);
+                navigate("/Add_User");
+              }}
+            >
+              Agregar
+            </button>
+          </div>
           <div class="cotainer">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-2">
               {accounts
@@ -49,7 +62,7 @@ function Section_cards() {
                       display: "flex",
                       alignItems: "between",
                       margin: "10px 0px",
-                      color: isActive ? "red" : "",
+                      color: isActive ? "#0064fa" : "white",
                     })}
                     to={`/Admin-user-int/${accounts.cc}`}
                     key={accounts.cc}
