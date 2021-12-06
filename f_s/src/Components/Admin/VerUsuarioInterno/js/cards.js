@@ -39,9 +39,8 @@ function Section_cards() {
                 .filter((acount) => {
                   let filter = searchParams.get("filter");
                   if (!filter) return true;
-                  let name = acount.name.toLowerCase();
-                  // let documento = acount.cc();
-                  return name.startsWith(filter.toLowerCase());
+                  let documento = acount.cc.toString();
+                  return documento.startsWith(filter.toLowerCase());
                 })
                 .map((accounts) => (
                   // Esto lo que hace es aplicar el "mapeo" en la consulta y lo erroja como link
