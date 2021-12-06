@@ -24,8 +24,9 @@ import Section_cards from "./Components/Admin/VerUsuarioInterno/js/cards";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
 import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
-
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import Login from "./Components/LandingPage/Login/Login";
+import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
 
 
@@ -39,17 +40,17 @@ function App() {
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
-          <Route index element={<NavBar_admin />} />
-          <Route index element={<AboutUSmain />} />
-          <Route index element={<Section_cards />} /> 
-            <Route path=":userID" element={<ViewUserAdm />} /> 
-          <Route index element={<Info_user />} />  
-          <Route index element={<Button_delete />} />  
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<ViewUserAdm />} /> 
           
         </Route>
 
         <Route path="rutas" element={<Rutas />} />
 
+        {/* ruta login*/}
+        <Route path="/Login" element={<Login />} />
+        {/* ruta solicitudes usuario interno*/}
+        <Route path="/Solicitud" element={<Solicitud />} />
 
 
       </Routes>
