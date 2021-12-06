@@ -1,19 +1,8 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-  Link,
-  NavLink,
-  useNavigate,
-  useLocation,
-  Outlet,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Component imports
-import Home from "./Components/LandingPage/Principal/home"
+import Home from "./Components/LandingPage/Principal/home";
 import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
 /* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
@@ -22,16 +11,13 @@ import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenD
 
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
-import Section_cards from "./Components/Admin/VerUsuarioInterno/js/cards";
+import Add_user from "./Components/Admin/VerUsuarioInterno/js/add_user";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
-import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
-import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
+
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
-
-
-
 
 function App() {
   return (
@@ -47,9 +33,9 @@ function App() {
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
           <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<ViewUserAdm />} /> 
-          
+          <Route path=":userID" element={<Info_user />} />
         </Route>
+        <Route path="Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
         <Route path="/about" element={<AboutUSmain />} />
@@ -58,8 +44,6 @@ function App() {
         <Route path="/Login" element={<Login />} />
         {/* ruta solicitudes usuario interno*/}
         <Route path="/Solicitud" element={<Solicitud />} />
-
-
       </Routes>
     </Router>
   );
