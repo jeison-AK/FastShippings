@@ -19,6 +19,7 @@ import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenD
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
 import Add_user from "./Components/Admin/VerUsuarioInterno/js/add_user";
+import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 
@@ -30,7 +31,8 @@ function App() {
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
-          <Route path=":userID" element={<ViewUserAdm />} />
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<Info_user />} />
         </Route>
         <Route path="Add_User" element={<Add_user />} />
 

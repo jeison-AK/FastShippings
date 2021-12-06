@@ -1,5 +1,9 @@
+a {
+  max-width: 15em;
+}
 .services .icon-box {
   padding: 30px;
+  margin: 10px 0;
   position: relative;
   overflow: hidden;
   background: #fff;

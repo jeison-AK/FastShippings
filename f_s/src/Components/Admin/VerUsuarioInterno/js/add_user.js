@@ -1,94 +1,122 @@
 import "../css/add_user.css";
 import NavBar_Adm from "../../../Comun/NavBar/NavBar_Adm";
-import Separador from "../../../Comun/Separador/separador";
 import Footer from "../../../Comun/footer/footer";
 
 function Add_user() {
   return (
-    <div class="container-md">
+    <div class="container-md ">
       <nav>
         <NavBar_Adm />
       </nav>
-      <Separador />
-      <Separador />
-      <main>
+      <main class="addUser">
         <form class="row g-3 needs-validation" novalidate>
           <div class="col-md-4">
             <label for="validationCustom01" class="form-label">
-              First name
+              Nombre y Apellido
             </label>
             <input
               type="text"
               class="form-control"
               id="validationCustom01"
-              value="Mark"
+              placeholder="Ingrese nombre/s y apellido/s."
               required
             />
             <div class="valid-feedback">Looks good!</div>
           </div>
           <div class="col-md-4">
             <label for="validationCustom02" class="form-label">
-              Last name
+              Documento
             </label>
             <input
               type="text"
               class="form-control"
               id="validationCustom02"
-              value="Otto"
+              placeholder="Ingrese documento de identidad."
               required
             />
             <div class="valid-feedback">Looks good!</div>
           </div>
           <div class="col-md-4">
             <label for="validationCustomUsername" class="form-label">
-              Username
+              Email
             </label>
             <div class="input-group has-validation">
               <span class="input-group-text" id="inputGroupPrepend">
-                @
+                📧
               </span>
               <input
                 type="text"
                 class="form-control"
                 id="validationCustomUsername"
                 aria-describedby="inputGroupPrepend"
+                placeholder="Ingrese Correo Electrónico."
                 required
               />
-              <div class="invalid-feedback">Please choose a username.</div>
+              <div class="invalid-feedback">Please choose a Email.</div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <label for="validationCustom03" class="form-label">
-              City
+              Contacto
             </label>
             <input
               type="text"
               class="form-control"
               id="validationCustom03"
+              placeholder="Ingrese número de contacto."
               required
             />
-            <div class="invalid-feedback">Please provide a valid city.</div>
+            <div class="invalid-feedback">Please provide a valid contact.</div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <label for="validationCustom04" class="form-label">
-              State
+              Rol
             </label>
             <select class="form-select" id="validationCustom04" required>
               <option selected disabled value="">
                 Choose...
               </option>
-              <option>...</option>
+              {/* <option>Administrador</option> */}
+              {/* <option>Usuario Externo</option> */}
+              <option>Usuario Interno</option>
             </select>
             <div class="invalid-feedback">Please select a valid state.</div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <label for="validationCustom05" class="form-label">
-              Zip
+              Due
+            </label>
+            <input
+              type="date"
+              class="form-control"
+              id="validationCustom05"
+              placeholder="Ingrese fecha de nacimiento."
+              required
+            />
+            <div class="invalid-feedback">Please provide a valid zip.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom06" class="form-label">
+              Job
             </label>
             <input
               type="text"
               class="form-control"
-              id="validationCustom05"
+              id="validationCustom06"
+              placeholder="Ingrese puesto de trabajo"
+              required
+            />
+            <div class="invalid-feedback">Please provide a valid zip.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom07" class="form-label">
+              Descripción
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom07"
+              placeholder="Ingrese breve descripción"
               required
             />
             <div class="invalid-feedback">Please provide a valid zip.</div>
@@ -117,10 +145,6 @@ function Add_user() {
           </div>
         </form>
       </main>
-
-      <Separador />
-      <Separador />
-      <Separador />
       <footer>
         <Footer />
       </footer>

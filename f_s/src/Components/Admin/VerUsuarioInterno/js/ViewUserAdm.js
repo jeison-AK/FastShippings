@@ -1,8 +1,8 @@
 import React from "react";
 import NavBar_admin from "../../../Comun/NavBar/NavBar_Adm";
 import Section_cards from "./cards";
-import Info_user from "./info_user";
 import Footer from "../../../Comun/footer/footer";
+import { Outlet } from "react-router";
 
 //-Esta pagina cubre los siguientes requerimientos para el usuario externo:
 // ❌	Darse de alta en la plataforma (Registrarse).
@@ -20,12 +20,12 @@ function ViewUserAdm() {
       <main>
         <section id="mid" class="container-fluid d-flex justify-content-center">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <Section_cards />
             </div>
 
-            <div class="col-md-4">
-              <Info_user />
+            <div class="col-md-3">
+              <Outlet />
             </div>
           </div>
         </section>

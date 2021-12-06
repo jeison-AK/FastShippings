@@ -1,12 +1,13 @@
 import React from "react";
 import "../css/info_user.css";
 import Button_delete from "./btn_edit_del";
-import { useNavigate } from "react-router-dom";
-import { getAccounts } from "./data";
+import { useParams, useNavigate } from "react-router-dom";
+import { getAccounts, deleteAccounts } from "./data";
 
 function Info_user() {
   let navigate = useNavigate();
-  let acounts = getAccounts();
+  let params = useParams();
+  let acounts = getAccounts(parseInt(params.userID, 10));
   return (
     <div class="card container h-80 p-3 bg-white rounded-3">
       <img
@@ -16,22 +17,25 @@ function Info_user() {
       />
       <div class="card-body">
         <h5 class="card-title">
-          <strong>Santiago (Prueba)</strong>
+          <strong>Información Usuario</strong>
         </h5>
         <p class="card-text"></p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <strong>Name: </strong>Santiago Urrego
+          <strong>Name: </strong> {acounts.name}
         </li>
         <li class="list-group-item">
-          <strong>CC: </strong>1995
+          <strong>CC: </strong> {acounts.cc}
         </li>
         <li class="list-group-item">
-          <strong>Contact: </strong>+57 300 333 0000
+          <strong>Contact: </strong> {acounts.contact}
         </li>
         <li class="list-group-item">
-          <strong>Fecha de nacimiento: </strong>12/05/1995
+          <strong>Fecha de nacimiento: </strong> {acounts.due}
+        </li>
+        <li class="list-group-item">
+          <strong>Descripción: </strong> {acounts.description}
         </li>
       </ul>
       <div class="card-body">
@@ -39,10 +43,9 @@ function Info_user() {
       </div>
       <div>
         <button
-          // style={style}
           className="btn btn-primary"
           onClick={() => {
-            //deleteAccounts(account.cc);
+            deleteAccounts(acounts.cc);
             navigate("/Add_User");
           }}
         >
