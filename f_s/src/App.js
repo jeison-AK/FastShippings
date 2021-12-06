@@ -25,7 +25,9 @@ import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
 import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
 
+//Uusario Interno
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import Historialui from "./Components/UsuarioInterno/Historial/historialui";
 
 
 
@@ -49,6 +51,7 @@ function App() {
         </Route>
 
         <Route path="rutas" element={<Rutas />} />
+        <Route path="historialui" element={<Historialui />} />
 
 
 
