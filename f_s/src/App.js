@@ -33,12 +33,9 @@ function App() {
   return (
     <Router>
       <Routes>
-<<<<<<< Updated upstream
-=======
         <Route path="/" element={<Home />} />
         <Route path="/registro" element={<Registro />} />
         {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
->>>>>>> Stashed changes
         <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
