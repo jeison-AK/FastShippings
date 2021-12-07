@@ -13,7 +13,16 @@ import {
 } from "react-router-dom";
 
 //Component imports
+<<<<<<< Updated upstream
 import Home from "./Components/UsuarioExterno/Home/homeComp";
+=======
+// import Home from "./Components/LandingPage/Principal/home"
+import Home from "./Components/UsuarioExterno/Home/homeComp";
+// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
+/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
+import AboutUSmain from "./Components/Comun/AboutUs/about_us";
+import Registro from "./Components/LandingPage/Registro/registro";
+>>>>>>> Stashed changes
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
 // Section admin
@@ -28,6 +37,12 @@ function App() {
   return (
     <Router>
       <Routes>
+<<<<<<< Updated upstream
+=======
+        <Route path="/" element={<Home />} />
+        <Route path="/registro" element={<Registro />} />
+        {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
+>>>>>>> Stashed changes
         <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
