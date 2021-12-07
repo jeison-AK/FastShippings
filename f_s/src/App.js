@@ -13,9 +13,11 @@ import {
 } from "react-router-dom";
 
 //Component imports
-import Home from "./Components/UsuarioExterno/Home/homeComp";
-import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
+import Home from "./Components/LandingPage/Principal/home"
+import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
+/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
+import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
 // Section admin
@@ -24,8 +26,9 @@ import Section_cards from "./Components/Admin/VerUsuarioInterno/js/cards";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
 import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
-
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import Login from "./Components/LandingPage/Login/Login";
+import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
 
 
@@ -34,22 +37,27 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/registro" element={<Registro />} />
+        {/* <Route path="/HomeExt" element={<HomeExt />}/>
+          <Route index element={<NewNavBar />} /> */}
 
-        <Route path="/HomeUsExt" element={<Home />} />
+        <Route path="/HomeExt" element={<HomeExt />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
-          <Route index element={<NavBar_admin />} />
-          <Route index element={<AboutUSmain />} />
-          <Route index element={<Section_cards />} /> 
-            <Route path=":userID" element={<ViewUserAdm />} /> 
-          <Route index element={<Info_user />} />  
-          <Route index element={<Button_delete />} />  
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<ViewUserAdm />} /> 
           
         </Route>
 
         <Route path="rutas" element={<Rutas />} />
+        <Route path="/about" element={<AboutUSmain />} />
 
+        {/* ruta login*/}
+        <Route path="/Login" element={<Login />} />
+        {/* ruta solicitudes usuario interno*/}
+        <Route path="/Solicitud" element={<Solicitud />} />
 
 
       </Routes>
