@@ -13,8 +13,8 @@ import {
 } from "react-router-dom";
 
 //Component imports
-import Home from "./Components/LandingPage/Principal/home"
-import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
+// import Home from "./Components/LandingPage/Principal/home";
+import Home from "./Components/UsuarioExterno/Home/homeComp";
 /* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
@@ -30,25 +30,19 @@ import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
-
-
-
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> Cambie este elemento de ruta andres 🤣 */}
         <Route path="/registro" element={<Registro />} />
-        {/* <Route path="/HomeExt" element={<HomeExt />}/>
-          <Route index element={<NewNavBar />} /> */}
 
-        <Route path="/HomeExt" element={<HomeExt />} />
+        <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
           <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<ViewUserAdm />} /> 
-          
+          <Route path=":userID" element={<ViewUserAdm />} />
         </Route>
 
         <Route path="rutas" element={<Rutas />} />
@@ -58,8 +52,6 @@ function App() {
         <Route path="/Login" element={<Login />} />
         {/* ruta solicitudes usuario interno*/}
         <Route path="/Solicitud" element={<Solicitud />} />
-
-
       </Routes>
     </Router>
   );
