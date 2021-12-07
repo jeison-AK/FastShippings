@@ -74,21 +74,19 @@ export default function OrdenDespacho() {
                   </div>
 
                   <div class="col-12">
-                    <label for="username" class="form-label">
-                      Usuario
+                    <label for="cedula" class="form-label">
+                      Identificación
                     </label>
                     <div class="input-group has-validation">
-                      <span class="input-group-text">@</span>
+                      <span class="input-group-text">CC</span>
                       <input
                         type="text"
                         class="form-control"
-                        id="username"
-                        placeholder="Username"
+                        id="cedula"
+                        placeholder=""
                         required
                       />
-                      <div class="invalid-feedback">
-                        Nombre de usuario no valido.
-                      </div>
+                      <div class="invalid-feedback">Ingrese su cedula</div>
                     </div>
                   </div>
 
@@ -107,24 +105,70 @@ export default function OrdenDespacho() {
                       Ingrese una Dirección de correo valida.
                     </div>
                   </div>
+                  <div class="col-12">
+                    <label for="describir-P" class="form-label">
+                      Descripción del producto
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="describir-P"
+                      placeholder="Medidas, color etc"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Describa su producto a enviar
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="peso" class="form-label">
+                      Peso
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="peso"
+                      placeholder=""
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      peso del producto es requerido.
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <label for="N-vehiculos" class="form-label">
+                      Vehiculos necesarios para el envio
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="N-vehiculos"
+                      placeholder="2"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Ingrese el numero de vehiculos necesarios para el envio
+                      del producto.
+                    </div>
+                  </div>
 
                   <div class="col-12">
                     <label for="address" class="form-label">
-                      Dirección
+                      Telefono
                     </label>
                     <input
                       type="text"
                       class="form-control"
                       id="address"
-                      placeholder="1234 Main St"
+                      placeholder="310..."
                       required
                     />
                     <div class="invalid-feedback">
-                      Por favor ingrese una Dirección.
+                      Por favor ingrese un celular
                     </div>
                   </div>
 
-                  <div class="col-md-5">
+                  {/* <div class="col-md-5">
                     <label for="departamento" class="form-label">
                       Departamento
                     </label>
@@ -147,7 +191,7 @@ export default function OrdenDespacho() {
                     <div class="invalid-feedback">
                       seleccione un municipio o ciudad.
                     </div>
-                  </div>
+                  </div> */}
 
                   <div class="col-md-3">
                     <label for="zip" class="form-label">
@@ -161,6 +205,40 @@ export default function OrdenDespacho() {
                       required
                     />
                     <div class="invalid-feedback">Zip code es requerido.</div>
+                  </div>
+                </div>
+
+                <div class="row gy-3">
+                  <div class="col-md-6">
+                    <label for="D-recogida" class="form-label">
+                      Dirección de recogida
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="D-recogida"
+                      placeholder=""
+                      required
+                    />
+                    <small class="text-muted">
+                      🛑 La direccion de recogida y envio deben coincidir con la
+                      ruta del envio seleccionada! Origen: xxx Destino: xxx
+                    </small>
+                    <div class="invalid-feedback">Nombre es requerido</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="D-entrega" class="form-label">
+                      Dirección de entrega
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="D-entrega"
+                      placeholder=""
+                      required
+                    />
+                    <div class="invalid-feedback">Ingrese una Dirección</div>
                   </div>
                 </div>
 
