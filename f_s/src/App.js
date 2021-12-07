@@ -28,6 +28,8 @@ import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
 //Uusario Interno
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 import Historialui from "./Components/UsuarioInterno/Historial/historialui";
+import ViewHisUI from"./Components/UsuarioInterno/Historial/js/ViewHisUI";
+import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
 
 
 
@@ -41,18 +43,17 @@ function App() {
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
         <Route path="/Admin-user-int" element={<ViewUserAdm />}>
-          <Route index element={<NavBar_admin />} />
-          <Route index element={<AboutUSmain />} />
-          <Route index element={<Section_cards />} /> 
-            <Route path=":userID" element={<ViewUserAdm />} /> 
-          <Route index element={<Info_user />} />  
-          <Route index element={<Button_delete />} />  
-          
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<Info_user />} />
         </Route>
+        {/* <Route path="Add_User" element={<Add_user />} /> */}
 
         <Route path="rutas" element={<Rutas />} />
         <Route path="historialui" element={<Historialui />} />
-
+        <Route path="historialui2" element={<ViewHisUI />} >
+        <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<Info_orden />} />
+        </Route>
 
 
       </Routes>
