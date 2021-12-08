@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 //Component imports
-// import Home from "./Components/LandingPage/Principal/home"
+import HomeP from "./Components/LandingPage/Principal/home"
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 // import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
 /* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
@@ -33,7 +33,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeP />} />
         <Route path="/registro" element={<Registro />} />
         {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
         <Route path="/HomeUsExt" element={<Home />} />
