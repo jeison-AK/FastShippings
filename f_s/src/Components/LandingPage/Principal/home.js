@@ -8,7 +8,7 @@ import Footer from "../../Comun/footer/footer";
 // ✅	Darse de alta en la plataforma (Registrarse).
 // ✅	Iniciar sesión en su cuenta.
 
-function Home() {
+function HomeP() {
   return (
     <div class="grid">
       <nav>
@@ -117,4 +117,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeP;
