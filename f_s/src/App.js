@@ -23,7 +23,7 @@ import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenD
 
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
-import Add_user from "./Components/Admin/VerUsuarioInterno/js/add_user";
+import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 import Login from "./Components/LandingPage/Login/Login";

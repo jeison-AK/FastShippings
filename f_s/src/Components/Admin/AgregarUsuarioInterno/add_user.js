@@ -1,6 +1,6 @@
-import "../css/add_user.css";
-import NavBar_Adm from "../../../Comun/NavBar/NavBar_Adm";
-import Footer from "../../../Comun/footer/footer";
+import "../AgregarUsuarioInterno/add_user.css";
+import NavBar_Adm from "../../Comun/NavBar/NavBar_Adm";
+import Footer from "../../Comun/footer/footer";
 
 function Add_user() {
   return (
