@@ -26,6 +26,8 @@ import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
 import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
+import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
@@ -46,6 +48,10 @@ function App() {
         <Route path="Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
+        <Route path="historialui" element={<ViewHisUI />} >
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<Info_orden />} />
+        </Route>
         <Route path="/about" element={<AboutUSmain />} />
 
         {/* ruta login*/}
