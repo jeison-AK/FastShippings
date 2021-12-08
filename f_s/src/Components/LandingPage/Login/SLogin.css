@@ -1,0 +1,31 @@
+.principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 240, 240);
+    
+       
+}
+
+.contenedor-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.principal{
+    background-image: url(../../imagenes/camion4.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.titulo{
+    margin-top: 100px;
+    font-size: 70px;
+    color: rgba(55, 109, 224, 0.788);
+    text-align: center;
+}

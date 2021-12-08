@@ -13,32 +13,29 @@ import {
 } from "react-router-dom";
 
 //Component imports
+import HomeP from "./Components/LandingPage/Principal/home"
 import Home from "./Components/UsuarioExterno/Home/homeComp";
-import NewNavBar from "./Components/Comun/NavBar/NavBar_JM";
+// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
+/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
+import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
-import Section_cards from "./Components/Admin/VerUsuarioInterno/js/cards";
+import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
-import Button_delete from "./Components/Admin/VerUsuarioInterno/js/btn_edit_del";
-import NavBar_admin from "./Components/Admin/VerUsuarioInterno/js/NavBar_admin";
-
-//Uusario Interno
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
-import Historialui from "./Components/UsuarioInterno/Historial/historialui";
-import ViewHisUI from"./Components/UsuarioInterno/Historial/js/ViewHisUI";
-import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
-
-
-
+import Login from "./Components/LandingPage/Login/Login";
+import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
 function App() {
   return (
     <Router>
       <Routes>
-
+        <Route path="/" element={<HomeP />} />
+        <Route path="/registro" element={<Registro />} />
+        {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
         <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
@@ -46,16 +43,15 @@ function App() {
           <Route index element={<main style={{ padding: "1rem" }}></main>} />
           <Route path=":userID" element={<Info_user />} />
         </Route>
-        {/* <Route path="Add_User" element={<Add_user />} /> */}
+        <Route path="Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
-        <Route path="historialui" element={<Historialui />} />
-        <Route path="historialui2" element={<ViewHisUI />} >
-          <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<Info_orden />} />
-        </Route>
+        <Route path="/about" element={<AboutUSmain />} />
 
-
+        {/* ruta login*/}
+        <Route path="/Login" element={<Login />} />
+        {/* ruta solicitudes usuario interno*/}
+        <Route path="/Solicitud" element={<Solicitud />} />
       </Routes>
     </Router>
   );
