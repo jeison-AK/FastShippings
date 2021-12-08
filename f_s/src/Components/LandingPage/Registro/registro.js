@@ -1,7 +1,6 @@
 import React from "react";
 import NavBar from "../../Comun/NavBar/NavBar_Reg";
 import "../../Comun/NavBar/navBar.css";
-import "../../LandingPage/Registro/registro.css";
 import Footer from "../../Comun/footer/footer";
 
 function Registro() {
@@ -10,6 +9,8 @@ function Registro() {
       <nav>
         <NavBar />
       </nav>
+      <br/>
+      <br/>
       <main>
         <div class="card-header">
           <h3 class="text-center font-weight-light my-4">Regístrese</h3>
@@ -99,7 +100,7 @@ function Registro() {
             </div>
             <div class="mt-4 mb-0">
               <div class="d-grid">
-                <a class="btn btn-secondary" href="login.html">
+                <a class="btn btn-secondary" href="#">
                   Crear cuenta
                 </a>
               </div>
@@ -107,7 +108,6 @@ function Registro() {
           </form>
         </div>
       </main>
-
       <footer>
         <Footer />
       </footer>
