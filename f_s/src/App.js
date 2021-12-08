@@ -46,6 +46,10 @@ function App() {
         <Route path="Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
+        <Route path="historialui" element={<ViewHisUI />} >
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<Info_orden />} />
+        </Route>
         <Route path="/about" element={<AboutUSmain />} />
 
         {/* ruta login*/}
