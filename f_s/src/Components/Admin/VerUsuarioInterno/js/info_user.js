@@ -8,7 +8,7 @@ function Info_user() {
   let params = useParams();
   let accounts = getAccount(parseInt(params.userID, 10));
   return (
-    <div class="card container h-80 p-3 bg-white rounded-4">
+    <section class="card container h-80 p-3 bg-white rounded-4">
       <img
         src="https://images.unsplash.com/photo-1634034379073-f689b460a3fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
         class="card-img-top"
@@ -40,7 +40,7 @@ function Info_user() {
       <div class="card-body">
         <Button_delete />
       </div>
-    </div>
+    </section>
   );
 }
 

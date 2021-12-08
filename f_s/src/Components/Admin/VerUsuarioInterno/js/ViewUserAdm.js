@@ -13,28 +13,33 @@ import { Outlet } from "react-router";
 
 function ViewUserAdm() {
   return (
-    <div class="grid">
-      <nav>
-        <NavBar_admin />
-      </nav>
-      <main>
-        <section id="mid" class="container-fluid d-flex justify-content-center">
-          <div class="row">
-            <div class="col-md-9">
-              <Section_cards />
-            </div>
+    <section class="addUserBody container-fluid">
+      <div class="grid">
+        <nav>
+          <NavBar_admin />
+        </nav>
+        <main>
+          <section
+            id="mid"
+            class="container-fluid d-flex justify-content-center"
+          >
+            <div class="row">
+              <div class="col-md-9">
+                <Section_cards />
+              </div>
 
-            <div class="col-md-3">
-              <Outlet />
+              <div class="col-md-3">
+                <Outlet />
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
 
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    </section>
   );
 }
 
