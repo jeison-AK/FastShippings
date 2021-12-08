@@ -1,6 +1,10 @@
 import React from "react";
 import "./navBar.css";
+import { Outlet, useLocation, Link, NavLink } from "react-router-dom";
 export default function NavBar_UI() {
+  const location = useLocation();
+  const url = location.pathname;
+  console.log("🔥My PAATH>>>>>>", url);
   return (
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light grid">
       <div class="container-fluid nav-tabs">
@@ -21,36 +25,68 @@ export default function NavBar_UI() {
 
         <div class="collapse navbar-collapse" id="navbarsExample04">
           <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Perfil
-            </a>
-            <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Ver perfil</a></li>
-                <li><a class="dropdown-item" href="#">Editar perfil</a></li>
-            </ul>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="HomeUsExt">
-                Home
               </a>
+              <ul
+                class="dropdown-menu dropdown-menu-white"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">
+                    Ver perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    Editar perfil
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li className="nav-item">
+              <NavLink
+                to={`/HomeUsExt`}
+                className={() =>
+                  url === "/HomeUsExt" ? "nav-link active" : "nav-link"
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
                 Solicitudes
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <NavLink
+                to={`/historialui`}
+                className={() =>
+                  url === "/historialui" ? "nav-link active" : "nav-link"
+                }
+              >
                 Historial
-              </a>
+              </NavLink>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <NavLink
+                to={`/rutas`}
+                className={() =>
+                  url === "/rutas" ? "nav-link active" : "nav-link"
+                }
+              >
                 Rutas
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
