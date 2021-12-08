@@ -17,7 +17,7 @@ function Button_delete() {
         className="btn btn-success"
         onClick={() => {
           //deleteAccounts(account.cc);
-          navigate("/Admin-user-int");
+          navigate("");
         }}
         to={`Add_User`}
       >

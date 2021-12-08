@@ -26,6 +26,8 @@ import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
 import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
+import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 

@@ -51,7 +51,7 @@ function Section_cards() {
                       margin: "10px 0px",
                       color: isActive ? "red" : "",
                     })}
-                    to={`/historialui2/${accounts.status}`}
+                    to={`/historialui/${accounts.status}`}
                     key={accounts.status}
                   >
                     <div class="icon-box" data-aos="fade-up">
