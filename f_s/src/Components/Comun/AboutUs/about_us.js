@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../NavBar/NavBar_Reg";
+import NavBar from "../NavBar/NavBarHome";
 import Footer from "../footer/footer";
 
 function AboutUSmain() {
