@@ -21,19 +21,10 @@ function Button_delete() {
         }}
         to={`Add_User`}
       >
-        Editar
+        Cambiar estado
       </button>
 
-      <button
-        style={style}
-        className="btn btn-danger"
-        onClick={() => {
-          deleteAccounts(account.cc);
-          navigate("../Add_User");
-        }}
-      >
-        Eliminar
-      </button>
+
     </div>
   );
 }

@@ -2,13 +2,12 @@ import React from "react";
 import "../css/info_user.css";
 import Button_delete from "./btn_edit_del";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { getAccounts, deleteAccounts } from "./data";
+import { getAccounts } from "./data";
 
 function Info_orden() {
   let navigate = useNavigate();
   let params = useParams();
-  let searchURL = useSearchParams();
-  let acounts = getAccounts(params.userID);
+  let acounts = getAccounts(params.userID.toLowerCase, 10);
   let accounts = getAccounts();
   return (
     <div class="card container h-80 p-3 bg-white rounded-3">
@@ -43,17 +42,7 @@ function Info_orden() {
       <div class="card-body">
         <Button_delete />
       </div>
-      <div>
-        <button
-          className="btn btn-primary"
-          onClick={() => {
-            deleteAccounts(acounts.cc);
-            navigate("/Add_User");
-          }}
-        >
-          Agregar
-        </button>
-      </div>
+
     </div>
   );
 }

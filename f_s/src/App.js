@@ -51,7 +51,7 @@ function App() {
         <Route path="rutas" element={<Rutas />} />
         <Route path="historialui" element={<Historialui />} />
         <Route path="historialui2" element={<ViewHisUI />} >
-        <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
           <Route path=":userID" element={<Info_orden />} />
         </Route>
 
