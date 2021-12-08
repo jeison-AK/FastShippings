@@ -1,14 +1,14 @@
 import React from "react";
 import "../css/info_user.css";
 import Button_delete from "./btn_edit_del";
-import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { getAccounts } from "./data";
+import { useParams } from "react-router-dom";
+import { getAccount } from "./data";
 
 function Info_orden() {
-  let navigate = useNavigate();
+  
   let params = useParams();
-  let acounts = getAccounts(params.userID.toLowerCase, 10);
-  let accounts = getAccounts();
+  let acounts = getAccount(params.userID, 10);
+  
   return (
     <div class="card container h-80 p-3 bg-white rounded-3">
       <img
