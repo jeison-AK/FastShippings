@@ -1,0 +1,10 @@
+.controllers
+archivos que terminen con .controller manejaran las requests a la api, (traeran data de la db según los filtros q se apliquen)
+ejemple:    status.controller.js  
+en estos archivos vamos a tener que importar la conexion desde algun archivo DAO
+
+.route
+en estos archivos se manejara algunas urls y los request que tienen permitido dichas urls
+luego en .controller se llamara las apis que aqui se definan y el request que usen (post, put, delete)
+para un ejemplo ver---> backend/api/restaurants.route.js
+en este proyecto--->https://github.dev/jeison-AK/MernProject2/tree/Basic-Frontend
