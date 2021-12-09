@@ -24,6 +24,7 @@ import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenD
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
 import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
+import Edit_user from "./Components/Admin/EditarUsuarioInterno/editUI";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 import Login from "./Components/LandingPage/Login/Login";
@@ -43,7 +44,8 @@ function App() {
           <Route index element={<main style={{ padding: "1rem" }}></main>} />
           <Route path=":userID" element={<Info_user />} />
         </Route>
-        <Route path="Add_User" element={<Add_user />} />
+        <Route path="/Edit_User" element={<Edit_user />} />
+        <Route path="/Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
         <Route path="/about" element={<AboutUSmain />} />

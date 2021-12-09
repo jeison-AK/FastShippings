@@ -7,7 +7,7 @@ let accounts = [
     rol: "Usuario interno",
     job: "Front-end developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Camilo Contreras",
@@ -17,7 +17,7 @@ let accounts = [
     rol: "Supervisor",
     job: "Front-end developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Jeison Martinez",
@@ -27,7 +27,7 @@ let accounts = [
     rol: "Usuario interno",
     job: "Full Stack developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Brayan Duque",
@@ -37,7 +37,7 @@ let accounts = [
     rol: "Usuario interno",
     job: "Databases developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Andres Dickson",
@@ -47,7 +47,7 @@ let accounts = [
     rol: "Usuario interno",
     job: "Back-end developer",
     description:
-      "Breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
 ];
 

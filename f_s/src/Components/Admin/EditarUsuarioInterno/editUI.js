@@ -2,7 +2,7 @@ import "../AgregarUsuarioInterno/add_user.css";
 import NavBar_Adm from "../../Comun/NavBar/NavBar_Adm";
 import Footer from "../../Comun/footer/footer";
 
-function Add_user() {
+function Edit_user() {
   return (
     <section class="addUserBody">
       <div class="container-md ">
@@ -10,9 +10,6 @@ function Add_user() {
           <NavBar_Adm />
         </nav>
         <main class="addUser">
-          <div>
-            <h1 className="tittle-add-user">Añadir Usuario Interno</h1>
-          </div>
           <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-4">
               <label for="validationCustom01" class="form-label">
@@ -159,4 +156,4 @@ function Add_user() {
     </section>
   );
 }
-export default Add_user;
+export default Edit_user;
