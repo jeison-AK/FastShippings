@@ -1,14 +1,14 @@
 import React from "react";
-import "./carrusel.css";
+//import "./carrusel.css";
 import NavBar from "../../Comun/NavBar/NavBarHome";
-import "../../Comun/NavBar/navBar.css";
+//import "../../Comun/NavBar/navBar.css";
 import Footer from "../../Comun/footer/footer";
 
 //-Esta pagina cubre los siguientes requerimientos para el usuario externo:
 // ✅	Darse de alta en la plataforma (Registrarse).
 // ✅	Iniciar sesión en su cuenta.
 
-function Home() {
+function HomeP() {
   return (
     <div class="grid">
       <nav>
@@ -117,4 +117,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeP;

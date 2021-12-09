@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 //Component imports
-// import Home from "./Components/LandingPage/Principal/home"
+import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 // import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
 /* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
@@ -27,6 +27,8 @@ import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
 import Edit_user from "./Components/Admin/EditarUsuarioInterno/editUI";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
+import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
@@ -34,7 +36,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeP />} />
         <Route path="/registro" element={<Registro />} />
         {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
         <Route path="/HomeUsExt" element={<Home />} />
@@ -48,11 +50,15 @@ function App() {
         <Route path="/Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
+        <Route path="historialui" element={<ViewHisUI />} >
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<Info_orden />} />
+        </Route>
         <Route path="/about" element={<AboutUSmain />} />
 
         {/* ruta login*/}
         <Route path="/Login" element={<Login />} />
-        {/* ruta solicitudes usuario interno*/}
+        {/* ruta solicudes rno*/}
         <Route path="/Solicitud" element={<Solicitud />} />
       </Routes>
     </Router>
