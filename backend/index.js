@@ -1,5 +1,5 @@
 import app from "./server.js";
-import mongodb from "mongodb";
+import mongodb, { ClientSession } from "mongodb";
 import dotenv from "dotenv";
 import RestaurantsDAO from "./dao/restaurantsDAO.js";
 import ReviewsDAO from "./dao/reviewsDAO.js";

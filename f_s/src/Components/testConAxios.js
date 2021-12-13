@@ -1,7 +1,10 @@
 import axios from "axios";
 import React from "react";
+import dotenv from "dotenv";
 
-const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+const baseURL = "RESTREVIEWS_DB_URI";
+
+dotenv.config();
 
 export default function Axios() {
   const [post, setPost] = React.useState(null);
@@ -16,8 +19,8 @@ export default function Axios() {
 
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <h1>{post.borough}</h1> {/*"Brooklyn"*/}
+      <p>{post.cuisine}</p>
       <input value={post.body}></input>
     </div>
   );
