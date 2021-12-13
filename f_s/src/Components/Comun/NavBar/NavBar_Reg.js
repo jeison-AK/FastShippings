@@ -28,15 +28,15 @@ export default function NavBar_Reg() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="http://localhost:3000/about">
                 Sobre Nosotros
               </a>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <a class="nav-link" href="#">
                 Contáctenos
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
