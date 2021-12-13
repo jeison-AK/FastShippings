@@ -22,6 +22,7 @@ function CreateNote() {
       content: input.content,
     }; //este es el objeto q enviamos al backend y la base de datos
     axios.post("http://localhost:5000/api/v1/restaurants/create", newNote); //donde sera el post [el adress the nuestri backend server] y lo que enviaremos
+    console.log(input);
   }
   return (
     <div className="container">
