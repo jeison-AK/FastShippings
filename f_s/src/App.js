@@ -1,16 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-  Link,
-  NavLink,
-  useNavigate,
-  useLocation,
-  Outlet,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Component imports
 import HomeP from "./Components/LandingPage/Principal/home";
@@ -31,10 +20,13 @@ import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 
+import Axios from "./Components/testConAxios";
+
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/Axios" element={<Axios />} />
         <Route path="/" element={<HomeP />} />
         <Route path="/registro" element={<Registro />} />
         {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
@@ -48,7 +40,7 @@ function App() {
         <Route path="Add_User" element={<Add_user />} />
 
         <Route path="rutas" element={<Rutas />} />
-        <Route path="historialui" element={<ViewHisUI />} >
+        <Route path="historialui" element={<ViewHisUI />}>
           <Route index element={<main style={{ padding: "1rem" }}></main>} />
           <Route path=":userID" element={<Info_orden />} />
         </Route>
