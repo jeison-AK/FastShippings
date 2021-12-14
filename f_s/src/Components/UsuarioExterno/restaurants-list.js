@@ -76,7 +76,7 @@ const RestaurantsList = (props) => {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine == "All Cuisines") {
+    if (searchCuisine === "All Cuisines") {
       refreshList();
     } else {
       find(searchCuisine, "cuisine");
@@ -162,7 +162,7 @@ const RestaurantsList = (props) => {
                       View Reviews
                     </Link>
                     <a
-                      target="_blank"
+                      target=""
                       href={"https://www.google.com/maps/place/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
