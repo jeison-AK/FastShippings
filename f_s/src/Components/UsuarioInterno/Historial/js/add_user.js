@@ -1,13 +1,8 @@
 import "../css/add_user.css";
-import NavBar_Adm from "../../../Comun/NavBar/NavBar_Adm";
-import Footer from "../../../Comun/footer/footer";
 
 function Add_user() {
   return (
     <div class="container-md ">
-      <nav>
-        <NavBar_Adm />
-      </nav>
       <main class="addUser">
         <form class="row g-3 needs-validation" novalidate>
           <div class="col-md-4">
@@ -145,9 +140,6 @@ function Add_user() {
           </div>
         </form>
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

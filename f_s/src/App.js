@@ -1,22 +1,8 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-  Link,
-  NavLink,
-  useNavigate,
-  useLocation,
-  Outlet,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Component imports
-import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
-// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
-/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
@@ -26,19 +12,29 @@ import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
 import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
 import Edit_user from "./Components/Admin/EditarUsuarioInterno/editUI";
 import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
+
+// Sectión Inter User
 import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
 import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
 import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
+
+// Section Landing Page
+import HomeP from "./Components/LandingPage/Principal/home";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
+import NotFound from "./Components/Comun/404NotFound/NotFound";
+import { NavBar_Adm } from "./Components/Comun/NavBar/NavBar_Adm";
+import Footer from "./Components/Comun/footer/footer";
+import Separador from "./Components/Comun/Separador/separador";
 
 function App() {
   return (
     <Router>
+      <NavBar_Adm />
+      <Separador />
       <Routes>
         <Route path="/" element={<HomeP />} />
         <Route path="/registro" element={<Registro />} />
-        {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
         <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
@@ -49,8 +45,8 @@ function App() {
         <Route path="/Edit_User" element={<Edit_user />} />
         <Route path="/Add_User" element={<Add_user />} />
 
-        <Route path="rutas" element={<Rutas />} />
-        <Route path="historialui" element={<ViewHisUI />} >
+        <Route path="/rutas" element={<Rutas />} />
+        <Route path="/historialui" element={<ViewHisUI />}>
           <Route index element={<main style={{ padding: "1rem" }}></main>} />
           <Route path=":userID" element={<Info_orden />} />
         </Route>
@@ -60,7 +56,9 @@ function App() {
         <Route path="/Login" element={<Login />} />
         {/* ruta solicudes rno*/}
         <Route path="/Solicitud" element={<Solicitud />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

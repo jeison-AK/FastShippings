@@ -25,10 +25,10 @@ function Info_user() {
           <strong>Name: </strong> {accounts.name}
         </li>
         <li className="list-group-item">
-          <strong>CC: </strong> {accounts.name}
+          <strong>CC: </strong> {accounts.cc}
         </li>
         <li className="list-group-item">
-          <strong>CC: </strong> {accounts.cc}
+          <strong>Job: </strong> {accounts.job}
         </li>
         <li className="list-group-item">
           <strong>Contact: </strong> {accounts.contact}

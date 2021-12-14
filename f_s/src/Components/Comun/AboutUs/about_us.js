@@ -1,13 +1,8 @@
 import React from "react";
-import NavBar from "../NavBar/NavBarHome";
-import Footer from "../footer/footer";
 
 function AboutUSmain() {
   return (
     <div class="container col-xxl-8 px-4 py-5 border rounded-3">
-      <nav>
-        <NavBar />
-      </nav>
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
           <img
@@ -28,17 +23,11 @@ function AboutUSmain() {
             de productos de un cliente, y llevarlos a donde este cliente le
             indique.
           </p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start"></div>
         </div>
       </div>
       <div class="b-example-divider"></div>
-      <footer>
-        <Footer />
-      </footer>
     </div>
-
-    
   );
 }
 

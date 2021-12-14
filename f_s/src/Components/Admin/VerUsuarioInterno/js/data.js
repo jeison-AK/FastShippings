@@ -4,7 +4,7 @@ let accounts = [
     cc: 1995,
     contact: "+57 300 333 0000",
     due: "12/05/1995",
-    rol: "Usuario interno",
+    rol: "Usuario Interno",
     job: "Front-end developer",
     description:
       "Aquí dejamos una breve descripción de la persona relacionada.",
@@ -14,7 +14,7 @@ let accounts = [
     cc: 2000,
     contact: "+57 300 333 0000",
     due: "10/31/2000",
-    rol: "Supervisor",
+    rol: "Usuario Interno",
     job: "Front-end developer",
     description:
       "Aquí dejamos una breve descripción de la persona relacionada.",
@@ -24,7 +24,7 @@ let accounts = [
     cc: 2003,
     contact: "+57 300 333 0000",
     due: "07/22/2003",
-    rol: "Usuario interno",
+    rol: "Administrador",
     job: "Full Stack developer",
     description:
       "Aquí dejamos una breve descripción de la persona relacionada.",
@@ -44,7 +44,7 @@ let accounts = [
     cc: 1998,
     contact: "+57 300 333 0000",
     due: "01/27/1998",
-    rol: "Usuario interno",
+    rol: "Usuario externo",
     job: "Back-end developer",
     description:
       "Aquí dejamos una breve descripción de la persona relacionada.",
