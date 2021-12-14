@@ -20,12 +20,12 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to="/restaurants" className="navbar-brand">
+        <Link to="/restaurants/" className="navbar-brand">
           Restaurant Reviews
         </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link to={"/restaurants"} className="nav-link">
+            <Link to={"/restaurants/"} className="nav-link">
               Restaurants
             </Link>
           </li>

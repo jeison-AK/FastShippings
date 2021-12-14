@@ -10,7 +10,7 @@ const Restaurant = (props) => {
     cuisine: "",
     reviews: [],
   };
-  const [restaurant, setRestaurant] = useState(initialRestaurantState);
+  const [restaurant, setRestaurant] = useState(initialRestaurantState); //usamos initialRestaurantState para darle un set inicial a restaurant
 
   const getRestaurant = (id) => {
     RestaurantDataService.get(id)
@@ -24,9 +24,12 @@ const Restaurant = (props) => {
   };
 
   useEffect(() => {
+    //FIXME: fix error, props.match
     getRestaurant(props.match.params.id);
-  }, [props.match.params.id]);
+  }, [props.match.params.id]); //solo sera llamado si [props.match.params.id] es updated, es decir unicamente se volvera a llamar a
+  // getRestaurant si el id es actualizado
 
+  //unicamente se podrá eliminar un review si eres el usuario de ese review
   const deleteReview = (reviewId, index) => {
     RestaurantDataService.deleteReview(reviewId, props.user.id)
       .then((response) => {
