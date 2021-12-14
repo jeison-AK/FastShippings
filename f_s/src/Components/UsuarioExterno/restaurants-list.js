@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../../services/restaurant";
 import { Link } from "react-router-dom";
-
+//! ver services/restaurant.js
 const RestaurantsList = (props) => {
   //necesitamos tener variables para los items que las personas esten buscando
   const [restaurants, setRestaurants] = useState([]);
@@ -156,7 +156,7 @@ const RestaurantsList = (props) => {
                   </p>
                   <div className="row">
                     <Link
-                      to={"/restaurants/" + restaurant._id}
+                      to={"/restaurants" + restaurant._id}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Reviews
