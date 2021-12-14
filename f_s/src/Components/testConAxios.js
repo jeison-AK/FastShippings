@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
 
 const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
 
