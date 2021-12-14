@@ -1,9 +1,0 @@
-section.card {
-  display: flex;
-  width: 18rem;
-  align-items: center;
-  border-radius: 5rem;
-}
-.card-img-top {
-  border-radius: 5rem;
-}

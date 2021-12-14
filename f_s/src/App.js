@@ -1,55 +1,28 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Outlet,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-//Component imports
-import HomeP from "./Components/LandingPage/Principal/home";
-import Home from "./Components/UsuarioExterno/Home/homeComp";
-// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
-/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
-import AboutUSmain from "./Components/Comun/AboutUs/about_us";
-import Registro from "./Components/LandingPage/Registro/registro";
-import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
-
-// Section admin
-import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
-import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
-import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
-import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
-import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
-import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
-import Login from "./Components/LandingPage/Login/Login";
-import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
-
-import Axios from "./Components/testConAxios";
+import GetReq from "./Components/testConAxios";
+import PostReq from "./Components/postRequestAxios";
+import PutReq from "./Components/putReqAxios";
+import DeleteReq from "./Components/deleteReqAxios";
+import Error from "./Components/handleErrors";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/Axios" element={<Axios />} />
-        <Route path="/" element={<HomeP />} />
-        <Route path="/registro" element={<Registro />} />
-        {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
-        <Route path="/HomeUsExt" element={<Home />} />
-        <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
-
-        <Route path="/Admin-user-int" element={<ViewUserAdm />}>
-          <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<Info_user />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<GetReq />} />
+          <Route path="post" element={<PostReq />} />
+          <Route path="put" element={<PutReq />} />
+          <Route path="delete" element={<DeleteReq />} />
         </Route>
-        <Route path="Add_User" element={<Add_user />} />
-
-        <Route path="rutas" element={<Rutas />} />
-        <Route path="historialui" element={<ViewHisUI />}>
-          <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<Info_orden />} />
-        </Route>
-        <Route path="/about" element={<AboutUSmain />} />
-
-        {/* ruta login*/}
-        <Route path="/Login" element={<Login />} />
-        {/* ruta solicudes rno*/}
-        <Route path="/Solicitud" element={<Solicitud />} />
+        <Route path="/error" element={<Error />} />
       </Routes>
     </Router>
   );
@@ -57,6 +30,13 @@ function App() {
 
 export default App;
 
+function Layout() {
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
+}
 //Navigate replace redirecciona
 // no usamos <a> tags porque recarga toda la pagina en su lugar usamos Link
 //outlet indica en qué parte de la pagina cargar algún componente
