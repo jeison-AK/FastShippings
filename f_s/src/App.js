@@ -10,7 +10,10 @@ import PostReq from "./Components/postRequestAxios";
 import PutReq from "./Components/putReqAxios";
 import DeleteReq from "./Components/deleteReqAxios";
 import Error from "./Components/handleErrors";
+import AxiosInstance from "./Components/CreateAxiosInstance";
+import AsyncAwait from "./Components/Async-Await";
 
+//!IMPORTANT: ver CreateAxiosInstance.js, Async-Await.js
 function App() {
   return (
     <Router>
@@ -20,8 +23,12 @@ function App() {
           <Route path="post" element={<PostReq />} />
           <Route path="put" element={<PutReq />} />
           <Route path="delete" element={<DeleteReq />} />
+          <Route path="/error" element={<Error />} />
+          {/* escribe codigo más limpio usando esto: */}
+          <Route path="/instance" element={<AxiosInstance />} />
+          <Route path="/AA" element={<AsyncAwait />} />
+          {/* --------------------------------------- */}
         </Route>
-        <Route path="/error" element={<Error />} />
       </Routes>
     </Router>
   );
