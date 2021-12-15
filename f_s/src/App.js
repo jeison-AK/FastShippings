@@ -1,59 +1,63 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-  Link,
-  NavLink,
-  useNavigate,
-  useLocation,
-  Outlet,
-  useParams,
-} from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
-//Component imports
-import HomeP from "./Components/LandingPage/Principal/home";
-import Home from "./Components/UsuarioExterno/Home/homeComp";
-// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
-/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
-import AboutUSmain from "./Components/Comun/AboutUs/about_us";
-import Registro from "./Components/LandingPage/Registro/registro";
-import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
-
-// Section admin
-import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
-import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
-import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
-import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
-import Login from "./Components/LandingPage/Login/Login";
-import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
+import AddReview from "../src/Components/UsuarioExterno/add-review";
+import Restaurant from "../src/Components/UsuarioExterno/restaurants";
+import RestaurantsList from "../src/Components/UsuarioExterno/restaurants-list";
+import Login from "../src/Components/UsuarioExterno/login";
 
 function App() {
+  const [user, setUser] = React.useState(null);
+
+  async function login(user = null) {
+    setUser(user);
+  }
+
+  async function logout() {
+    setUser(null);
+  }
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomeP />} />
-        <Route path="/registro" element={<Registro />} />
-        {/* <Route path="/HomeExt" element={<HomeExt />} /> */}
-        <Route path="/HomeUsExt" element={<Home />} />
-        <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
-
-        <Route path="/Admin-user-int" element={<ViewUserAdm />}>
-          <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<Info_user />} />
-        </Route>
-        <Route path="Add_User" element={<Add_user />} />
-
-        <Route path="rutas" element={<Rutas />} />
-        <Route path="/about" element={<AboutUSmain />} />
-
-        {/* ruta login*/}
-        <Route path="/Login" element={<Login />} />
-        {/* ruta solicudes rno*/}
-        <Route path="/Solicitud" element={<Solicitud />} />
-      </Routes>
-    </Router>
+    <div>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <Link to="/restaurants/" className="navbar-brand">
+          Restaurant Reviews
+        </Link>
+        <div className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link to={"/restaurants/"} className="nav-link">
+              Restaurants
+            </Link>
+          </li>
+          <li className="nav-item">
+            {user ? (
+              <a
+                onClick={logout}
+                className="nav-link"
+                style={{ cursor: "pointer" }}
+              >
+                Logout {user.name}
+              </a>
+            ) : (
+              <Link to={"/login"} className="nav-link">
+                Login
+              </Link>
+            )}
+          </li>
+        </div>
+      </nav>
+      <div className="container mt-3">
+        <Routes>
+          <Route path={"/restaurants"} element={<RestaurantsList />} />
+          <Route
+            path="/restaurants/:id/review"
+            element={<AddReview user={user} />}
+          />
+          <Route path="/restaurants/:id" element={<Restaurant user={user} />} />
+          <Route path="/login" element={<Login login={login} />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

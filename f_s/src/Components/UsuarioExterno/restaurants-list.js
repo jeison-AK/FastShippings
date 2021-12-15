@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../../services/restaurant";
 import { Link } from "react-router-dom";
-
+//! ver services/restaurant.js
 const RestaurantsList = (props) => {
   //necesitamos tener variables para los items que las personas esten buscando
   const [restaurants, setRestaurants] = useState([]);
@@ -12,12 +12,12 @@ const RestaurantsList = (props) => {
 
   //useEffect es como le indicas a react que tu componente necesita hacer algo despues de renderizar
   useEffect(() => {
-    retrieveRestaurants();
-    retrieveCuisines();
+    retrieveRestaurants(); //traerse los restaurantes
+    retrieveCuisines(); //traerse las cocinas
   }, []);
 
   const onChangeSearchName = (e) => {
-    const searchName = e.target.value;
+    const searchName = e.target.value; // .value se refiere al valor q el usuario tipee
     setSearchName(searchName);
   };
 
@@ -46,7 +46,7 @@ const RestaurantsList = (props) => {
     RestaurantDataService.getCuisines()
       .then((response) => {
         console.log(response.data);
-        setCuisines(["All Cuisines"].concat(response.data));
+        setCuisines(["All Cuisines"].concat(response.data)); //Dropdown menu
       })
       .catch((e) => {
         console.log(e);
@@ -57,6 +57,7 @@ const RestaurantsList = (props) => {
   };
 
   const find = (query, by) => {
+    // find es llamada dentro de otras funciones
     RestaurantDataService.find(query, by)
       .then((response) => {
         console.log(response.data);
@@ -76,7 +77,7 @@ const RestaurantsList = (props) => {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine == "All Cuisines") {
+    if (searchCuisine === "All Cuisines") {
       refreshList();
     } else {
       find(searchCuisine, "cuisine");
@@ -125,7 +126,9 @@ const RestaurantsList = (props) => {
         <div className="input-group col-lg-4">
           <select onChange={onChangeSearchCuisine}>
             {cuisines.map((cuisine) => {
-              return <option value={cuisine}> {cuisine.substr(0, 20)} </option>;
+              return (
+                <option value={cuisine}> {cuisine.substring(0, 20)} </option>
+              );
             })}
           </select>
           <div className="input-group-append">
@@ -139,6 +142,8 @@ const RestaurantsList = (props) => {
           </div>
         </div>
       </div>
+
+      {/* Cards */}
       <div className="row">
         {restaurants.map((restaurant) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
@@ -162,7 +167,7 @@ const RestaurantsList = (props) => {
                       View Reviews
                     </Link>
                     <a
-                      target="_blank"
+                      target=""
                       href={"https://www.google.com/maps/place/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
