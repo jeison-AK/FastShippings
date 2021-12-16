@@ -18,11 +18,11 @@ function Section_cards() {
     return <NavLink to={to + location.search} {...props} />;
   }
   return (
-    <section id="services" class="services">
-      <div class="container h-100 p-5 text-white bg-dark rounded-3 ">
-        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-          <h2 class="pb-3 border-bottom">Usuarios</h2>
-          <div class="input-add_user">
+    <section id="services" className="services">
+      <div className="container h-100 p-5 text-white bg-dark rounded-3 ">
+        <div className="section-title" data-aos="fade-in" data-aos-delay="100">
+          <h2 className="pb-3 border-bottom">Usuarios</h2>
+          <div className="input-add_user">
             <input
               placeholder="Introduzca documento"
               value={searchParams.get("filter") || ""}
@@ -36,7 +36,7 @@ function Section_cards() {
               }}
             />
             <button
-              className="btn btn-primary"
+              classNameName="btn btn-primary"
               onClick={() => {
                 // deleteAccounts(accounts.cc);
                 navigate("/Add_User");
@@ -45,8 +45,8 @@ function Section_cards() {
               Agregar
             </button>
           </div>
-          <div class="cotainer">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-2">
+          <div className="cotainer">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-2">
               {accounts
                 .filter((acount) => {
                   let filter = searchParams.get("filter");
@@ -66,9 +66,9 @@ function Section_cards() {
                     to={`/Admin-user-int/${accounts.cc}`}
                     key={accounts.cc}
                   >
-                    <div class="icon-box" data-aos="fade-up">
-                      <h4 class="title">{accounts.name}</h4>
-                      <p class="description">
+                    <div className="icon-box" data-aos="fade-up">
+                      <h4 className="title">{accounts.name}</h4>
+                      <p className="description">
                         <b>Job:</b> {accounts.job}
                         <br></br>
                         <b>Document:</b> {accounts.cc}

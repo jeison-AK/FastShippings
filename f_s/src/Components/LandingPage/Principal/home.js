@@ -87,8 +87,8 @@ function HomeP() {
       </div>
 
       <p></p>
-        <span class="placeholder col-12 bg-primary"></span>
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <span class="placeholder col-12 bg-primary"></span>
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
           <img
             src="https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?cs=srgb&dl=pexels-tiger-lily-4481259.jpg&fm=jpg"
@@ -108,11 +108,9 @@ function HomeP() {
             de productos de un cliente, y llevarlos a donde este cliente le
             indique.
           </p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start"></div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -4,19 +4,12 @@ import {
   Routes,
   Route,
   Navigate,
-  Link,
-  NavLink,
-  useNavigate,
-  useLocation,
   Outlet,
-  useParams,
 } from "react-router-dom";
 
 //Component imports
 import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
-// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
-/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
@@ -30,6 +23,8 @@ import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
 import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
+import { NavBar_Adm } from "./Components/Comun/NavBar/NavBar_Adm";
+import Separador from "./Components/Comun/Separador/separador";
 
 function App() {
   return (
