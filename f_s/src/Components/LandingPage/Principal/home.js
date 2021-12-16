@@ -112,7 +112,6 @@ function HomeP() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
