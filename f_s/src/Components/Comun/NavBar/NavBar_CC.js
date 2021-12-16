@@ -33,7 +33,7 @@ export default function NavBar_CC() {
             </li>
             
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="HomeUsExt">
+              <a class="nav-link active" aria-current="page" href="http://localhost:3000/">
                 Home
               </a>
             </li>
@@ -98,7 +98,7 @@ export default function NavBar_CC() {
             </button>
             <button
               type="button"
-              class="btn btn-primary p-2 flex-fill bd-highlight"
+              class="btn btn-outline-primary me-2 p-2 flex-fill bd-highlight"
             >
               Registrarse
             </button>

@@ -34,17 +34,10 @@ export default function NavBarHome() {
                 Home
               </NavLink>
             </li>
-
             <li className="nav-item">
-              <NavLink
-                to={`/about`}
-                className={() =>
-                  url === "/about" ? "nav-link active" : "nav-link"
-                }
-              >
-                Sobre Nosotros
-              </NavLink>
+              <a class="nav-link" href="#scrollAbout">Sobre Nosotros</a>
             </li>
+
             {/* <li className="nav-item">
               <a className="nav-link" href="http://localhost:3000/about">
                 Contactenos
