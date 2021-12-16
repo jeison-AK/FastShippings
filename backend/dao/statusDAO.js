@@ -63,7 +63,7 @@ export default class StatusDAO {
     }
   }
 
-  static async getStatuses() {
+  static async getStatus() {
     let statuses = [];
     try {
       statuses = await statuses.distinct("cuisine");

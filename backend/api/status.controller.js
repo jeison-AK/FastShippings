@@ -19,17 +19,18 @@ export default class StatusController {
     const { statusList, totalNumStatus } = await StatusDAO.getStatuses({
       filters,
       page,
-      statusesPerPage: statusPerPage,
+      statusPerPage,
     });
 
     //creamos una respuesta para enviar a la persona cuando esta api url se llame
     let response = {
-      restaurants: statusList, //le enviamos la lista de restaurantes, pagina, filtros etc
+      statuses: statusList, //le enviamos la lista de restaurantes, pagina, filtros etc
       page: page,
       filters: filters,
       entries_per_page: statusPerPage,
       total_results: totalNumStatus,
     };
+
     res.json(response); //aqui es donde enviamos la respuesta en un formato json
   }
   static async apiGetStatusById(req, res, next) {
@@ -50,7 +51,7 @@ export default class StatusController {
 
   static async apiGetOneStatus(req, res, next) {
     try {
-      let cuisines = await StatusDAO.getStatuses();
+      let cuisines = await StatusDAO.getStatus();
       res.json(cuisines);
     } catch (e) {
       console.log(`api, ${e}`);
