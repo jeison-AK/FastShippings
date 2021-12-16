@@ -1,24 +1,10 @@
 import React from "react";
 import "./carrucel.css";
-import { Outlet } from "react-router-dom";
-import NewNavBar from "../../Comun/NavBar/NavBar_JM";
 import "../../Comun/NavBar/navBar.css";
-import "../../Comun/footer/footer";
-import Footer from "../../Comun/footer/footer";
-
-//-Esta pagina cubre los siguientes requerimientos para el usuario externo:
-// ❌	Darse de alta en la plataforma (Registrarse).
-// ✅	Generar una orden de despacho indicando el nombre, descripción, y peso del producto. Así mismo, deberá ingresar la cantidad de vehículos necesarios para el transporte, el lugar de recogida y el lugar de entrega.
-// ✅	Ver historial de ordenes de despacho.
-// ✅	Filtrar órdenes de despacho de acuerdo a su estado
-// ✅	Ver detalle de una orden de despacho.
 
 function Home() {
   return (
     <div class="grid">
-      <nav>
-        <NewNavBar />
-      </nav>
       <main>
         <section id="mid" class="container-fluid">
           <div class="row">
@@ -149,7 +135,6 @@ function Home() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <Footer />
     </div>
   );
 }

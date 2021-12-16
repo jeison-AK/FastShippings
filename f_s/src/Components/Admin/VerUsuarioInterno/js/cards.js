@@ -4,7 +4,6 @@ import {
   useLocation,
   useSearchParams,
   NavLink,
-  Outlet,
   useNavigate,
 } from "react-router-dom";
 import { getAccounts, deleteAccounts } from "./data";
@@ -39,7 +38,7 @@ function Section_cards() {
             <button
               className="btn btn-primary"
               onClick={() => {
-                deleteAccounts(accounts.cc);
+                // deleteAccounts(accounts.cc);
                 navigate("/Add_User");
               }}
             >

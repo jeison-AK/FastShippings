@@ -1,48 +1,35 @@
 import "../AgregarUsuarioInterno/add_user.css";
 
-function Add_user() {
+function Edit_user() {
   return (
     <section class="addUserBody">
       <div class="container-md ">
         <main class="addUser">
-          <div>
-            <h1 className="tittle-add-user">Añadir Usuario Interno</h1>
-          </div>
           <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-4">
               <label for="validationCustom01" class="form-label">
                 Nombre y Apellido
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">
-                  👤
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom01"
-                  placeholder="Ingrese nombre/s y apellido/s."
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustom01"
+                placeholder="Ingrese nombre/s y apellido/s."
+                required
+              />
               <div class="valid-feedback">Looks good!</div>
             </div>
             <div class="col-md-4">
               <label for="validationCustom02" class="form-label">
                 Documento
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">
-                  🖋
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom02"
-                  placeholder="Ingrese documento de identidad."
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustom02"
+                placeholder="Ingrese documento de identidad."
+                required
+              />
               <div class="valid-feedback">Looks good!</div>
             </div>
             <div class="col-md-4">
@@ -68,18 +55,13 @@ function Add_user() {
               <label for="validationCustom03" class="form-label">
                 Contacto
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">
-                  📱
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom03"
-                  placeholder="Ingrese número de contacto."
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustom03"
+                placeholder="Ingrese número de contacto."
+                required
+              />
               <div class="invalid-feedback">
                 Please provide a valid contact.
               </div>
@@ -88,73 +70,53 @@ function Add_user() {
               <label for="validationCustom04" class="form-label">
                 Rol
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">
-                  👥
-                </span>
-                <select class="form-select" id="validationCustom04" required>
-                  <option selected disabled value="">
-                    Choose...
-                  </option>
-                  {/* <option>Administrador</option> */}
-                  {/* <option>Usuario Externo</option> */}
-                  <option>Usuario Interno</option>
-                </select>
-              </div>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">
+                  Choose...
+                </option>
+                {/* <option>Administrador</option> */}
+                {/* <option>Usuario Externo</option> */}
+                <option>Usuario Interno</option>
+              </select>
               <div class="invalid-feedback">Please select a valid state.</div>
             </div>
             <div class="col-md-4">
               <label for="validationCustom05" class="form-label">
                 Due
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">
-                  📆
-                </span>
-                <input
-                  type="date"
-                  class="form-control"
-                  id="validationCustom05"
-                  placeholder="Ingrese fecha de nacimiento."
-                  required
-                />
-              </div>
+              <input
+                type="date"
+                class="form-control"
+                id="validationCustom05"
+                placeholder="Ingrese fecha de nacimiento."
+                required
+              />
               <div class="invalid-feedback">Please provide a valid zip.</div>
             </div>
             <div class="col-md-4">
               <label for="validationCustom06" class="form-label">
                 Job
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">
-                  🖥
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom06"
-                  placeholder="Ingrese puesto de trabajo"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustom06"
+                placeholder="Ingrese puesto de trabajo"
+                required
+              />
               <div class="invalid-feedback">Please provide a valid zip.</div>
             </div>
             <div class="col-md-4">
               <label for="validationCustom07" class="form-label">
                 Descripción
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">
-                  📃
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom07"
-                  placeholder="Ingrese breve descripción"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustom07"
+                placeholder="Ingrese breve descripción"
+                required
+              />
               <div class="invalid-feedback">Please provide a valid zip.</div>
             </div>
             <div class="col-12">
@@ -185,4 +147,4 @@ function Add_user() {
     </section>
   );
 }
-export default Add_user;
+export default Edit_user;

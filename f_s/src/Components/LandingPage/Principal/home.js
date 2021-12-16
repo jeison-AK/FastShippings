@@ -1,35 +1,8 @@
 import React from "react";
-//import "./carrusel.css";
-import NavBar from "../../Comun/NavBar/NavBarHome";
-//import "../../Comun/NavBar/navBar.css";
-import Footer from "../../Comun/footer/footer";
-
-//-Esta pagina cubre los siguientes requerimientos para el usuario externo:
-// ✅	Darse de alta en la plataforma (Registrarse).
-// ✅	Iniciar sesión en su cuenta.
 
 function HomeP() {
   return (
     <div class="grid">
-      <nav>
-        <NavBar />
-      </nav>
-      <main>
-        {/* <section id="mid" class="container-fluid">
-          <div class="row">
-            <div class="col-md-8 ">
-              
-            </div>
-            <div class="col-md-4">
-              SideBar
-              <p>
-                para ver la info de la orden que se escoja del filtro y generar
-                la orden
-              </p>
-            </div>
-          </div>
-        </section> */}
-      </main>
       <div
         id="carouselExampleIndicators"
         class="carousel carousel-dark slide grid"
@@ -112,6 +85,7 @@ function HomeP() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
       <p></p>
         <span class="placeholder col-12 bg-primary"></span>
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">

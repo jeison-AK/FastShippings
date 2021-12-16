@@ -1,9 +1,14 @@
-.addUserBody {
+/* .addUserBody {
   background-color: #a0bed9a2;
   width: 100vmax;
   height: 100vh;
-}
+} */
 
 .addUser {
   margin: 10rem 0;
+}
+.tittle-add-user {
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+  margin: 4%;
 }
