@@ -111,10 +111,11 @@ export default class StatusDAO {
     }
   }
 
-  static async getCuisines() {
+  static async getEstados() {
     let cuisines = [];
     try {
-      cuisines = await status.distinct("cuisine");
+      console.log("🔥🔥");
+      cuisines = await status.distinct("status");
       return cuisines;
     } catch (e) {
       console.error(`Unable to get cuisines, ${e}`);

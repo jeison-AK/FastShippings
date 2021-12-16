@@ -1,6 +1,6 @@
 import estadosDAO from "../dao/estadosDAO.js";
 
-export default class RestaurantsController {
+export default class StatusController {
   //esta api se llama por medio de una url que puede ser una query string que es una forma en la q podemos especificar parametros
   //restaurantsPerPage será igual a lo que se le pase atravez de la url (query string), despues la convierte a un int y si no existe el default es 20
   static async apiGetRestaurants(req, res, next) {
@@ -37,26 +37,11 @@ export default class RestaurantsController {
     };
     res.json(response); //aqui es donde enviamos la respuesta en un formato json
   }
-  static async apiGetRestaurantById(req, res, next) {
-    //una query es lo que sigue luego de ? un param es lo que va luego de un /
-    try {
-      let id = req.params.id || {};
-      let restaurant = await estadosDAO.getRestaurantByID(id);
-      if (!restaurant) {
-        res.status(404).json({ error: "Not found" });
-        return;
-      }
-      res.json(restaurant);
-    } catch (e) {
-      console.log(`api, ${e}`);
-      res.status(500).json({ error: e });
-    }
-  }
 
-  static async apiGetRestaurantCuisines(req, res, next) {
+  static async apiGetEstados(req, res, next) {
     try {
-      let cuisines = await estadosDAO.getCuisines();
-      res.json(cuisines);
+      let status = await estadosDAO.getEstados();
+      res.json(status);
     } catch (e) {
       console.log(`api, ${e}`);
       res.status(500).json({ error: e });
