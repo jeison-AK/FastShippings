@@ -12,7 +12,7 @@ const MongoClient = mongodb.MongoClient; //access our mongo client from mongodb
 const port = process.env.PORT || 8000; //set port form our envarairoment variable, we pass PORT cuz that's what we have in our env
 
 //-connecto to database
-MongoClient.connect(process.env.RESTREVIEWS_DB_URI, {
+MongoClient.connect(process.env.DB_URI, {
   wtimeoutMS: 2500, //after 2500 milliseconds the request will time-out
   useNewUrlParser: true, //blabla not need to know just put this
 })
