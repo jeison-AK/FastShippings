@@ -17,6 +17,11 @@ function Section_cards() {
     let location = useLocation();
     return <NavLink to={to + location.search} {...props} />;
   }
+
+  const style = {
+    margin: "0.5em",
+    listStyle: "none",
+  };
   return (
     <section id="services" className="services">
       <div className="container h-100 p-5 text-white bg-dark rounded-3 ">
@@ -36,9 +41,9 @@ function Section_cards() {
               }}
             />
             <button
-              classNameName="btn btn-primary"
+              style={style}
+              className="btn btn-primary"
               onClick={() => {
-                // deleteAccounts(accounts.cc);
                 navigate("/Add_User");
               }}
             >
@@ -82,7 +87,7 @@ function Section_cards() {
           </div>
         </div>
         <p>
-          {" "}
+          <br></br>
           Esta sección está dedicada para la búsqueda de usuarios internos por
           su documento de identidad (ID). <br></br>Pruebe libremente, por favor,
           con alguno de los documentos relacionados en la base de datos que se

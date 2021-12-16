@@ -6,11 +6,11 @@ function Add_user() {
       <div className="container-md ">
         <main className="addUser">
           <div>
-            <h1 classNameNameName="tittle-add-user">Añadir Usuario Interno</h1>
+            <h1 className="tittle-add-user">Añadir Usuario Interno</h1>
           </div>
-          <form classNameName="row g-3 needs-validation" novalidate>
-            <div classNameName="col-md-4">
-              <label for="validationCustom01" classNameName="form-label">
+          <form className="row g-3 needs-validation" novalidate>
+            <div className="col-md-4">
+              <label for="validationCustom01" className="form-label">
                 Nombre y Apellido
               </label>
               <div className="input-group has-validation">

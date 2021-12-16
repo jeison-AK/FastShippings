@@ -25,6 +25,8 @@ import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
 import { NavBar_Adm } from "./Components/Comun/NavBar/NavBar_Adm";
 import Separador from "./Components/Comun/Separador/separador";
+import Footer from "./Components/Comun/footer/footer";
+import PrivateAmin from "./Components/Admin/Authentication/Auth";
 
 function App() {
   return (
@@ -38,8 +40,8 @@ function App() {
         <Route path="/about" element={<AboutUSmain />} />
 
         {/* 🔏🔏🔏🔏 */}
-        <Route path="/HomeExt" element={<PrivateOutletHome />}>
-          <Route path="HomeUsExt" element={<Home />} />
+        <Route path="/HomeUsExt" element={<PrivateOutletHome />}>
+          <Route path="" element={<Home />} />
           <Route path="OrdenarDespacho" element={<OrdenDespacho />} />
         </Route>
         {/* 🔏🔏🔏🔏 */}
@@ -52,15 +54,16 @@ function App() {
         <Route path="/Solicitud" element={<Solicitud />} />
 
         {/* 🔏🔏🔏🔏 */}
-        <Route path="/Admin-user-int" element={<PrivateOutlet />}>
+        <Route path="/Admin-user-int" element={<PrivateAmin />}>
           <Route path="" element={<ViewUserAdm />}>
             <Route index element={<main style={{ padding: "1rem" }}></main>} />
             <Route path=":userID" element={<Info_user />} />
-            <Route path="Add_User" element={<Add_user />} />
           </Route>
         </Route>
+        <Route path="Add_User" element={<Add_user />} />
         {/* 🔏🔏🔏🔏 */}
       </Routes>
+      <Footer />
     </Router>
   );
 }
@@ -68,15 +71,6 @@ function App() {
 export default App;
 
 // const Private = () => <div>private</div>;  No se está usando, es un div de prueba solamente.
-
-function PrivateOutlet() {
-  const auth = useAuth();
-  return auth ? <Outlet /> : <Navigate to="/login" />;
-}
-
-function useAuth() {
-  return true;
-}
 
 //🏠
 const PrivateHome = () => <div>private HOME el auth es true</div>;
