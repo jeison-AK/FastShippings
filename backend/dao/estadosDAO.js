@@ -20,7 +20,9 @@ export default class StatusDAO {
     }
   }
 
+  //TODO no se esta implementando aún:
   //es lo que llamamos cuando queremos obtener una lista de algun tipo de status todos los pendientes o completados etc
+  //!se puede implementar un filtro similar para obtener usuarios por id etc
   static async getRestaurants({
     filters = null, //filtrar por status  (son fields q existen en la db)
     page = 0, //q pagina quieres ver

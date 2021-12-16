@@ -1,7 +1,7 @@
 import app from "./server.js";
 import mongodb from "mongodb";
 import dotenv from "dotenv";
-import RestaurantsDAO from "./dao/restaurantsDAO.js";
+import estadosDAO from "./dao/estadosDAO.js";
 import ReviewsDAO from "./dao/reviewsDAO.js";
 
 //* aqui conectamos con la base de datos y corremos el servidor
@@ -21,7 +21,7 @@ MongoClient.connect(process.env.DB_URI, {
     process.exit(1);
   })
   .then(async (client) => {
-    await RestaurantsDAO.injectDB(client); //reference to the restaurants collection in the database, lo q sigue es crear el controller
+    await estadosDAO.injectDB(client); //reference to the restaurants collection in the database, lo q sigue es crear el controller
     // q el arichivo route usara para acceder eñ archivo DAO
     await ReviewsDAO.injectDB(client);
     app.listen(port, () => {

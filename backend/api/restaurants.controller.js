@@ -1,4 +1,4 @@
-import RestaurantsDAO from "../dao/restaurantsDAO.js";
+import estadosDAO from "../dao/estadosDAO.js";
 
 export default class RestaurantsController {
   //esta api se llama por medio de una url que puede ser una query string que es una forma en la q podemos especificar parametros
@@ -21,7 +21,7 @@ export default class RestaurantsController {
     //ahora q ya tenemos los filtros (si es q se escogieron filtros) podemos pasarlos aquí
     //esto va a retornar una lista de restaurantes (restaurantList) y el numero total de restaurantes(totalNumRestaurants)
     const { restaurantsList, totalNumRestaurants } =
-      await RestaurantsDAO.getRestaurants({
+      await estadosDAO.getRestaurants({
         filters,
         page,
         restaurantsPerPage,
@@ -41,7 +41,7 @@ export default class RestaurantsController {
     //una query es lo que sigue luego de ? un param es lo que va luego de un /
     try {
       let id = req.params.id || {};
-      let restaurant = await RestaurantsDAO.getRestaurantByID(id);
+      let restaurant = await estadosDAO.getRestaurantByID(id);
       if (!restaurant) {
         res.status(404).json({ error: "Not found" });
         return;
@@ -55,7 +55,7 @@ export default class RestaurantsController {
 
   static async apiGetRestaurantCuisines(req, res, next) {
     try {
-      let cuisines = await RestaurantsDAO.getCuisines();
+      let cuisines = await estadosDAO.getCuisines();
       res.json(cuisines);
     } catch (e) {
       console.log(`api, ${e}`);
