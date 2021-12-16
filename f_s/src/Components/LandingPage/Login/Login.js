@@ -4,6 +4,7 @@ import Opciones from "../Login/Label/Label";
 import Separador from "../../Comun/Separador/separador";
 
 function Login() {
+
   return (
     <main className="principal">
       <div>
