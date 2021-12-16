@@ -35,6 +35,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeP />} />
         <Route path="/registro" element={<Registro />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/about" element={<AboutUSmain />} />
+
+        <Route path="/Solicitud" element={<Solicitud />} />
         <Route path="/HomeUsExt" element={<Home />} />
         <Route path="/OrdenarDespacho" element={<OrdenDespacho />} />
 
@@ -50,12 +54,7 @@ function App() {
           <Route index element={<main style={{ padding: "1rem" }}></main>} />
           <Route path=":userID" element={<Info_orden />} />
         </Route>
-        <Route path="/about" element={<AboutUSmain />} />
 
-        {/* ruta login*/}
-        <Route path="/Login" element={<Login />} />
-        {/* ruta solicudes rno*/}
-        <Route path="/Solicitud" element={<Solicitud />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
