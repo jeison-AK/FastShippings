@@ -21,12 +21,12 @@ export default class RutasDAO {
   }
 
   //TODO no se esta implementando aún:
-  //es lo que llamamos cuando queremos obtener una lista de algun tipo de status todos los pendientes o completados etc
+  //es lo que llamamos cuando queremos obtener una lista de algun tipo de rutas todos los pendientes o completados etc
   //!se puede implementar un filtro similar para obtener usuarios por id etc
-  static async getRutas({
-    filters = null, //filtrar por status  (son fields q existen en la db)
+  static async getAllData({
+    filters = null, //filtrar por rutas  (son fields q existen en la db)
     page = 0, //q pagina quieres ver
-    restaurantsPerPage: resultsPerPage = 20, //default ver solo 20 resultados por pagina
+    restaurantsPerPage = 20, //default ver solo 20 resultados por pagina
   } = {}) {
     let query;
     if (filters) {
@@ -34,8 +34,10 @@ export default class RutasDAO {
       //esta es la logica de los filtros:
       if ("rutas" in filters) {
         query = { rutas: { $eq: filters["rutas"] } };
-      } else if ("page" in filters) {
-        query = { page: { $eq: filters["page"] } };
+      } else if ("zipcode" in filters) {
+        query = { "address.zipcode": { $eq: filters["zipcode"] } };
+      } else if ("rutas" in filters) {
+        query = { rutas: { $eq: filters["rutas"] } };
       }
     }
 
@@ -46,23 +48,23 @@ export default class RutasDAO {
       cursor = await rutas.find(query);
     } catch (e) {
       console.error(`Unable to issue find command, ${e}`);
-      return { rutasList: [], totalNumRutas: 0 }; //returns an empty list and 0 for total number of restaurants
+      return { dataList: [], totalNumRestaurants: 0 }; //returns an empty list and 0 for total number of restaurants
     }
 
     //si no hay error intentará limitar los resultados dependiendo de lo que se especifique en restaurantsPerPage
     const displayCursor = cursor
-      .limit(resultsPerPage)
-      .skip(resultsPerPage * page);
+      .limit(restaurantsPerPage)
+      .skip(restaurantsPerPage * page);
     try {
-      const rutasList = await displayCursor.toArray(); //sele hace un set a tipo array
-      const totalNumRutas = await rutas.countDocuments(query); //cuenta el numero de documentos que existen
+      const dataList = await displayCursor.toArray(); //sele hace un set a tipo array
+      const totalNumRestaurants = await rutas.countDocuments(query); //cuenta el numero de documentos que existen
 
-      return { rutasList, totalNumRutas }; //aqui seretorna la erray
+      return { dataList, totalNumRestaurants }; //aqui seretorna la erray
     } catch (e) {
       console.error(
         `Unable to convert cursor to array or problem counting documents, ${e}`
       );
-      return { rutasList: [], totalNumRutas: 0 };
+      return { dataList: [], totalNumRestaurants: 0 };
     }
   }
   static async getRestaurantByID(id) {
@@ -108,12 +110,12 @@ export default class RutasDAO {
       throw e;
     }
   }
-  //?podria midificarse para que traiga algunas rutas en especifico, un filtro de rutas, o un filtro en input box usando un text
-  static async getRutas() {
+
+  static async getEstados() {
     let cuisines = [];
     try {
       console.log("🔥estados🔥");
-      cuisines = await rutas.distinct("status");
+      cuisines = await rutas.distinct("rutas");
       return cuisines;
     } catch (e) {
       console.error(`Unable to get cuisines, ${e}`);

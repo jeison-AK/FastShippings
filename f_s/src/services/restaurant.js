@@ -8,7 +8,7 @@ import http from "../http-common";
 class RestaurantDataService {
   getAll(page = 0) {
     console.log(page, "🃏🃏🃏");
-    return http.get(`?page=${page}`); //http://localhost:5000/api/v1/rutas
+    return http.get(`?page=${page}`); //http://localhost:5000/api/v1/users
   }
 
   getCuisines(id) {

@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/v1/rutas", rutasDisponibles); //especificamos cual va a ser nuestra direccion inicial, el root
+app.use("/api/v1/users", rutasDisponibles); //especificamos cual va a ser nuestra direccion inicial, el root
 //EJEMPLO app.use("/api/v1/admin", admin); //no se olviden de importar el .route
 
 app.use("*", (req, res) => res.status(404).json({ error: "not found" })); // por si alguien va a una ruta que no existe
