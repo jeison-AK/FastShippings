@@ -11,6 +11,7 @@ export default class Opciones extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.changeStateApp = this.props.onTryLogin;
+    // TODO
     // Components State Definition
     this.state = {
       username: "",
@@ -19,10 +20,11 @@ export default class Opciones extends React.Component {
   }
 
   async handleClick() {
+    // TODO
     let response = await axios.post(appConfig.urlBackEnd + "users", this.state);
     if (response.data.length == 1) {
       console.log(response);
-      this.changeStateApp(true, response.data[0].username);
+      this.changeStateApp(true, response.data[0].username); // FIXME
     } else {
       alert("Usuario y/o contraseña incorrecto.");
     }
