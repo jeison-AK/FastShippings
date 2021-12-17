@@ -1,7 +1,7 @@
 import estadosDAO from "../dao/estadosDAO.js";
 import RutasDAO from "../dao/rutasDAO.js";
 
-export default class StatusController {
+export default class UsuariosController {
   //esta api se llama por medio de una url que puede ser una query string que es una forma en la q podemos especificar parametros
   //resultsPerPage será igual a lo que se le pase atravez de la url (query string), despues la convierte a un int y si no existe el default es 20
   static async apiGetUserEstados(req, res, next) {

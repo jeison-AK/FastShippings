@@ -169,7 +169,7 @@ const RestaurantsList = (props) => {
                       View Reviews
                     </Link>
                     <a
-                      target=""
+                      target="_blank"
                       href={"https://www.google.com/maps/dir/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
