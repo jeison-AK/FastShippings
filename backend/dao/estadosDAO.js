@@ -23,7 +23,7 @@ export default class StatusDAO {
   //TODO no se esta implementando aún:
   //es lo que llamamos cuando queremos obtener una lista de algun tipo de status todos los pendientes o completados etc
   //!se puede implementar un filtro similar para obtener usuarios por id etc
-  static async getRestaurants({
+  static async getAllData({
     filters = null, //filtrar por status  (son fields q existen en la db)
     page = 0, //q pagina quieres ver
     restaurantsPerPage = 20, //default ver solo 20 resultados por pagina
@@ -36,8 +36,8 @@ export default class StatusDAO {
         query = { status: { $eq: filters["status"] } };
       } else if ("zipcode" in filters) {
         query = { "address.zipcode": { $eq: filters["zipcode"] } };
-      } else if ("page" in filters) {
-        query = { page: { $eq: filters["page"] } };
+      } else if ("rutas" in filters) {
+        query = { rutas: { $eq: filters["rutas"] } };
       }
     }
 
@@ -48,7 +48,7 @@ export default class StatusDAO {
       cursor = await status.find(query);
     } catch (e) {
       console.error(`Unable to issue find command, ${e}`);
-      return { restaurantsList: [], totalNumRestaurants: 0 }; //returns an empty list and 0 for total number of restaurants
+      return { dataList: [], totalNumRestaurants: 0 }; //returns an empty list and 0 for total number of restaurants
     }
 
     //si no hay error intentará limitar los resultados dependiendo de lo que se especifique en restaurantsPerPage
@@ -56,15 +56,15 @@ export default class StatusDAO {
       .limit(restaurantsPerPage)
       .skip(restaurantsPerPage * page);
     try {
-      const restaurantsList = await displayCursor.toArray(); //sele hace un set a tipo array
+      const dataList = await displayCursor.toArray(); //sele hace un set a tipo array
       const totalNumRestaurants = await status.countDocuments(query); //cuenta el numero de documentos que existen
 
-      return { restaurantsList, totalNumRestaurants }; //aqui seretorna la erray
+      return { dataList, totalNumRestaurants }; //aqui seretorna la erray
     } catch (e) {
       console.error(
         `Unable to convert cursor to array or problem counting documents, ${e}`
       );
-      return { restaurantsList: [], totalNumRestaurants: 0 };
+      return { dataList: [], totalNumRestaurants: 0 };
     }
   }
   static async getRestaurantByID(id) {

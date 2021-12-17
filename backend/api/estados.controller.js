@@ -10,8 +10,8 @@ export default class StatusController {
     const page = req.query.page ? parseInt(req.query.page, 10) : 0;
 
     let filters = {}; //iniciará como un objecto vacio, si en la url esta el filtro de cuisine, filters.cuisine será igual al query q se pase
-    if (req.query.cuisine) {
-      filters.cuisine = req.query.cuisine;
+    if (req.query.status) {
+      filters.status = req.query.status;
     } else if (req.query.zipcode) {
       filters.zipcode = req.query.zipcode;
     } else if (req.query.name) {
@@ -20,16 +20,15 @@ export default class StatusController {
 
     //ahora q ya tenemos los filtros (si es q se escogieron filtros) podemos pasarlos aquí
     //esto va a retornar una lista de restaurantes (restaurantList) y el numero total de restaurantes(totalNumRestaurants)
-    const { restaurantsList, totalNumRestaurants } =
-      await estadosDAO.getRestaurants({
-        filters,
-        page,
-        restaurantsPerPage,
-      });
+    const { dataList, totalNumRestaurants } = await estadosDAO.getAllData({
+      filters,
+      page,
+      restaurantsPerPage,
+    });
 
     //creamos una respuesta para enviar a la persona cuando esta api url se llame
     let response = {
-      restaurants: restaurantsList, //le enviamos la lista de restaurantes, pagina, filtros etc
+      restaurants: dataList, //le enviamos la lista de restaurantes, pagina, filtros etc
       page: page,
       filters: filters,
       entries_per_page: restaurantsPerPage,
