@@ -8,7 +8,7 @@ const RestaurantsList = (props) => {
   const [searchName, setSearchName] = useState("");
   const [searchZip, setSearchZip] = useState("");
   const [searchCuisine, setSearchCuisine] = useState("");
-  const [cuisines, setCuisines] = useState(["All Cuisines"]);
+  const [estados, setEstado] = useState(["Estados"]);
 
   //useEffect es como le indicas a react que tu componente necesita hacer algo despues de renderizar
   useEffect(() => {
@@ -46,7 +46,7 @@ const RestaurantsList = (props) => {
     RestaurantDataService.getCuisines()
       .then((response) => {
         console.log(response.data);
-        setCuisines(["All Cuisines"].concat(response.data)); //Dropdown menu
+        setEstado(["Estados"].concat(response.data)); //Dropdown menu
       })
       .catch((e) => {
         console.log(e);
@@ -77,7 +77,7 @@ const RestaurantsList = (props) => {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine === "All Cuisines") {
+    if (searchCuisine === "Estados") {
       refreshList();
     } else {
       find(searchCuisine, "status");
@@ -125,7 +125,7 @@ const RestaurantsList = (props) => {
         </div>
         <div className="input-group col-lg-4">
           <select onChange={onChangeSearchCuisine}>
-            {cuisines.map((status) => {
+            {estados.map((status) => {
               return (
                 <option value={status}> {status.substring(0, 20)} </option>
               );
@@ -144,31 +144,31 @@ const RestaurantsList = (props) => {
       </div>
 
       {/* Cards */}
-      {/* <div className="row">
-        {restaurants.map((restaurant) => {
-          const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
+      <div className="row">
+        {restaurants.map((estadoX) => {
+          const estado = `${estadoX.user} ${estadoX.status}`;
           return (
             <div className="col-lg-4 pb-1">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{restaurant.name}</h5>
+                  <h5 className="card-title">{estadoX.name}</h5>
                   <p className="card-text">
-                    <strong>Cuisine: </strong>
-                    {restaurant.cuisine}
+                    <strong>User: </strong>
+                    {estadoX.user}
                     <br />
-                    <strong>Address: </strong>
-                    {address}
+                    <strong>Estado: </strong>
+                    {estado}
                   </p>
                   <div className="row">
                     <Link
-                      to={"/restaurants/" + restaurant._id}
+                      to={"/restaurants/" + estadoX._id}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Reviews
                     </Link>
                     <a
                       target=""
-                      href={"https://www.google.com/maps/place/" + address}
+                      href={"https://www.google.com/maps/place/" + estado}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Map
@@ -179,7 +179,7 @@ const RestaurantsList = (props) => {
             </div>
           );
         })}
-      </div> */}
+      </div>
     </div>
   );
 };

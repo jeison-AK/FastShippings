@@ -1,5 +1,6 @@
 import express from "express";
 import StatusesCtrl from "./status.controller.js"; //el archivo route usara el archivo controllers
+import RutasCtrl from "./rutas.controller.js";
 import ReviewsCtrl from "./reviews.controller.js";
 
 const router = express.Router();

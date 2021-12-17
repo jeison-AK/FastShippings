@@ -64,7 +64,7 @@ function App() {
         </Route>
         <Route path="Add_User" element={<Add_user />} />
         {/* 🔏🔏🔏🔏 */}
-        <Route path={"/restaurants"} element={<RestaurantsList />} />
+        <Route path={"/inicio"} element={<RestaurantsList />} />
       </Routes>
       <Footer />
     </Router>
