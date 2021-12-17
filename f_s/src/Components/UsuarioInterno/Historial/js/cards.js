@@ -1,11 +1,6 @@
 import React from "react";
 import "../css/services.css";
-import {
-  useLocation,
-  useSearchParams,
-  NavLink,
-  Outlet,
-} from "react-router-dom";
+import { useLocation, useSearchParams, NavLink } from "react-router-dom";
 import { getAccounts } from "./data";
 
 function Section_cards() {
@@ -69,13 +64,6 @@ function Section_cards() {
             </div>
           </div>
         </div>
-        {/* <p>
-          {" "}
-          Esta sección está dedicada para la búsqueda de usuarios internos por
-          su documento de identidad (ID). <br></br>Pruebe libremente, por favor,
-          con alguno de los documentos relacionados en la base de datos que se
-          le proporcionó anteriormente.
-        </p> */}
       </div>
     </section>
   );

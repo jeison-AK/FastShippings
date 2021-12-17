@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getAccounts, deleteAccounts } from "./data";
 
 function Button_delete() {
@@ -16,8 +16,7 @@ function Button_delete() {
         style={style}
         className="btn btn-success"
         onClick={() => {
-          //deleteAccounts(account.cc);
-          navigate("/Admin-user-int");
+          navigate("/Edit_User");
         }}
         to={``} // Esto para redireccionar a la edición del usuario
       >

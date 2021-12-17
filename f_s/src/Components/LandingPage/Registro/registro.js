@@ -1,16 +1,8 @@
 import React from "react";
-import NavBar from "../../Comun/NavBar/NavBar_Reg";
-import "../../Comun/NavBar/navBar.css";
-import Footer from "../../Comun/footer/footer";
 
 function Registro() {
   return (
     <div class="grid">
-      <nav>
-        <NavBar />
-      </nav>
-      <br/>
-      <br/>
       <main>
         <div class="card-header">
           <h3 class="text-center font-weight-light my-4">Regístrese</h3>
@@ -24,7 +16,9 @@ function Registro() {
                     class="form-control"
                     id="inputFirstName"
                     type="text"
-                    placeholder="Nombre" autoFocus required
+                    placeholder="Nombre"
+                    autoFocus
+                    required
                   />
                   <label for="inputFirstName">Nombre</label>
                 </div>
@@ -35,7 +29,8 @@ function Registro() {
                     class="form-control"
                     id="inputLastName"
                     type="text"
-                    placeholder="Apellido" required
+                    placeholder="Apellido"
+                    required
                   />
                   <label for="inputLastName">Apellido</label>
                 </div>
@@ -48,7 +43,8 @@ function Registro() {
                     class="form-control"
                     id="inputFirstName"
                     type="number"
-                    placeholder="Documento" required
+                    placeholder="Documento"
+                    required
                   />
                   <label for="inputFirstName">Número de documento</label>
                 </div>
@@ -59,21 +55,26 @@ function Registro() {
                     class="form-control"
                     id="inputLastName"
                     type="mail"
-                    placeholder="mail" required
+                    placeholder="mail"
+                    required
                   />
                   <label for="inputLastName">E-mail</label>
                 </div>
               </div>
             </div>
             <div>
-          <select class="form-select" aria-label="Default select example" required>
-            <option selected>Tipo de persona</option>
-            <option value="1">Persona natural</option>
-            <option value="2">Persona juridica</option>
-            <option value="3">Representante legal</option>
-          </select>
-        </div>
-        <p/>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                required
+              >
+                <option selected>Tipo de persona</option>
+                <option value="1">Persona natural</option>
+                <option value="2">Persona juridica</option>
+                <option value="3">Representante legal</option>
+              </select>
+            </div>
+            <p />
             <div class="row mb-3">
               <div class="col-md-6">
                 <div class="form-floating mb-3 mb-md-0">
@@ -81,7 +82,9 @@ function Registro() {
                     class="form-control"
                     id="inputPassword"
                     type="password"
-                    placeholder="Create a password" required minLength="6"
+                    placeholder="Create a password"
+                    required
+                    minLength="6"
                   />
                   <label for="inputPassword">Password</label>
                 </div>
@@ -92,7 +95,8 @@ function Registro() {
                     class="form-control"
                     id="inputPasswordConfirm"
                     type="password"
-                    placeholder="Confirm password" required
+                    placeholder="Confirm password"
+                    required
                   />
                   <label for="inputPasswordConfirm">Confirmar Password</label>
                 </div>
@@ -108,9 +112,6 @@ function Registro() {
           </form>
         </div>
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

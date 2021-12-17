@@ -4,30 +4,30 @@ let accounts = [
     cc: 1995,
     contact: "+57 300 333 0000",
     due: "12/05/1995",
-    rol: "Usuario interno",
+    rol: "Usuario Interno",
     job: "Front-end developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Camilo Contreras",
     cc: 2000,
     contact: "+57 300 333 0000",
     due: "10/31/2000",
-    rol: "Supervisor",
+    rol: "Usuario Interno",
     job: "Front-end developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Jeison Martinez",
     cc: 2003,
     contact: "+57 300 333 0000",
     due: "07/22/2003",
-    rol: "Usuario interno",
+    rol: "Administrador",
     job: "Full Stack developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Brayan Duque",
@@ -37,17 +37,17 @@ let accounts = [
     rol: "Usuario interno",
     job: "Databases developer",
     description:
-      "Aquí dejamos una breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
   {
     name: "Andres Dickson",
     cc: 1998,
     contact: "+57 300 333 0000",
     due: "01/27/1998",
-    rol: "Usuario interno",
+    rol: "Usuario externo",
     job: "Back-end developer",
     description:
-      "Breve descripción de la persona relacionada poder mostrar en el 'perfil' que mostraremos al lado derecho de la página posterior al darle click a la card",
+      "Aquí dejamos una breve descripción de la persona relacionada.",
   },
 ];
 

@@ -21,19 +21,22 @@ function Info_user() {
         <p class="card-text"></p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">
+        <li className="list-group-item name_UI">
           <strong>Name: </strong> {accounts.name}
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <strong>CC: </strong> {accounts.cc}
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
+          <strong>Job: </strong> {accounts.job}
+        </li>
+        <li className="list-group-item">
           <strong>Contact: </strong> {accounts.contact}
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <strong>Fecha de nacimiento: </strong> {accounts.due}
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <strong>Descripción: </strong> {accounts.description}
         </li>
       </ul>
