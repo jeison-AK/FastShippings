@@ -14,6 +14,10 @@ class RestaurantDataService {
   getCuisines(id) {
     return http.get(`/status`);
   }
+
+  getUserRutas(id) {
+    return http.get("/rut");
+  }
 }
 
 export default new RestaurantDataService();

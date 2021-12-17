@@ -32,7 +32,7 @@ const RestaurantsList = (props) => {
   };
 
   const retrieveRestaurants = () => {
-    RestaurantDataService.getAll()
+    RestaurantDataService.getUserRutas()
       .then((response) => {
         console.log(response.data);
         setRestaurants(response.data.restaurants);
