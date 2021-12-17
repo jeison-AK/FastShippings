@@ -3,7 +3,7 @@ import estadosDAO from "../dao/estadosDAO.js";
 export default class StatusController {
   //esta api se llama por medio de una url que puede ser una query string que es una forma en la q podemos especificar parametros
   //restaurantsPerPage será igual a lo que se le pase atravez de la url (query string), despues la convierte a un int y si no existe el default es 20
-  static async apiGetRestaurants(req, res, next) {
+  static async apiGetRoutes(req, res, next) {
     const restaurantsPerPage = req.query.restaurantsPerPage
       ? parseInt(req.query.restaurantsPerPage, 10)
       : 20;

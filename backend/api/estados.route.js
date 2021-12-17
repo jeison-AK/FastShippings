@@ -4,7 +4,7 @@ import ReviewsCtrl from "./reviews.controller.js";
 
 const router = express.Router();
 
-router.route("/").get(RestaurantsCtrl.apiGetRestaurants); //lo q se retornara en este route vendra de RestaurantsCtrl.apiGetRestaurants
+router.route("/").get(RestaurantsCtrl.apiGetRoutes); //lo q se retornara en este route vendra de RestaurantsCtrl.apiGetRestaurants
 router.route("/status").get(RestaurantsCtrl.apiGetEstados); //list of cuisines resason: we want the user to be able to select a cuisine from a dropdown menu
 
 router
