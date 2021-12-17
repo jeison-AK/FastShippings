@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import estados from "./api/estados.route.js"; //aqui estarán los routes
+import estados from "./api/usuarioExterno.route.js"; //aqui estarán los routes
 
 const app = express();
 
