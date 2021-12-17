@@ -45,21 +45,11 @@ export default function NavBarHome() {
                 Sobre Nosotros
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="http://localhost:3000/about">
                 Contactenos
               </a>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to={`/OrdenarDespacho`}
-                className={({}) =>
-                  url === "/OrdenarDespacho" ? "nav-link active" : "nav-link"
-                }
-              >
-                🛒
-              </NavLink>
-            </li>
+            </li> */}
           </ul>
 
           <div>
