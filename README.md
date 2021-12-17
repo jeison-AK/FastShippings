@@ -18,3 +18,9 @@ Estos archivos contienen logica de filtros que se hacen por la url "queries" est
 
 📌api/estados.route
 es donde se definen las urls y las apis a las que tienen acceso
+
+📌server.js
+importamos express y ponemos los cimientos para correr nuestra app. Definimos también una url root y le damos acceso a esta a las APIs definidas en algun archivo .route.js
+
+📌index.js
+corremos el servidor, conectamos con la base de datos llamando a los DAOs
