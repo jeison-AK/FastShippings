@@ -109,15 +109,15 @@ export default class RutasDAO {
     }
   }
   //?podria midificarse para que traiga algunas rutas en especifico, un filtro de rutas, o un filtro en input box usando un text
-  //   static async getRutas() {
-  //     let cuisines = [];
-  //     try {
-  //       console.log("🔥estados🔥");
-  //       cuisines = await rutas.distinct("status");
-  //       return cuisines;
-  //     } catch (e) {
-  //       console.error(`Unable to get cuisines, ${e}`);
-  //       return cuisines;
-  //     }
-  //   }
+  static async getRutas() {
+    let cuisines = [];
+    try {
+      console.log("🔥estados🔥");
+      cuisines = await rutas.distinct("status");
+      return cuisines;
+    } catch (e) {
+      console.error(`Unable to get cuisines, ${e}`);
+      return cuisines;
+    }
+  }
 }
