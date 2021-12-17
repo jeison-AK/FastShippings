@@ -146,7 +146,7 @@ const RestaurantsList = (props) => {
       {/* Cards */}
       <div className="row">
         {restaurants.map((estadoX) => {
-          const estado = `${estadoX.user} ${estadoX.status}`;
+          const estado = `${"📝"} ${estadoX.status}`;
           return (
             <div className="col-lg-4 pb-1">
               <div className="card">
