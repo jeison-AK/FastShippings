@@ -160,14 +160,17 @@ const RestaurantsList = (props) => {
                     <strong>Estado: </strong>
                     {"📝"}
                     {estadoX.status}
+                    <br />
+                    <strong>Valor por envio:</strong>
+                    {estadoX.valorRuta}💲
                   </p>
                   <div className="row">
-                    <Link
+                    {/* <Link
                       to={"/restaurants/" + estadoX._id}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Reviews
-                    </Link>
+                    </Link> */}
                     <a
                       target="_blank"
                       href={"https://www.google.com/maps/dir/" + address}
