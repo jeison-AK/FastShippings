@@ -80,7 +80,7 @@ const RestaurantsList = (props) => {
     if (searchCuisine === "All Cuisines") {
       refreshList();
     } else {
-      find(searchCuisine, "cuisine");
+      find(searchCuisine, "status");
     }
   };
 
@@ -125,9 +125,9 @@ const RestaurantsList = (props) => {
         </div>
         <div className="input-group col-lg-4">
           <select onChange={onChangeSearchCuisine}>
-            {cuisines.map((cuisine) => {
+            {cuisines.map((status) => {
               return (
-                <option value={cuisine}> {cuisine.substring(0, 20)} </option>
+                <option value={status}> {status.substring(0, 20)} </option>
               );
             })}
           </select>
@@ -144,7 +144,7 @@ const RestaurantsList = (props) => {
       </div>
 
       {/* Cards */}
-      <div className="row">
+      {/* <div className="row">
         {restaurants.map((restaurant) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
           return (
@@ -179,7 +179,7 @@ const RestaurantsList = (props) => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
