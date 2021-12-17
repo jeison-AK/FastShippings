@@ -146,18 +146,20 @@ const RestaurantsList = (props) => {
       {/* Cards */}
       <div className="row">
         {restaurants.map((estadoX) => {
-          const estado = `${"📝"} ${estadoX.status}`;
+          const address = `${estadoX.origen} / ${estadoX.destino}`;
+
           return (
             <div className="col-lg-4 pb-1">
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">{estadoX.name}</h5>
                   <p className="card-text">
-                    <strong>User: </strong>
-                    {estadoX.user}
+                    <strong>Ruta: </strong>
+                    {address}
                     <br />
                     <strong>Estado: </strong>
-                    {estado}
+                    {"📝"}
+                    {estadoX.status}
                   </p>
                   <div className="row">
                     <Link
@@ -168,7 +170,7 @@ const RestaurantsList = (props) => {
                     </Link>
                     <a
                       target=""
-                      href={"https://www.google.com/maps/place/" + estado}
+                      href={"https://www.google.com/maps/dir/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Map
