@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import "../Label/SLabel.css";
 import axios from "axios";
 import appConfig from "../../../../appConfig";
 
-export default class Opciones extends React.Component {
+export default class Opciones extends Component {
   constructor(props) {
     // Initialize dad constructor
     super(props);
@@ -20,13 +20,11 @@ export default class Opciones extends React.Component {
   }
 
   async handleClick() {
-    // TODO
     let response = await axios.post(appConfig.urlBackEnd + "users", this.state);
     if (response.data.length == 1) {
-      console.log(response);
-      this.changeStateApp(true, response.data[0].username); // FIXME
+      this.changeStateApp(true, response.data[0].username);
+      //actualizar el estado de logged en el component App
     } else {
-      alert("Usuario y/o contraseña incorrecto.");
     }
   }
 
