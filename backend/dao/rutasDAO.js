@@ -12,7 +12,7 @@ export default class RutasDAO {
       return; //si ya hay una referencia return
     }
     try {
-      rutas = await conn.db(process.env.DATABASE_NS).collection("rutas"); //intentamos obtener una conexion a la "collection resturants" de la base de datos
+      rutas = await conn.db(process.env.DATABASE_NS).collection("rutas"); //intentamos obtener una conexion a la collection de la base de datos
     } catch (e) {
       console.error(
         `Unable to establish a collection handle in statusDAO: ${e}`
