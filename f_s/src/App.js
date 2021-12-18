@@ -8,13 +8,14 @@ import {
 } from "react-router-dom";
 
 //Component imports
+import HomeList from "../src/Components/UsuarioExterno/HomeUser";
 import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 // import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
 /* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
-import OrdenDespacho from "./Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
+import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
@@ -60,6 +61,7 @@ class App extends React.Component {
         <Separador />
         <Routes>
           <Route path="/" element={<HomeP />} />
+          <Route path={"/inicio"} element={<HomeList />} />
           <Route path="/Login" element={<HomeP />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/about" element={<AboutUSmain />} />
