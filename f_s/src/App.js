@@ -5,11 +5,14 @@ import {
   Route,
   Navigate,
   Outlet,
+
 } from "react-router-dom";
 
 //Component imports
 import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
+// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
+/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
@@ -102,11 +105,21 @@ class App extends React.Component {
       return this.renderLogin();
     }
   }
+
 }
 
 export default App;
 
 // const Private = () => <div>private</div>;  No se está usando, es un div de prueba solamente.
+
+function PrivateOutlet() {
+  const auth = useAuth();
+  return auth ? <Outlet /> : <Navigate to="/login" />;
+}
+
+function useAuth() {
+  return true;
+}
 
 //🏠
 const PrivateHome = () => <div>private HOME el auth es true</div>;
