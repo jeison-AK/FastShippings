@@ -16,7 +16,7 @@ function Button_delete() {
         style={style}
         className="btn btn-success"
         onClick={() => {
-          navigate("/Edit_User");
+          navigate("/Admin-user-int/Edit_User");
         }}
         to={``} // Esto para redireccionar a la edición del usuario
       >
@@ -28,7 +28,7 @@ function Button_delete() {
         className="btn btn-danger"
         onClick={() => {
           deleteAccounts(account.cc);
-          navigate("/Admin-user-int");
+          navigate("Admin-user-int");
         }}
       >
         Eliminar

@@ -8,8 +8,11 @@ import {
 } from "react-router-dom";
 
 //Component imports
+import HomeList from "../src/Components/UsuarioExterno/HomeUser";
 import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
+// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
+/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
@@ -27,53 +30,96 @@ import { NavBar_Adm } from "./Components/Comun/NavBar/NavBar_Adm";
 import Separador from "./Components/Comun/Separador/separador";
 import Footer from "./Components/Comun/footer/footer";
 import PrivateAmin from "./Components/Admin/Authentication/Auth";
+import Edit_user from "./Components/Admin/EditarUsuarioInterno/editUI";
 
-import RestaurantsList from "../src/Components/UsuarioExterno/restaurants-list";
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logged: false,
+      username: "",
+    };
+    this.updateState = this.updateState.bind(this);
+  }
 
-function App() {
-  return (
-    <Router>
-      <NavBar_Adm />
-      <Separador />
-      <Routes>
-        <Route path="/" element={<HomeP />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/registro" element={<Registro />} />
-        <Route path="/about" element={<AboutUSmain />} />
+  async updateState(logged, username) {
+    await this.setState({
+      logged: logged,
+      username: username,
+    });
+    console.log(this.state);
+  }
 
-        {/* 🔏🔏🔏🔏 */}
-        <Route path="/HomeUsExt" element={<PrivateOutletHome />}>
-          <Route path="" element={<Home />} />
-          <Route path="OrdenarDespacho" element={<OrdenDespacho />} />
-        </Route>
-        {/* 🔏🔏🔏🔏 */}
+  renderLogin() {
+    return <Login onTryLogin={this.updateState} />;
+  }
 
-        <Route path="rutas" element={<Rutas />} />
-        <Route path="historialui" element={<ViewHisUI />}>
-          <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<Info_orden />} />
-        </Route>
-        <Route path="/Solicitud" element={<Solicitud />} />
+  renderApp() {
+    return (
+      <Router>
+        <NavBar_Adm />
+        <Separador />
+        <Routes>
+          <Route path="/" element={<HomeP />} />
+          <Route path={"/inicio"} element={<HomeList />} />
+          <Route path="/Login" element={<HomeP />} />
+          <Route path="/registro" element={<Registro />} />
+          <Route path="/about" element={<AboutUSmain />} />
 
-        {/* 🔏🔏🔏🔏 */}
-        <Route path="/Admin-user-int" element={<PrivateAmin />}>
-          <Route path="" element={<ViewUserAdm />}>
-            <Route index element={<main style={{ padding: "1rem" }}></main>} />
-            <Route path=":userID" element={<Info_user />} />
+          {/* 🔏🔏🔏🔏 */}
+          <Route path="/HomeUsExt" element={<PrivateOutletHome />}>
+            <Route path="" element={<Home />} />
+            <Route path="OrdenarDespacho" element={<OrdenDespacho />} />
           </Route>
-        </Route>
-        <Route path="Add_User" element={<Add_user />} />
-        {/* 🔏🔏🔏🔏 */}
-        <Route path={"/inicio"} element={<RestaurantsList />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
+          {/* 🔏🔏🔏🔏 */}
+
+          <Route path="rutas" element={<Rutas />} />
+          <Route path="historialui" element={<ViewHisUI />}>
+            <Route index element={<main style={{ padding: "1rem" }}></main>} />
+            <Route path=":userID" element={<Info_orden />} />
+          </Route>
+          <Route path="/Solicitud" element={<Solicitud />} />
+
+          {/* 🔏🔏🔏🔏 */}
+          <Route path="/Admin-user-int" element={<PrivateAmin />}>
+            <Route path="" element={<ViewUserAdm />}>
+              <Route
+                index
+                element={<main style={{ padding: "1rem" }}></main>}
+              />
+              <Route path=":userID" element={<Info_user />} />
+              <Route path="Add_User" element={<Add_user />} />
+              <Route path="Edit_User" element={<Edit_user />} />
+            </Route>
+          </Route>
+          {/* 🔏🔏🔏🔏 */}
+        </Routes>
+        <Footer />
+      </Router>
+    );
+  }
+
+  render() {
+    if (this.state.logged) {
+      return this.renderApp();
+    } else {
+      return this.renderLogin();
+    }
+  }
 }
 
 export default App;
 
 // const Private = () => <div>private</div>;  No se está usando, es un div de prueba solamente.
+
+function PrivateOutlet() {
+  const auth = useAuth();
+  return auth ? <Outlet /> : <Navigate to="/login" />;
+}
+
+function useAuth() {
+  return true;
+}
 
 //🏠
 const PrivateHome = () => <div>private HOME el auth es true</div>;

@@ -112,6 +112,7 @@ export default class StatusDAO {
   }
 
   static async getEstados() {
+    //drompdown en home
     let cuisines = [];
     try {
       console.log("🔥estados🔥");
