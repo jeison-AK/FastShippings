@@ -14,7 +14,7 @@ import Home from "./Components/UsuarioExterno/Home/homeComp";
 /* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
-import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
+import OrdenDespacho from "./Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
 
 // Section admin
 import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
