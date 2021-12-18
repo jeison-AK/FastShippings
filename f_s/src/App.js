@@ -4,12 +4,8 @@ import {
   Routes,
   Route,
   Navigate,
-  Link,
-  NavLink,
-  useNavigate,
-  useLocation,
   Outlet,
-  useParams,
+
 } from "react-router-dom";
 
 //Component imports
@@ -30,44 +26,86 @@ import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
 import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
 import Login from "./Components/LandingPage/Login/Login";
 import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
+import { NavBar_Adm } from "./Components/Comun/NavBar/NavBar_Adm";
+import Separador from "./Components/Comun/Separador/separador";
+import Footer from "./Components/Comun/footer/footer";
+import PrivateAmin from "./Components/Admin/Authentication/Auth";
+import Edit_user from "./Components/Admin/EditarUsuarioInterno/editUI";
 
-function App() {
-  return (
-    <Router>
-      <NavBar_Adm />
-      <Separador />
-      <Routes>
-        <Route path="/" element={<HomeP />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/registro" element={<Registro />} />
-        <Route path="/about" element={<AboutUSmain />} />
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logged: false,
+      username: "",
+    };
+    this.updateState = this.updateState.bind(this);
+  }
 
-        {/* 🔏🔏🔏🔏 */}
-        <Route path="/HomeExt" element={<PrivateOutletHome />}>
-          <Route path="HomeUsExt" element={<Home />} />
-          <Route path="OrdenarDespacho" element={<OrdenDespacho />} />
-        </Route>
-        {/* 🔏🔏🔏🔏 */}
+  async updateState(logged, username) {
+    await this.setState({
+      logged: logged,
+      username: username,
+    });
+    console.log(this.state);
+  }
 
-        <Route path="rutas" element={<Rutas />} />
-        <Route path="historialui" element={<ViewHisUI />}>
-          <Route index element={<main style={{ padding: "1rem" }}></main>} />
-          <Route path=":userID" element={<Info_orden />} />
-        </Route>
-        <Route path="/Solicitud" element={<Solicitud />} />
+  renderLogin() {
+    return <Login onTryLogin={this.updateState} />;
+  }
 
-        {/* 🔏🔏🔏🔏 */}
-        <Route path="/Admin-user-int" element={<PrivateOutlet />}>
-          <Route path="" element={<ViewUserAdm />}>
-            <Route index element={<main style={{ padding: "1rem" }}></main>} />
-            <Route path=":userID" element={<Info_user />} />
-            <Route path="Add_User" element={<Add_user />} />
+  renderApp() {
+    return (
+      <Router>
+        <NavBar_Adm />
+        <Separador />
+        <Routes>
+          <Route path="/" element={<HomeP />} />
+          <Route path="/Login" element={<HomeP />} />
+          <Route path="/registro" element={<Registro />} />
+          <Route path="/about" element={<AboutUSmain />} />
+
+          {/* 🔏🔏🔏🔏 */}
+          <Route path="/HomeUsExt" element={<PrivateOutletHome />}>
+            <Route path="" element={<Home />} />
+            <Route path="OrdenarDespacho" element={<OrdenDespacho />} />
           </Route>
-        </Route>
-        {/* 🔏🔏🔏🔏 */}
-      </Routes>
-    </Router>
-  );
+          {/* 🔏🔏🔏🔏 */}
+
+          <Route path="rutas" element={<Rutas />} />
+          <Route path="historialui" element={<ViewHisUI />}>
+            <Route index element={<main style={{ padding: "1rem" }}></main>} />
+            <Route path=":userID" element={<Info_orden />} />
+          </Route>
+          <Route path="/Solicitud" element={<Solicitud />} />
+
+          {/* 🔏🔏🔏🔏 */}
+          <Route path="/Admin-user-int" element={<PrivateAmin />}>
+            <Route path="" element={<ViewUserAdm />}>
+              <Route
+                index
+                element={<main style={{ padding: "1rem" }}></main>}
+              />
+              <Route path=":userID" element={<Info_user />} />
+              <Route path="Add_User" element={<Add_user />} />
+              <Route path="Edit_User" element={<Edit_user />} />
+            </Route>
+          </Route>
+          {/* 🔏🔏🔏🔏 */}
+        </Routes>
+        <Footer />
+      </Router>
+    );
+  }
+
+  render() {
+    if (this.state.logged) {
+      return this.renderApp();
+    } else {
+      return this.renderLogin();
+    }
+  }
+
 }
 
 export default App;

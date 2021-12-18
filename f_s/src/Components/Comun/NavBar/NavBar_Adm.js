@@ -163,9 +163,11 @@ export function NavBar_Adm() {
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/OrdenarDespacho`}
+                to={`/HomeUsExt/OrdenarDespacho`}
                 className={({}) =>
-                  url === "/OrdenarDespacho" ? "nav-link active" : "nav-link"
+                  url === "HomeUsExt/OrdenarDespacho"
+                    ? "nav-link active"
+                    : "nav-link"
                 }
               >
                 🛒

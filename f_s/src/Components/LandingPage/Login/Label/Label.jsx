@@ -1,34 +1,82 @@
 import React from "react";
 import "../Label/SLabel.css";
+import axios from "axios";
+import appConfig from "../../../../appConfig";
 
-function Opciones (){
+export default class Opciones extends React.Component {
+  constructor(props) {
+    // Initialize dad constructor
+    super(props);
+    // Binding functions
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.changeStateApp = this.props.onTryLogin;
+    // TODO
+    // Components State Definition
+    this.state = {
+      username: "",
+      password: "",
+    };
+  }
+
+  async handleClick() {
+    // TODO
+    let response = await axios.post(appConfig.urlBackEnd + "users", this.state);
+    if (response.data.length == 1) {
+      console.log(response);
+      this.changeStateApp(true, response.data[0].username); // FIXME
+    } else {
+      alert("Usuario y/o contraseña incorrecto.");
+    }
+  }
+
+  async handleChange(e) {
+    if (e.target.name == "username") {
+      await this.setState({
+        username: e.target.value,
+      });
+    } else {
+      await this.setState({
+        password: e.target.value,
+      });
+    }
+    console.log(this.state);
+  }
+
+  render() {
     return (
-        <div className="contenedor">
-            <section className="contenedor-login">
-                <label className="label">USUARIO</label>
-                <input 
-                    className="input-usuario"
-                    id="usuario"
-                    name="usuario"
-                    placeholder="Usuario"
-                    type="text" 
-                /> 
-                    
-            
-                <label className="label">CONTRASEÑA</label>
-                <input
-                    className="input-contraseña" 
-                    id="contraseña"
-                    name="contraseña"
-                    placeholder="Contraseña"
-                    type="password"
-                />
+      <div className="contenedor">
+        <section className="contenedor-login">
+          <label className="label">USUARIO</label>
+          <input
+            className="input-usuario"
+            id="usuario"
+            name="username"
+            placeholder="Usuario"
+            type="text"
+            onChange={this.handleChange}
+          />
 
-                <button className="ingresar" id="boton-ingresar" name="boton-ingresar" type="submit" value="ingresar"> Ingresar </button>
+          <label className="label">CONTRASEÑA</label>
+          <input
+            className="input-contraseña"
+            id="contraseña"
+            name="password"
+            placeholder="Contraseña"
+            type="password"
+            onChange={this.handleChange}
+          />
 
-            </section>
-        </div>
-    )
-};
-
-export default Opciones;
+          <input
+            className="ingresar"
+            id="boton-ingresar"
+            name="boton-ingresar"
+            type="submit"
+            value="Login"
+            onClick={this.handleClick}
+          />
+        </section>
+      </div>
+    );
+  }
+}

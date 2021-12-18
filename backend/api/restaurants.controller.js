@@ -38,6 +38,7 @@ export default class RestaurantsController {
     res.json(response); //aqui es donde enviamos la respuesta en un formato json
   }
   static async apiGetRestaurantById(req, res, next) {
+    //una query es lo que sigue luego de ? un param es lo que va luego de un /
     try {
       let id = req.params.id || {};
       let restaurant = await RestaurantsDAO.getRestaurantByID(id);
