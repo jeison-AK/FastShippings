@@ -15,7 +15,7 @@ export default class Login extends Component {
     // TODO
     // Components State Definition
     this.state = {
-      email: "",
+      name: "",
       password: "",
     };
   }
@@ -23,7 +23,7 @@ export default class Login extends Component {
   async handleClick() {
     let response = await axios.post(appConfig.urlBackEnd + "users", this.state);
     if (response.data.length == 1) {
-      this.changeStateApp(true, response.data[6].email);
+      this.changeStateApp(true, response.data[0].nombre);
       console.log(response);
       //actualizar el estado de logged en el component App
     } else {
@@ -32,9 +32,9 @@ export default class Login extends Component {
   }
 
   async handleChange(e) {
-    if (e.target.email == "email") {
+    if (e.target.name == "name") {
       await this.setState({
-        email: e.target.value,
+        name: e.target.value,
       });
     } else {
       await this.setState({
@@ -42,8 +42,8 @@ export default class Login extends Component {
       });
     }
     console.log(this.state);
-    console.log(this.state.email);
   }
+
   render() {
     return (
       <div>
@@ -52,12 +52,12 @@ export default class Login extends Component {
             <h1 className="titulo">INICIA SESIÓN</h1>
 
             <section className="contenedor-login">
-              <label className="label">CORREO</label>
+              <label className="label">USUARIO</label>
               <input
-                className="input-email"
-                id="email"
-                name="email"
-                placeholder="Correo electrónico"
+                className="input-usuario"
+                id="name"
+                name="name"
+                placeholder="nombre"
                 type="text"
                 onChange={this.handleChange}
               />

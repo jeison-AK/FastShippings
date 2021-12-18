@@ -31,5 +31,7 @@ app.post("/users", async (req, res) => {
 
 // Awake server
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(
+    `Escuchando en el backend desde la dirección ==> http://localhost:${port}`
+  );
 });

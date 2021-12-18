@@ -5,7 +5,6 @@ import {
   Route,
   Navigate,
   Outlet,
-
 } from "react-router-dom";
 
 //Component imports
@@ -105,7 +104,6 @@ class App extends React.Component {
       return this.renderLogin();
     }
   }
-
 }
 
 export default App;

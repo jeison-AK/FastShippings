@@ -1,9 +1,9 @@
-// import connection library
+//import connction library
 let MongoClient = require("mongodb").MongoClient;
-// Import db Conection
+//Import db connection
 let { connectionString, dbName } = require("./dbConfig");
-// Functions
-async function testConection() {
+//Functions
+async function testConnection() {
   try {
     let connection = await MongoClient.connect(connectionString, {
       useNewUrlParser: true,
@@ -32,13 +32,12 @@ async function findData(collectionName, filter) {
       result.push(currentDocument);
       currentDocument = await cursor.next();
     }
-
     return result;
   } catch (ex) {
-    return "Estamos haciendo algo mal";
+    return "Algo salió mal";
   }
 }
 
-// Exports
-module.exports.testConection = testConection;
+//Exports
+module.exports.testConnection = testConnection;
 module.exports.findData = findData;
