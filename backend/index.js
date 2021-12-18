@@ -1,7 +1,7 @@
 import app from "./server.js";
 import mongodb from "mongodb";
 import dotenv from "dotenv";
-import RestaurantsDAO from "./dao/restaurantsDAO.js";
+import estadosDAO from "./dao/estadosDAO.js";
 import ReviewsDAO from "./dao/reviewsDAO.js";
 
 //* aqui conectamos con la base de datos y corremos el servidor
@@ -12,7 +12,7 @@ const MongoClient = mongodb.MongoClient; //access our mongo client from mongodb
 const port = process.env.PORT || 8000; //set port form our envarairoment variable, we pass PORT cuz that's what we have in our env
 
 //-connecto to database
-MongoClient.connect(process.env.RESTREVIEWS_DB_URI, {
+MongoClient.connect(process.env.DB_URI, {
   wtimeoutMS: 2500, //after 2500 milliseconds the request will time-out
   useNewUrlParser: true, //blabla not need to know just put this
 })
@@ -21,7 +21,7 @@ MongoClient.connect(process.env.RESTREVIEWS_DB_URI, {
     process.exit(1);
   })
   .then(async (client) => {
-    await RestaurantsDAO.injectDB(client); //reference to the restaurants collection in the database, lo q sigue es crear el controller
+    await estadosDAO.injectDB(client); //reference to the restaurants collection in the database, lo q sigue es crear el controller
     // q el arichivo route usara para acceder eñ archivo DAO
     await ReviewsDAO.injectDB(client);
     app.listen(port, () => {
