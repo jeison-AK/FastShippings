@@ -28,7 +28,7 @@ import Separador from "./Components/Comun/Separador/separador";
 import Footer from "./Components/Comun/footer/footer";
 import PrivateAmin from "./Components/Admin/Authentication/Auth";
 
-import RestaurantsList from "../src/Components/UsuarioExterno/restaurants-list";
+import HomeList from "../src/Components/UsuarioExterno/HomeUser";
 
 function App() {
   return (
@@ -64,7 +64,7 @@ function App() {
         </Route>
         <Route path="Add_User" element={<Add_user />} />
         {/* 🔏🔏🔏🔏 */}
-        <Route path={"/inicio"} element={<RestaurantsList />} />
+        <Route path={"/inicio"} element={<HomeList />} />
       </Routes>
       <Footer />
     </Router>
