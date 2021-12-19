@@ -110,21 +110,23 @@ function Courses() {
   const navigate = useNavigate();
   const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
   const USERINF = `${users.name}, ${users.email}`; //!
+  var strJSON = encodeURIComponent(JSON.stringify(users));
   return (
     <div>
       <h1>Curses list</h1>
       <h4>Courses card</h4>
       <hr />
       <h4>NavLink</h4>
+      <p> P tag: {USERINF} </p>
       <NavLink
-        to={`/learn/courses/${USERINF}`}
+        to={`/learn/courses/${strJSON}`}
         style={({ isActive }) => {
           return {
             backgroundColor: isActive ? "pink" : "",
           };
         }}
       >
-        {USERINF}
+        {strJSON}
       </NavLink>
       <NavLink to={`/learn/courses/💩`} className="btn btn-light">
         💩💩
