@@ -5,7 +5,8 @@ import Button_delete from "./btn_edit_del";
 import { getAccount } from "./data";
 
 function Info_user() {
-  let params = useParams();
+  const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
+  console.log(courseId);
   // let accounts = getAccount(parseInt(params.userID, 10));
   const [users, setCardsUsers] = useState([]);
   return (
@@ -23,7 +24,7 @@ function Info_user() {
       </div>
       <ul class="list-group list-group-flush">
         <li className="list-group-item name_UI">
-          <strong>Nombre: </strong> {users.name}
+          <strong>Nombre: </strong> {courseId}
         </li>
         <li className="list-group-item">
           {/* <strong>Correo: </strong> {users.email} */}
