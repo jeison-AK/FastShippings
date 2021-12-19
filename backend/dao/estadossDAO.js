@@ -38,6 +38,8 @@ export default class StatusDAO {
         query = { "address.zipcode": { $eq: filters["zipcode"] } };
       } else if ("rutas" in filters) {
         query = { rutas: { $eq: filters["rutas"] } };
+      } else if ("origin" in filters) {
+        //TODO agregar &text para hacer el filtro por origin y destino en otro statement
       }
     }
 
@@ -112,9 +114,10 @@ export default class StatusDAO {
   }
 
   static async getEstados() {
+    //drompdown en home
     let cuisines = [];
     try {
-      console.log("🔥estados🔥");
+      console.log("🔥estados🔥", status);
       cuisines = await status.distinct("status");
       return cuisines;
     } catch (e) {

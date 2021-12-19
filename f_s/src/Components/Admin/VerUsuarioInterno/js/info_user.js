@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import RequestUserData from "../../../../services/requests.http";
 import "../css/info_user.css";
 import Button_delete from "./btn_edit_del";
 import { useParams } from "react-router-dom";
@@ -6,7 +7,35 @@ import { getAccount } from "./data";
 
 function Info_user() {
   let params = useParams();
-  let accounts = getAccount(parseInt(params.userID, 10));
+  const [cardUser, setCardUsers] = useState([]);
+
+  const retrieveCardUser = () => {
+    RequestUserData.getAll()
+      .then((response) => {
+        console.log(response.data.resultados, " 🥶🥶");
+        console.log(response.data);
+        setCardUsers(response.data.resultados);
+        console.log(cardUser[0].name, "🤯🤯🤯");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    retrieveCardUser(); //traerse los usuarios
+  }, []);
+
+  const refreshList = () => {
+    retrieveCardUser();
+  };
+
+  // let user = params.userID;
+  let user = getUser(params.userID);
+  function getUser(nombre) {
+    return cardUser.find((info) => info.name === nombre);
+  }
+
   return (
     <section class="card container h-80 p-3 bg-white rounded-4">
       <img
@@ -22,12 +51,12 @@ function Info_user() {
       </div>
       <ul class="list-group list-group-flush">
         <li className="list-group-item name_UI">
-          <strong>Name: </strong> {accounts.name}
+          <strong>Name: </strong> {user.name}
         </li>
         <li className="list-group-item">
-          <strong>CC: </strong> {accounts.cc}
+          <strong>Email: </strong> {user.email}
         </li>
-        <li className="list-group-item">
+        {/* <li className="list-group-item">
           <strong>Job: </strong> {accounts.job}
         </li>
         <li className="list-group-item">
@@ -38,7 +67,7 @@ function Info_user() {
         </li>
         <li className="list-group-item">
           <strong>Descripción: </strong> {accounts.description}
-        </li>
+        </li> */}
       </ul>
       <div class="card-body">
         <Button_delete />

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import RestaurantDataService from "../../services/requests.http";
+import urlRequestData from "../../services/requests.http";
 import { Link } from "react-router-dom";
 //! ver services/restaurant.js
 const RestaurantsList = (props) => {
   //necesitamos tener variables para los items que las personas esten buscando
-  const [restaurants, setRestaurants] = useState([]);
-  const [searchName, setSearchName] = useState("");
-  const [searchZip, setSearchZip] = useState("");
-  const [searchCuisine, setSearchCuisine] = useState("");
-  const [estados, setEstado] = useState(["Estados"]);
+  const [rutas, setRutas] = useState([]);
+  const [estados, setEstado] = useState(["Estados"]); //? dropdown
+  const [searchName, setSearchName] = useState(""); //! no se esta usando
+  const [searchZip, setSearchZip] = useState(""); //! no se esta usando
+  const [searchCuisine, setSearchCuisine] = useState(""); //! no se esta usando
 
   //useEffect es como le indicas a react que tu componente necesita hacer algo despues de renderizar
   useEffect(() => {
-    retrieveRestaurants(); //traerse los restaurantes
-    retrieveCuisines(); //traerse las cocinas
+    retriveRutas(); //traerse los restaurantes
+    retrieveEstados(); //traerse las cocinas
   }, []);
 
   const onChangeSearchName = (e) => {
@@ -31,19 +31,22 @@ const RestaurantsList = (props) => {
     setSearchCuisine(searchCuisine);
   };
 
-  const retrieveRestaurants = () => {
-    RestaurantDataService.getUserRutas()
+  const retriveRutas = () => {
+    urlRequestData
+      .getUserRutas()
       .then((response) => {
-        console.log(response.data);
-        setRestaurants(response.data.restaurants);
+        console.log(response.data, "😈😈");
+        console.log(response.data.resultados, " 🔥🔥 ");
+        setRutas(response.data.resultados);
       })
       .catch((e) => {
         console.log(e);
       });
   };
 
-  const retrieveCuisines = () => {
-    RestaurantDataService.getCuisines()
+  const retrieveEstados = () => {
+    urlRequestData
+      .getCuisines()
       .then((response) => {
         console.log(response.data);
         setEstado(["Estados"].concat(response.data)); //Dropdown menu
@@ -53,15 +56,16 @@ const RestaurantsList = (props) => {
       });
   };
   const refreshList = () => {
-    retrieveRestaurants();
+    retriveRutas();
   };
 
   const find = (query, by) => {
     // find es llamada dentro de otras funciones
-    RestaurantDataService.find(query, by)
+    urlRequestData
+      .find(query, by)
       .then((response) => {
         console.log(response.data);
-        setRestaurants(response.data.restaurants); //setRestauramt sera lo q recibamos del servidor backend
+        setRutas(response.data.resultados); //setRestauramt sera lo q recibamos del servidor backend
       })
       .catch((e) => {
         console.log(e);
@@ -145,7 +149,7 @@ const RestaurantsList = (props) => {
 
       {/* Cards */}
       <div className="row">
-        {restaurants.map((estadoX) => {
+        {rutas.map((estadoX) => {
           const address = `${estadoX.origen} / ${estadoX.destino}`;
 
           return (
@@ -166,7 +170,7 @@ const RestaurantsList = (props) => {
                   </p>
                   <div className="row">
                     {/* <Link
-                      to={"/restaurants/" + estadoX._id}
+                      to={"/resultados/" + estadoX._id}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Reviews

@@ -1,17 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/services.css";
+import RequestUserData from "../../../../services/requests.http";
+
 import {
   useLocation,
   useSearchParams,
   NavLink,
   useNavigate,
 } from "react-router-dom";
-import { getAccounts, deleteAccounts } from "./data";
+// import { getAccounts, deleteAccounts } from "./data";
 
 function Section_cards() {
+  const [cardUser, setCardUsers] = useState([]);
   let [searchParams, setSearchParams] = useSearchParams();
-  let accounts = getAccounts();
+  // let accounts = getAccounts();
   let navigate = useNavigate();
+
+  useEffect(() => {
+    retrieveCardUser(); //traerse los usuarios
+  }, []);
+
+  const retrieveCardUser = () => {
+    RequestUserData.getAll()
+      .then((response) => {
+        console.log("URL 💲💲💲", RequestUserData);
+        console.log(response.data, "🐜🐜");
+        console.log(response.data.resultados, " 🃏🃏");
+        console.log(response.data);
+        setCardUsers(response.data.resultados);
+        console.log(response.data.resultados[0].name, "🤯🤯🤯");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  const refreshList = () => {
+    retrieveCardUser();
+  };
 
   function QueryNavLink({ to, ...props }) {
     let location = useLocation();
@@ -52,14 +77,14 @@ function Section_cards() {
           </div>
           <div className="cotainer">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-2">
-              {accounts
+              {cardUser
                 .filter((acount) => {
                   let filter = searchParams.get("filter");
                   if (!filter) return true;
-                  let documento = acount.cc.toString();
+                  let documento = acount.name.toLowerCase();
                   return documento.startsWith(filter.toLowerCase());
                 })
-                .map((accounts) => (
+                .map((cardUser) => (
                   // Esto lo que hace es aplicar el "mapeo" en la consulta y lo erroja como link
                   <QueryNavLink
                     style={({ isActive }) => ({
@@ -68,17 +93,17 @@ function Section_cards() {
                       margin: "10px 0px",
                       color: isActive ? "#0064fa" : "white",
                     })}
-                    to={`/Admin-user-int/${accounts.cc}`}
-                    key={accounts.cc}
+                    to={`/Admin-user-int/${cardUser.name}`}
+                    key={cardUser.name}
                   >
                     <div className="icon-box" data-aos="fade-up">
-                      <h4 className="title">{accounts.name}</h4>
+                      <h4 className="title">{cardUser.user}</h4>
                       <p className="description">
-                        <b>Job:</b> {accounts.job}
+                        <b>Estado de ruta:</b> {cardUser.name}
                         <br></br>
-                        <b>Document:</b> {accounts.cc}
+                        <b>Document:</b> {cardUser.email}
                         <br></br>
-                        <b>Rol:</b> {accounts.rol}
+                        {/*<b>Rol:</b> {cardUser.rol} */}
                       </p>
                     </div>
                   </QueryNavLink>
