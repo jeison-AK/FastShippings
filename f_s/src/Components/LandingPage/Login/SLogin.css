@@ -1,17 +1,11 @@
-.principal {
+/* .principal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(228, 240, 240);
-}
+} */
 
-.contenedor-principal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .principal {
   background-image: url(../../imagenes/camion4.jpg);
   background-position: center center;
@@ -21,10 +15,62 @@
   height: 100%;
   font-family: "Numans", sans-serif;
 }
+.footer_login {
+  display: flex;
+  width: auto;
+}
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .titulo {
   margin-top: 100px;
   font-size: 70px;
   color: rgba(55, 109, 224, 0.788);
   text-align: center;
+}
+.contenedor-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  background-color: rgba(183, 192, 221, 0.329);
+  border-radius: 10px;
+}
+
+/* .contenedor {
+  background-color: rgba(183, 192, 221, 0.329);
+  width: 75%;
+} */
+.label {
+  margin: 50px 20px 10px 20px;
+  font-size: 20px;
+  color: rgb(55, 109, 224);
+}
+.input-usuario {
+  height: 40px;
+  width: 290px;
+  font-size: 15px;
+  border-radius: 6px;
+  margin: 10px 20px 10px 20px;
+}
+
+.input-contraseña {
+  height: 40px;
+  width: 290px;
+  font-size: 15px;
+  border-radius: 6px;
+  margin: 10px 20px 50px 20px;
+}
+
+.ingresar {
+  height: 60px;
+  width: 190px;
+  margin: 20px 20px 50px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  color: rgba(55, 109, 224, 0.712);
 }

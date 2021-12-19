@@ -5,10 +5,10 @@ import {
   Route,
   Navigate,
   Outlet,
-
 } from "react-router-dom";
 
 //Component imports
+import HomeList from "../src/Components/UsuarioExterno/HomeUser";
 import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
 // import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
@@ -36,7 +36,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: false,
+      logged: true,
       username: "",
     };
     this.updateState = this.updateState.bind(this);
@@ -61,6 +61,7 @@ class App extends React.Component {
         <Separador />
         <Routes>
           <Route path="/" element={<HomeP />} />
+          <Route path={"/inicio"} element={<HomeList />} />
           <Route path="/Login" element={<HomeP />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/about" element={<AboutUSmain />} />
@@ -105,7 +106,6 @@ class App extends React.Component {
       return this.renderLogin();
     }
   }
-
 }
 
 export default App;
