@@ -100,12 +100,12 @@ export function NavBar_Adm() {
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/HomeUsExt`}
+                to={`/inicio`}
                 className={({}) =>
                   url === "/HomeUsExt" ? "nav-link active" : "nav-link "
                 }
               >
-                HomeUsExt
+                Despachos
               </NavLink>
             </li>
 
