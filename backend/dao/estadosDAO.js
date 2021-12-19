@@ -12,7 +12,7 @@ export default class StatusDAO {
       return; //si ya hay una referencia return
     }
     try {
-      status = await conn.db(process.env.DATABASE_NS).collection("status"); //intentamos obtener una conexion a la "collection resturants" de la base de datos
+      status = await conn.db(process.env.DATABASE_NS).collection("users"); //intentamos obtener una conexion a la "collection resturants" de la base de datos
     } catch (e) {
       console.error(
         `Unable to establish a collection handle in statusDAO: ${e}`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/services.css";
 import {
   useLocation,
@@ -6,11 +6,28 @@ import {
   NavLink,
   useNavigate,
 } from "react-router-dom";
-import { getAccounts, deleteAccounts } from "./data";
+import RequestsData from "../../../../services/requests.http";
+import { getAccounts } from "./data";
 
 function Section_cards() {
+  const [users, setCardsUsers] = useState([]);
+
+  useEffect(() => {
+    retrieveCardsUsers(); //traerse los usuarios
+  }, []);
+
+  const retrieveCardsUsers = () => {
+    RequestsData.getAll()
+      .then((response) => {
+        console.log(response.data, "🔥");
+        setCardsUsers(response.data.resultados);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
   let [searchParams, setSearchParams] = useSearchParams();
-  let accounts = getAccounts();
+  // let accounts = getAccounts();
   let navigate = useNavigate();
 
   function QueryNavLink({ to, ...props }) {
@@ -52,14 +69,14 @@ function Section_cards() {
           </div>
           <div className="cotainer">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-2">
-              {accounts
-                .filter((acount) => {
+              {users
+                .filter((nombre) => {
                   let filter = searchParams.get("filter");
                   if (!filter) return true;
-                  let documento = acount.cc.toString();
+                  let documento = nombre.name.toLowerCase();
                   return documento.startsWith(filter.toLowerCase());
                 })
-                .map((accounts) => (
+                .map((users) => (
                   // Esto lo que hace es aplicar el "mapeo" en la consulta y lo erroja como link
                   <QueryNavLink
                     style={({ isActive }) => ({
@@ -68,17 +85,15 @@ function Section_cards() {
                       margin: "10px 0px",
                       color: isActive ? "#0064fa" : "white",
                     })}
-                    to={`/Admin-user-int/${accounts.cc}`}
-                    key={accounts.cc}
+                    to={`/Admin-user-int/${users.name}`}
+                    key={users.name}
                   >
                     <div className="icon-box" data-aos="fade-up">
-                      <h4 className="title">{accounts.name}</h4>
+                      <h4 className="title">{users.name}</h4>
                       <p className="description">
-                        <b>Job:</b> {accounts.job}
+                        <b>Nombre:</b> {users.name}
                         <br></br>
-                        <b>Document:</b> {accounts.cc}
-                        <br></br>
-                        <b>Rol:</b> {accounts.rol}
+                        <b>Correo:</b> {users.email}
                       </p>
                     </div>
                   </QueryNavLink>

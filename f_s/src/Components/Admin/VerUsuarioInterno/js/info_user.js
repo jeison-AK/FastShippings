@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/info_user.css";
 import Button_delete from "./btn_edit_del";
 import { useParams } from "react-router-dom";
@@ -6,7 +6,8 @@ import { getAccount } from "./data";
 
 function Info_user() {
   let params = useParams();
-  let accounts = getAccount(parseInt(params.userID, 10));
+  // let accounts = getAccount(parseInt(params.userID, 10));
+  const [users, setCardsUsers] = useState([]);
   return (
     <section class="card container h-80 p-3 bg-white rounded-4">
       <img
@@ -22,22 +23,10 @@ function Info_user() {
       </div>
       <ul class="list-group list-group-flush">
         <li className="list-group-item name_UI">
-          <strong>Name: </strong> {accounts.name}
+          <strong>Nombre: </strong> {users.name}
         </li>
         <li className="list-group-item">
-          <strong>CC: </strong> {accounts.cc}
-        </li>
-        <li className="list-group-item">
-          <strong>Job: </strong> {accounts.job}
-        </li>
-        <li className="list-group-item">
-          <strong>Contact: </strong> {accounts.contact}
-        </li>
-        <li className="list-group-item">
-          <strong>Fecha de nacimiento: </strong> {accounts.due}
-        </li>
-        <li className="list-group-item">
-          <strong>Descripción: </strong> {accounts.description}
+          <strong>Correo: </strong> {users.email}
         </li>
       </ul>
       <div class="card-body">

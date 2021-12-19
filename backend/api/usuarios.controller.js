@@ -17,7 +17,7 @@ export default class UsuariosController {
 
     //creamos una respuesta para enviar a la persona cuando esta api url se llame
     let response = {
-      restaurants: dataList, //le enviamos la lista de restaurantes, pagina, filtros etc
+      resultados: dataList, //le enviamos la lista de restaurantes, pagina, filtros etc
       page: page,
       filters: filters,
       entries_per_page: resultsPerPage,
@@ -39,7 +39,7 @@ export default class UsuariosController {
 
     //creamos una respuesta para enviar a la persona cuando esta api url se llame
     let response = {
-      restaurants: dataList, //le enviamos la lista de restaurantes, pagina, filtros etc
+      resultados: dataList, //le enviamos la lista de restaurantes, pagina, filtros etc
       page: page,
       filters: filters,
       entries_per_page: resultsPerPage,
