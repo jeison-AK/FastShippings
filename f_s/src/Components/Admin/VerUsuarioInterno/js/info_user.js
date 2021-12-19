@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import "../css/info_user.css";
 import Button_delete from "./btn_edit_del";
-import { useParams } from "react-router-dom";
 import { getAccount } from "./data";
 
 function Info_user() {
@@ -26,7 +26,7 @@ function Info_user() {
           <strong>Nombre: </strong> {users.name}
         </li>
         <li className="list-group-item">
-          <strong>Correo: </strong> {users.email}
+          {/* <strong>Correo: </strong> {users.email} */}
         </li>
       </ul>
       <div class="card-body">
