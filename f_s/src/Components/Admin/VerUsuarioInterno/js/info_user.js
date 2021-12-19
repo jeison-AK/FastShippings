@@ -12,6 +12,8 @@ function Info_user() {
   const retrieveCardUser = () => {
     RequestUserData.getAll()
       .then((response) => {
+        console.log(response.data.resultados, " 🥶🥶");
+        console.log(response.data);
         setCardUsers(response.data.resultados);
         console.log(cardUser[0].name, "🤯🤯🤯");
       })
@@ -19,6 +21,7 @@ function Info_user() {
         console.log(e);
       });
   };
+
   useEffect(() => {
     retrieveCardUser(); //traerse los usuarios
   }, []);
