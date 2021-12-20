@@ -11,8 +11,6 @@ import {
 import HomeList from "../src/Components/UsuarioExterno/HomeUser";
 import HomeP from "./Components/LandingPage/Principal/home";
 import Home from "./Components/UsuarioExterno/Home/homeComp";
-// import HomeExt from "./Components/UsuarioExterno/Home/homeComp";
-/* import NewNavBar from "./Components/Comun/NavBar/NavBar_JM"; */
 import AboutUSmain from "./Components/Comun/AboutUs/about_us";
 import Registro from "./Components/LandingPage/Registro/registro";
 import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
@@ -52,7 +50,17 @@ class App extends React.Component {
   }
 
   renderLogin() {
-    return <Login onTryLogin={this.updateState} />;
+    return (
+      <Router>
+        <Routes>
+          <Route>
+            <Route path="/" element={<Login onTryLogin={this.updateState} />} />
+
+            <Route path="/registro" element={<Registro />} />
+          </Route>
+        </Routes>
+      </Router>
+    );
   }
 
   renderApp() {
@@ -64,7 +72,7 @@ class App extends React.Component {
           <Route path="/" element={<HomeP />} />
           <Route path={"/inicio"} element={<HomeList />} />
           <Route path="/Login" element={<HomeP />} />
-          <Route path="/registro" element={<Registro />} />
+
           <Route path="/about" element={<AboutUSmain />} />
 
           {/* 🔏🔏🔏🔏 */}

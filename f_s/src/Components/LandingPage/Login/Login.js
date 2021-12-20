@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "../../LandingPage/Login/SLogin.css";
 import Footer from "../../Comun/footer/footer";
 import axios from "axios";
-import appConfig from "../../../appConfig";
+import baseURL from "../../../http-common";
+import { NavLink } from "react-router-dom";
 
 export default class Login extends Component {
   constructor(props) {
@@ -21,7 +22,8 @@ export default class Login extends Component {
   }
 
   async handleClick() {
-    let response = await axios.post(appConfig.urlBackEnd + "users", this.state);
+    let response = await axios.post(baseURL, this.State);
+    // let response = await axios.post(appConfig.urlBackEnd + "users", this.state);
     if (response.data.length == 1) {
       this.changeStateApp(true, response.data[0].nombre);
       console.log(response);
@@ -57,7 +59,7 @@ export default class Login extends Component {
                 className="input-usuario"
                 id="name"
                 name="name"
-                placeholder="nombre"
+                placeholder="Nombre"
                 type="text"
                 onChange={this.handleChange}
               />
@@ -80,6 +82,17 @@ export default class Login extends Component {
                 value="Login"
                 onClick={this.handleClick}
               />
+              <br></br>
+              <br></br>
+              <p>
+                {" "}
+                ¿No tienes cuenta?{" "}
+                <NavLink to="/registro" value="Regístrate" style={{}}>
+                  Regístrate
+                </NavLink>
+              </p>
+              <br></br>
+              <br></br>
             </section>
           </section>
           <div>

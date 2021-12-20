@@ -31,11 +31,11 @@ function DeleteModal() {
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
+          <div class="modal-content bg-warning">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Eliminando usuario {test[0]}
-              </h5>
+              <h2 class="modal-title" id="exampleModalLabel">
+                Eliminar {test[0]}
+              </h2>
               <button
                 type="button"
                 class="btn-close"

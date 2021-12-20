@@ -39,7 +39,7 @@ function Edit_user() {
                 <div className="invalid-feedback">Please choose a Email.</div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-7">
               <label for="validationCustom02" className="form-label">
                 Documento
               </label>
@@ -52,7 +52,7 @@ function Edit_user() {
               />
               <div className="valid-feedback">Looks good!</div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-5">
               <label for="validationCustom04" className="form-label">
                 Rol
               </label>
@@ -60,9 +60,9 @@ function Edit_user() {
                 <option selected disabled value="">
                   ...
                 </option>
-                <option>Administrador</option>
-                <option>Usuario Externo</option>
-                <option>Usuario Interno</option>
+                <option>Admin</option>
+                <option>Externo</option>
+                <option>Interno</option>
               </select>
               <div className="invalid-feedback">
                 Please select a valid state.

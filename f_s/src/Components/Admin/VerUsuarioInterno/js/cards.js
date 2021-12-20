@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Outlet } from "react-router";
+import { Outlet } from "react-router";
 
 import "../css/services.css";
-import {
-  useLocation,
-  useSearchParams,
-  NavLink,
-  useNavigate,
-} from "react-router-dom";
+import { useSearchParams, NavLink, useNavigate } from "react-router-dom";
 import RequestsData from "../../../../services/requests.http";
-import { getAccounts } from "./data";
+import AddModal from "./AddModal";
 
 function Section_cards() {
   const [users, setCardsUsers] = useState([]);
@@ -34,22 +29,10 @@ function Section_cards() {
         console.log(e);
       });
   };
-  const retriveOneCard = (x) => {
-    return users.find((o) => o.name === x);
-  };
-  // const navigate = useNavigate();
-  const USERINF = `${users.name}, ${users.email}`; //!
 
   let [searchParams, setSearchParams] = useSearchParams();
-  // let accounts = getAccounts();
   let navigate = useNavigate();
 
-  // function QueryNavLink({ to, ...props }) {
-  //   let location = useLocation();
-  //   return <NavLink to={to + location.search} {...props} />;
-  // }
-
-  var strJSON = encodeURIComponent(users.name);
   const style = {
     margin: "0.5em",
     listStyle: "none",
@@ -87,15 +70,7 @@ function Section_cards() {
                               }
                             }}
                           />
-                          <button
-                            style={style}
-                            className="btn btn-primary"
-                            onClick={() => {
-                              navigate("/Add_User");
-                            }}
-                          >
-                            Agregar
-                          </button>
+                          <AddModal />
                         </div>
                         <div className="cotainer">
                           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-2">
@@ -118,7 +93,6 @@ function Section_cards() {
                                     margin: "10px 0px",
                                     color: isActive ? "#0064fa" : "white",
                                   })}
-                                  // key={users.name}
                                 >
                                   <div className="icon-box" data-aos="fade-up">
                                     <h4 className="title">{users.name}</h4>
@@ -126,13 +100,6 @@ function Section_cards() {
                                       <b>Nombre:</b> {users.name} <br></br>
                                       <b>Correo:</b> {users.email}
                                     </p>
-                                    {/* <span Id="Contenido" Style="Display:none;">
-                                      {`${JSON.stringify(
-                                        retriveOneCard(users.name),
-                                        null,
-                                        4
-                                      )}`}
-                                    </span> Etiqueta oculta con toda la base de datos*/}
                                   </div>
                                 </NavLink>
                               ))}
@@ -163,3 +130,18 @@ function Section_cards() {
 }
 
 export default Section_cards;
+
+// const retriveOneCard = (x) => {
+//   return users.find((o) => o.name === x);
+// };
+// const USERINF = `${users.name}, ${users.email}`; //!
+// var strJSON = encodeURIComponent(users.name);
+// {
+//   /* <span Id="Contenido" Style="Display:none;">
+//                                     {`${JSON.stringify(
+//                                       retriveOneCard(users.name),
+//                                       null,
+//                                       4
+//                                     )}`}
+//                                   </span> Etiqueta oculta con toda la base de datos*/
+// }
