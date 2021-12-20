@@ -126,13 +126,13 @@ function Section_cards() {
                                       <b>Nombre:</b> {users.name} <br></br>
                                       <b>Correo:</b> {users.email}
                                     </p>
-                                    <span Id="Contenido" Style="Display:none;">
+                                    {/* <span Id="Contenido" Style="Display:none;">
                                       {`${JSON.stringify(
                                         retriveOneCard(users.name),
                                         null,
                                         4
                                       )}`}
-                                    </span>
+                                    </span> Etiqueta oculta con toda la base de datos*/}
                                   </div>
                                 </NavLink>
                               ))}
@@ -151,11 +151,9 @@ function Section_cards() {
                   </section>
                 </section>
               </div>
-              <div className="col-6 col-md-4">
-                children
+              <div class="col-md-3">
                 <Outlet />
               </div>
-              {/* <div class="col-md-3"></div> */}
             </div>
           </section>
         </main>

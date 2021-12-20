@@ -44,7 +44,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 //       <Route path="/myapps" element={<Navigate replace to="/learn" />} />
 //       <Route path="/learn" element={<Learn />}>
 //         <Route path="courses/" element={<Courses />}>
-//           <Route path=":courseId" element={<CourseId />} />
+//           <Route path=":paramsID" element={<CourseId />} />
 //         </Route>
 //         <Route path="bundles" element={<Bundles />} />
 //       </Route>
@@ -109,7 +109,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 //       });
 //   };
 //   const navigate = useNavigate();
-//   const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
+//   const { paramsID } = useParams(); //-paramsID porque asi es como se puso en el Route
 //   const USERINF = `${users.name}, ${users.email}`; //!
 //   var strJSON = encodeURIComponent(JSON.stringify(users));
 //   return (
@@ -170,11 +170,11 @@ ReactDOM.render(<App />, document.getElementById("root"));
 //   //       });
 //   //   };
 //   const navigate = useNavigate();
-//   const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
+//   const { paramsID } = useParams(); //-paramsID porque asi es como se puso en el Route
 //   //   const userInfo = `${users.name}, ${users.email}`; //!
 //   return (
 //     <div>
-//       <h1>El parametro de la URL es: {courseId}</h1>
+//       <h1>El parametro de la URL es: {paramsID}</h1>
 //       {/* <button
 //         onClick={() => {
 //           navigate("/dashboard", { state: userInfo });
