@@ -1,36 +1,45 @@
-import React from 'react'
+import React from "react";
 import {
-    Link,
-    Outlet, NavLink,
-    useNavigate,useParams
+  Link,
+  Outlet,
+  NavLink,
+  useNavigate,
+  useParams,
 } from "react-router-dom";
 
 function learn() {
-    return (
-        <div>
-            <h1>Learn component</h1>
-            <h4>learn to learn</h4>
-            <Link to="/learn/courses" className="btn btn-success">courses</Link>{" "}
-            <Link to="/learn/bundles" className="btn btn-primary">bundle</Link>
-            <Outlet/>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Learn component</h1>
+      <h4>learn to learn</h4>
+      <Link to="/learn/courses" className="btn btn-success">
+        courses
+      </Link>{" "}
+      <Link to="/learn/bundles" className="btn btn-primary">
+        bundle
+      </Link>
+      <Outlet />
+    </div>
+  );
 }
 function Courses() {
-  const courseList = ["React", "Angula", "Vue", "Nodejs"]
-  const ramdomCourseName = courseList[Math.floor(Math.random()*courseList.length)]
+  const courseList = ["React", "Angula", "Vue", "Nodejs"];
+  const ramdomCourseName =
+    courseList[Math.floor(Math.random() * courseList.length)];
   return (
     <div>
       <h1>Curses list</h1>
       <h4>Courses card</h4>
       <hr />
       <h4>NavLink</h4>
-      <NavLink to={`/learn/courses/${ramdomCourseName}`}
+      <NavLink
+        to={`/learn/courses/${ramdomCourseName}`}
         style={({ isActive }) => {
           return {
-          backgroundColor: isActive ? "pink" : ''
-        }
-      }}>
+            backgroundColor: isActive ? "pink" : "",
+          };
+        }}
+      >
         {ramdomCourseName}
       </NavLink>
       <NavLink to={`/learn/courses/💩`} className="btn btn-light">
@@ -39,7 +48,7 @@ function Courses() {
       <Outlet />
       {/* autlet a CourseId() */}
     </div>
-  )
+  );
 }
 function Bundles() {
   return (
@@ -47,23 +56,27 @@ function Bundles() {
       <h1>Bundle list</h1>
       <h4>Bundle card</h4>
     </div>
-  )
+  );
 }
 function CourseId() {
-  const navigate =  useNavigate()
-  const {courseId} = useParams() //-courseId porque asi es como se puso en el Route
+  const navigate = useNavigate();
+  const { paramID } = useParams(); //-paramID porque asi es como se puso en el Route
   return (
     <div>
-      <h1>El parametro de la URL es: {courseId}</h1>
+      <h1>El parametro de la URL es: {paramID}</h1>
       <button
         onClick={() => {
-          navigate("/dashboard",{state:"399"})
+          navigate("/dashboard", { state: "399" });
         }}
-        className="btn btn-warning">Price
+        className="btn btn-warning"
+      >
+        Price
       </button>
-      <Link to="/dashboard" state={"StateFromLink"}>Test-Link</Link>
+      <Link to="/dashboard" state={"StateFromLink"}>
+        Test-Link
+      </Link>
     </div>
-  )
+  );
 }
 
-export default {learn,Courses,Bundles}
+export default { learn, Courses, Bundles };

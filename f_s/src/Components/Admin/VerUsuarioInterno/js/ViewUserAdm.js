@@ -29,7 +29,7 @@
 //   //     });
 //   // };
 //   // // const navigate = useNavigate();
-//   // const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
+//   // const { paramID } = useParams(); //-paramID porque asi es como se puso en el Route
 //   // const USERINF = `${users.name}, ${users.email}`; //!
 
 //   return (
