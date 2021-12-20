@@ -36,7 +36,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: false,
+      logged: true,
       username: "",
     };
     this.updateState = this.updateState.bind(this);
