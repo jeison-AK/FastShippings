@@ -24,7 +24,6 @@ const Restaurant = (props) => {
   };
 
   useEffect(() => {
-    //FIXME: fix error, props.match
     getRestaurant(props.match.params.id);
   }, [props.match.params.id]); //solo sera llamado si [props.match.params.id] es updated, es decir unicamente se volvera a llamar a
   // getRestaurant si el id es actualizado

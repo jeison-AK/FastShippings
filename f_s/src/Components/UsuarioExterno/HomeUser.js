@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import RestaurantDataService from "../../services/restaurant";
+import RequestsDataService from "../../services/requests.http";
 import { Link } from "react-router-dom";
 //! ver services/restaurant.js
 const RestaurantsList = (props) => {
   //necesitamos tener variables para los items que las personas esten buscando
-  const [restaurants, setRestaurants] = useState([]);
+  const [resultados, setResultados] = useState([]);
+  const [estados, setEstado] = useState(["Estados"]);
   const [searchName, setSearchName] = useState("");
   const [searchZip, setSearchZip] = useState("");
   const [searchCuisine, setSearchCuisine] = useState("");
-  const [cuisines, setCuisines] = useState(["All Cuisines"]);
 
   //useEffect es como le indicas a react que tu componente necesita hacer algo despues de renderizar
   useEffect(() => {
@@ -32,10 +32,10 @@ const RestaurantsList = (props) => {
   };
 
   const retrieveRestaurants = () => {
-    RestaurantDataService.getAll()
+    RequestsDataService.getUserRutas()
       .then((response) => {
         console.log(response.data);
-        setRestaurants(response.data.restaurants);
+        setResultados(response.data.resultados);
       })
       .catch((e) => {
         console.log(e);
@@ -43,10 +43,10 @@ const RestaurantsList = (props) => {
   };
 
   const retrieveCuisines = () => {
-    RestaurantDataService.getCuisines()
+    RequestsDataService.getCuisines()
       .then((response) => {
         console.log(response.data);
-        setCuisines(["All Cuisines"].concat(response.data)); //Dropdown menu
+        setEstado(["Estados"].concat(response.data)); //Dropdown menu
       })
       .catch((e) => {
         console.log(e);
@@ -58,10 +58,10 @@ const RestaurantsList = (props) => {
 
   const find = (query, by) => {
     // find es llamada dentro de otras funciones
-    RestaurantDataService.find(query, by)
+    RequestsDataService.find(query, by)
       .then((response) => {
         console.log(response.data);
-        setRestaurants(response.data.restaurants); //setRestauramt sera lo q recibamos del servidor backend
+        setResultados(response.data.resultados); //setRestauramt sera lo q recibamos del servidor backend
       })
       .catch((e) => {
         console.log(e);
@@ -77,10 +77,10 @@ const RestaurantsList = (props) => {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine === "All Cuisines") {
+    if (searchCuisine === "Estados") {
       refreshList();
     } else {
-      find(searchCuisine, "cuisine");
+      find(searchCuisine, "status");
     }
   };
 
@@ -125,9 +125,9 @@ const RestaurantsList = (props) => {
         </div>
         <div className="input-group col-lg-4">
           <select onChange={onChangeSearchCuisine}>
-            {cuisines.map((cuisine) => {
+            {estados.map((status) => {
               return (
-                <option value={cuisine}> {cuisine.substring(0, 20)} </option>
+                <option value={status}> {status.substring(0, 20)} </option>
               );
             })}
           </select>
@@ -145,30 +145,35 @@ const RestaurantsList = (props) => {
 
       {/* Cards */}
       <div className="row">
-        {restaurants.map((restaurant) => {
-          const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
+        {resultados.map((estadoX) => {
+          const address = `${estadoX.origen} / ${estadoX.destino}`;
+
           return (
             <div className="col-lg-4 pb-1">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{restaurant.name}</h5>
+                  <h5 className="card-title">{estadoX.name}</h5>
                   <p className="card-text">
-                    <strong>Cuisine: </strong>
-                    {restaurant.cuisine}
-                    <br />
-                    <strong>Address: </strong>
+                    <strong>Ruta: </strong>
                     {address}
+                    <br />
+                    <strong>Estado: </strong>
+                    {"📝"}
+                    {estadoX.status}
+                    <br />
+                    <strong>Valor por envio:</strong>
+                    {estadoX.valorRuta}💲
                   </p>
                   <div className="row">
-                    <Link
-                      to={"/restaurants/" + restaurant._id}
+                    {/* <Link
+                      to={"/resultados/" + estadoX._id}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Reviews
-                    </Link>
+                    </Link> */}
                     <a
-                      target=""
-                      href={"https://www.google.com/maps/place/" + address}
+                      target="_blank"
+                      href={"https://www.google.com/maps/dir/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
                     >
                       View Map

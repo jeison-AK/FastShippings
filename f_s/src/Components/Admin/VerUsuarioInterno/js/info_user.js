@@ -1,12 +1,13 @@
-import React from "react";
-import "../css/info_user.css";
-import Button_delete from "./btn_edit_del";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { getAccount } from "./data";
+import "../css/info_user.css";
+import DeleteModal from "./DeleteModal";
+import EditModal from "./EditModal";
 
 function Info_user() {
-  let params = useParams();
-  let accounts = getAccount(parseInt(params.userID, 10));
+  const { paramsID } = useParams(); //-paramsID porque asi es como se puso en el Route
+  const params = { paramsID };
+  const test = params.paramsID.split(",");
   return (
     <section class="card container h-80 p-3 bg-white rounded-4">
       <img
@@ -22,26 +23,15 @@ function Info_user() {
       </div>
       <ul class="list-group list-group-flush">
         <li className="list-group-item name_UI">
-          <strong>Name: </strong> {accounts.name}
+          <strong>Nombre: </strong> {test[0]}
         </li>
         <li className="list-group-item">
-          <strong>CC: </strong> {accounts.cc}
-        </li>
-        <li className="list-group-item">
-          <strong>Job: </strong> {accounts.job}
-        </li>
-        <li className="list-group-item">
-          <strong>Contact: </strong> {accounts.contact}
-        </li>
-        <li className="list-group-item">
-          <strong>Fecha de nacimiento: </strong> {accounts.due}
-        </li>
-        <li className="list-group-item">
-          <strong>Descripción: </strong> {accounts.description}
+          <strong>Correo: </strong> {test[1]}
         </li>
       </ul>
       <div class="card-body">
-        <Button_delete />
+        <EditModal />
+        <DeleteModal />
       </div>
     </section>
   );
