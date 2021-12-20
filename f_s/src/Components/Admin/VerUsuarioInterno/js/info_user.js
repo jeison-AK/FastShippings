@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../css/info_user.css";
-import Button_delete from "./btn_edit_del";
-import { getAccount } from "./data";
+import DeleteModal from "./DeleteModal";
+import EditModal from "./EditModal";
 
 function Info_user() {
   const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
   console.log(courseId);
-  // let accounts = getAccount(parseInt(params.userID, 10));
-  const [users, setCardsUsers] = useState([]);
   return (
     <section class="card container h-80 p-3 bg-white rounded-4">
       <img
@@ -31,7 +29,8 @@ function Info_user() {
         </li>
       </ul>
       <div class="card-body">
-        <Button_delete />
+        <EditModal />
+        <DeleteModal />
       </div>
     </section>
   );
