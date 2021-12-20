@@ -2,9 +2,9 @@ import { React } from "react";
 import { useParams } from "react-router-dom";
 
 function DeleteModal() {
-  const { courseId } = useParams();
-  const params = { courseId };
-  const test = params.courseId.split(",");
+  const { paramsID } = useParams();
+  const params = { paramsID };
+  const test = params.paramsID.split(",");
   const style = {
     margin: "0.5em",
     listStyle: "none",

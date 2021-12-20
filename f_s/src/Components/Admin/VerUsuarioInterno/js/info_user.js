@@ -5,9 +5,9 @@ import DeleteModal from "./DeleteModal";
 import EditModal from "./EditModal";
 
 function Info_user() {
-  const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
-  const params = { courseId };
-  const test = params.courseId.split(",");
+  const { paramsID } = useParams(); //-paramsID porque asi es como se puso en el Route
+  const params = { paramsID };
+  const test = params.paramsID.split(",");
   return (
     <section class="card container h-80 p-3 bg-white rounded-4">
       <img

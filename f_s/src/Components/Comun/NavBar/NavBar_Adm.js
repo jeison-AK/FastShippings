@@ -28,7 +28,7 @@ export function NavBar_Adm() {
                   <NavLink
                     to={`/card`}
                     className={({}) =>
-                      url === "/card/" || "/card/:courseId"
+                      url === "/card/" || "/card/:paramsID"
                         ? "nav-link active"
                         : "nav-link"
                     }
