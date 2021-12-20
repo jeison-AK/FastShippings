@@ -6,6 +6,10 @@ import EditModal from "./EditModal";
 
 function Info_user() {
   const { courseId } = useParams(); //-courseId porque asi es como se puso en el Route
+  const params = { courseId };
+  const test = params.courseId.split("-");
+  console.log(params, "🍎🍎");
+  console.log(test, "👀👀😅😅");
   console.log(courseId);
   return (
     <section class="card container h-80 p-3 bg-white rounded-4">
@@ -25,7 +29,7 @@ function Info_user() {
           <strong>Nombre: </strong> {courseId}
         </li>
         <li className="list-group-item">
-          {/* <strong>Correo: </strong> {users.email} */}
+          <strong>Correo: </strong> {courseId}
         </li>
       </ul>
       <div class="card-body">
