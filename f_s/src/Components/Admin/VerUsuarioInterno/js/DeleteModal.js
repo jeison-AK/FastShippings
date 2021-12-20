@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 function DeleteModal() {
   const { courseId } = useParams();
+  const params = { courseId };
+  const test = params.courseId.split(",");
   const style = {
     margin: "0.5em",
     listStyle: "none",
@@ -32,7 +34,7 @@ function DeleteModal() {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                Eliminando usuario {courseId}
+                Eliminando usuario {test[0]}
               </h5>
               <button
                 type="button"
