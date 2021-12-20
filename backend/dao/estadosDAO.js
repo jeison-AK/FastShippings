@@ -12,7 +12,7 @@ export default class StatusDAO {
       return; //si ya hay una referencia return
     }
     try {
-      status = await conn.db(process.env.DATABASE_NS).collection("users"); //intentamos obtener una conexion a la "collection resturants" de la base de datos
+      status = await conn.db(process.env.DATABASE_NS).collection("users"); //intentamos obtener una conexion a la "collection users" de la base de datos
     } catch (e) {
       console.error(
         `Unable to establish a collection handle in statusDAO: ${e}`
@@ -113,14 +113,13 @@ export default class StatusDAO {
 
   static async getEstados() {
     //drompdown en home
-    let cuisines = [];
+    let dropdown = [];
     try {
-      console.log("🔥estados🔥");
-      cuisines = await status.distinct("status");
-      return cuisines;
+      dropdown = await status.distinct("status");
+      return dropdown;
     } catch (e) {
       console.error(`Unable to get cuisines, ${e}`);
-      return cuisines;
+      return dropdown;
     }
   }
 }

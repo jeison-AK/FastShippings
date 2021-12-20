@@ -64,7 +64,7 @@ function Section_cards() {
             class="container-fluid d-flex justify-content-center"
           >
             <div class="row">
-              <div class="col-md-9">
+              <div class="col-md-8">
                 <section class="addUserBody container-fluid">
                   <section id="services" className="services">
                     <div className="container h-100 p-5 text-white bg-dark rounded-3 ">
@@ -151,14 +151,14 @@ function Section_cards() {
                   </section>
                 </section>
               </div>
-              <div class="col-md-3"></div>
+              <div className="col-6 col-md-4">
+                children
+                <Outlet />
+              </div>
+              {/* <div class="col-md-3"></div> */}
             </div>
           </section>
         </main>
-      </div>
-      <div>
-        children
-        <Outlet />
       </div>
     </section>
   );
