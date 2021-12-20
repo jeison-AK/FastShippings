@@ -151,14 +151,12 @@ function Section_cards() {
                   </section>
                 </section>
               </div>
-              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                <Outlet />
+              </div>
             </div>
           </section>
         </main>
-      </div>
-      <div>
-        children
-        <Outlet />
       </div>
     </section>
   );
