@@ -73,7 +73,7 @@ export function NavBar_Adm() {
               <NavLink
                 to={`/inicio`}
                 className={({}) =>
-                  url === "/HomeUsExt" ? "nav-link active" : "nav-link "
+                  url === "/inicio" ? "nav-link active" : "nav-link "
                 }
               >
                 Despachos

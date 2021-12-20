@@ -1,11 +1,6 @@
-import { React } from "react";
-import { useParams } from "react-router-dom";
-import Edit_user from "../../EditarUsuarioInterno/editUI";
+import Add_user from "../../AgregarUsuarioInterno/add_user";
 
 function EditModal() {
-  const { paramsID } = useParams();
-  const params = { paramsID };
-  const test = params.paramsID.split(",");
   const style = {
     margin: "0.5em",
     listStyle: "none",
@@ -17,25 +12,25 @@ function EditModal() {
       <button
         style={style}
         type="button"
-        class="btn btn-success"
+        class="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#EditModal"
+        data-bs-target="#AddModal"
       >
-        Editar
+        Agregar usuario
       </button>
       {/* modal */}
       <div
         class="modal fade"
-        id="EditModal"
+        id="AddModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content bg-success">
+          <div class="modal-content bg-primary">
             <div class="modal-header">
               <h2 class="modal-title" id="exampleModalLabel">
-                Editar {test[0]}
+                Agregando un usuario
               </h2>
               <button
                 type="button"
@@ -45,10 +40,10 @@ function EditModal() {
               ></button>
             </div>
             <div class="modal-body">
-              <Edit_user />
+              <Add_user />
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-success">
                 Guardar Cambios
               </button>
               <button
