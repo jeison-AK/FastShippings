@@ -64,7 +64,7 @@ function Section_cards() {
             class="container-fluid d-flex justify-content-center"
           >
             <div class="row">
-              <div class="col-md-9">
+              <div class="col-md-8">
                 <section class="addUserBody container-fluid">
                   <section id="services" className="services">
                     <div className="container h-100 p-5 text-white bg-dark rounded-3 ">
@@ -111,7 +111,7 @@ function Section_cards() {
                               .map((users) => (
                                 // Esto lo que hace es aplicar el "mapeo" en la consulta y lo erroja como link
                                 <NavLink
-                                  to={`/card/${users.name}`}
+                                  to={`/card/${users.name},${users.email}`}
                                   style={({ isActive }) => ({
                                     display: "flex",
                                     alignItems: "between",
