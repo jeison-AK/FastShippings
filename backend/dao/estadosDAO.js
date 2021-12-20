@@ -2,29 +2,29 @@ import mongodb from "mongodb";
 
 const ObjectId = mongodb.ObjectId;
 
-let restaurants; // para guardar una referencia a nuestra base de datos
+let status; // para guardar una referencia a nuestra base de datos
 
-export default class RestaurantsDAO {
+export default class StatusDAO {
   static async injectDB(conn) {
     //es como inicialmente conectamos a la base de datoss
     //llamaremos este metodo tan pronto como nuestro servidor de se corra, es decir tomaremos una referencia a nuestra base de datos
-    if (restaurants) {
+    if (status) {
       return; //si ya hay una referencia return
     }
     try {
-      restaurants = await conn
-        .db(process.env.RESTREVIEWS_NS)
-        .collection("restaurants"); //intentamos obtener una conexion a la "collection resturants" de la base de datos
+      status = await conn.db(process.env.DATABASE_NS).collection("status"); //intentamos obtener una conexion a la "collection resturants" de la base de datos
     } catch (e) {
       console.error(
-        `Unable to establish a collection handle in restaurantsDAO: ${e}`
+        `Unable to establish a collection handle in statusDAO: ${e}`
       );
     }
   }
 
-  //es lo que llamamos cuando queremos obtener una lista de todos los restaurantes
+  //TODO no se esta implementando aún:
+  //es lo que llamamos cuando queremos obtener una lista de algun tipo de status todos los pendientes o completados etc
+  //!se puede implementar un filtro similar para obtener usuarios por id etc
   static async getRestaurants({
-    filters = null, //filtrar por nombre,  zipcode, cuisine  (son fields q existen en la db)
+    filters = null, //filtrar por status  (son fields q existen en la db)
     page = 0, //q pagina quieres ver
     restaurantsPerPage = 20, //default ver solo 20 resultados por pagina
   } = {}) {
@@ -32,12 +32,12 @@ export default class RestaurantsDAO {
     if (filters) {
       //este filtro puede estar vacio hasta q se escoja uno de ellos
       //esta es la logica de los filtros:
-      if ("name" in filters) {
-        query = { $text: { $search: filters["name"] } };
-      } else if ("cuisine" in filters) {
-        query = { cuisine: { $eq: filters["cuisine"] } }; //si la "cuisine" de la base de datos es equal a la cosina que se le paso (filters["cuisine"])
+      if ("status" in filters) {
+        query = { status: { $eq: filters["status"] } };
       } else if ("zipcode" in filters) {
         query = { "address.zipcode": { $eq: filters["zipcode"] } };
+      } else if ("page" in filters) {
+        query = { page: { $eq: filters["page"] } };
       }
     }
 
@@ -45,7 +45,7 @@ export default class RestaurantsDAO {
 
     try {
       //ejecutara la query que se tomo del filtro
-      cursor = await restaurants.find(query);
+      cursor = await status.find(query);
     } catch (e) {
       console.error(`Unable to issue find command, ${e}`);
       return { restaurantsList: [], totalNumRestaurants: 0 }; //returns an empty list and 0 for total number of restaurants
@@ -57,7 +57,7 @@ export default class RestaurantsDAO {
       .skip(restaurantsPerPage * page);
     try {
       const restaurantsList = await displayCursor.toArray(); //sele hace un set a tipo array
-      const totalNumRestaurants = await restaurants.countDocuments(query); //cuenta el numero de documentos que existen
+      const totalNumRestaurants = await status.countDocuments(query); //cuenta el numero de documentos que existen
 
       return { restaurantsList, totalNumRestaurants }; //aqui seretorna la erray
     } catch (e) {
@@ -104,17 +104,18 @@ export default class RestaurantsDAO {
           },
         },
       ];
-      return await restaurants.aggregate(pipeline).next();
+      return await status.aggregate(pipeline).next();
     } catch (e) {
       console.error(`Something went wrong in getRestaurantByID: ${e}`);
       throw e;
     }
   }
 
-  static async getCuisines() {
+  static async getEstados() {
     let cuisines = [];
     try {
-      cuisines = await restaurants.distinct("cuisine");
+      console.log("🔥🔥");
+      cuisines = await status.distinct("status");
       return cuisines;
     } catch (e) {
       console.error(`Unable to get cuisines, ${e}`);

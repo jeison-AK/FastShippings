@@ -1,15 +1,9 @@
 import React from "react";
-import NewNavBar from "../../Comun/NavBar/NavBar_JM";
 import "../../Comun/NavBar/navBar.css";
-import Footer from "../../Comun/footer/footer";
 import delivery from "../OrdenDespacho/delivery-truck.png";
 export default function OrdenDespacho() {
   return (
     <div>
-      <nav>
-        <NewNavBar />
-      </nav>
-
       <div class="container">
         <main>
           <div class="py-5 text-center">
@@ -385,7 +379,6 @@ export default function OrdenDespacho() {
           </div>
         </main>
       </div>
-      <Footer />
     </div>
   );
 }

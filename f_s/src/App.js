@@ -1,68 +1,88 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
 
-import AddReview from "../src/Components/UsuarioExterno/add-review";
-import Restaurant from "../src/Components/UsuarioExterno/restaurants";
-import RestaurantsList from "../src/Components/UsuarioExterno/restaurants-list";
-import Login from "../src/Components/UsuarioExterno/login";
+//Component imports
+import HomeP from "./Components/LandingPage/Principal/home";
+import Home from "./Components/UsuarioExterno/Home/homeComp";
+import AboutUSmain from "./Components/Comun/AboutUs/about_us";
+import Registro from "./Components/LandingPage/Registro/registro";
+import OrdenDespacho from "../src/Components/UsuarioExterno/OrdenDespacho/ordenDespacho";
+
+// Section admin
+import ViewUserAdm from "./Components/Admin/VerUsuarioInterno/js/ViewUserAdm";
+import Add_user from "./Components/Admin/AgregarUsuarioInterno/add_user";
+import Info_user from "./Components/Admin/VerUsuarioInterno/js/info_user";
+import Rutas from "./Components/UsuarioInterno/Rutas/rutas";
+import ViewHisUI from "./Components/UsuarioInterno/Historial/js/ViewHisUI";
+import Info_orden from "./Components/UsuarioInterno/Historial/js/info_orden";
+import Login from "./Components/LandingPage/Login/Login";
+import Solicitud from "./Components/UsuarioInterno/Solicitudes/Solicitud";
+import { NavBar_Adm } from "./Components/Comun/NavBar/NavBar_Adm";
+import Separador from "./Components/Comun/Separador/separador";
+import Footer from "./Components/Comun/footer/footer";
+import PrivateAmin from "./Components/Admin/Authentication/Auth";
 
 function App() {
-  const [user, setUser] = React.useState(null);
-
-  async function login(user = null) {
-    setUser(user);
-  }
-
-  async function logout() {
-    setUser(null);
-  }
-
   return (
-    <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to="/restaurants" className="navbar-brand">
-          Restaurant Reviews
-        </Link>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/restaurants"} className="nav-link">
-              Restaurants
-            </Link>
-          </li>
-          <li className="nav-item">
-            {user ? (
-              <a
-                onClick={logout}
-                className="nav-link"
-                style={{ cursor: "pointer" }}
-              >
-                Logout {user.name}
-              </a>
-            ) : (
-              <Link to={"/login"} className="nav-link">
-                Login
-              </Link>
-            )}
-          </li>
-        </div>
-      </nav>
-      <div className="container mt-3">
-        <Routes>
-          <Route path={"/restaurants"} element={<RestaurantsList />} />
-          <Route
-            path="/restaurants/:id/review"
-            element={<AddReview user={user} />}
-          />
-          <Route path="/restaurants/:id" element={<Restaurant user={user} />} />
-          <Route path="/login" element={<Login login={login} />} />
-        </Routes>
-      </div>
-    </div>
+    <Router>
+      <NavBar_Adm />
+      <Separador />
+      <Routes>
+        <Route path="/" element={<HomeP />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/about" element={<AboutUSmain />} />
+
+        {/* 🔏🔏🔏🔏 */}
+        <Route path="/HomeUsExt" element={<PrivateOutletHome />}>
+          <Route path="" element={<Home />} />
+          <Route path="OrdenarDespacho" element={<OrdenDespacho />} />
+        </Route>
+        {/* 🔏🔏🔏🔏 */}
+
+        <Route path="rutas" element={<Rutas />} />
+        <Route path="historialui" element={<ViewHisUI />}>
+          <Route index element={<main style={{ padding: "1rem" }}></main>} />
+          <Route path=":userID" element={<Info_orden />} />
+        </Route>
+        <Route path="/Solicitud" element={<Solicitud />} />
+
+        {/* 🔏🔏🔏🔏 */}
+        <Route path="/Admin-user-int" element={<PrivateAmin />}>
+          <Route path="" element={<ViewUserAdm />}>
+            <Route index element={<main style={{ padding: "1rem" }}></main>} />
+            <Route path=":userID" element={<Info_user />} />
+          </Route>
+        </Route>
+        <Route path="Add_User" element={<Add_user />} />
+        {/* 🔏🔏🔏🔏 */}
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
 export default App;
 
+// const Private = () => <div>private</div>;  No se está usando, es un div de prueba solamente.
+
+//🏠
+const PrivateHome = () => <div>private HOME el auth es true</div>;
+
+function PrivateOutletHome() {
+  const auth = useAuthHome();
+  return auth ? <Outlet /> : <Navigate to="/login" />;
+}
+
+function useAuthHome() {
+  return true;
+}
 //Navigate replace redirecciona
 // no usamos <a> tags porque recarga toda la pagina en su lugar usamos Link
 //outlet indica en qué parte de la pagina cargar algún componente

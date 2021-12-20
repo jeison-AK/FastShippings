@@ -1,9 +1,9 @@
-import RestaurantsDAO from "../dao/restaurantsDAO.js";
+import estadosDAO from "../dao/estadosDAO.js";
 
-export default class RestaurantsController {
+export default class StatusController {
   //esta api se llama por medio de una url que puede ser una query string que es una forma en la q podemos especificar parametros
   //restaurantsPerPage será igual a lo que se le pase atravez de la url (query string), despues la convierte a un int y si no existe el default es 20
-  static async apiGetRestaurants(req, res, next) {
+  static async apiGetRoutes(req, res, next) {
     const restaurantsPerPage = req.query.restaurantsPerPage
       ? parseInt(req.query.restaurantsPerPage, 10)
       : 20;
@@ -21,7 +21,7 @@ export default class RestaurantsController {
     //ahora q ya tenemos los filtros (si es q se escogieron filtros) podemos pasarlos aquí
     //esto va a retornar una lista de restaurantes (restaurantList) y el numero total de restaurantes(totalNumRestaurants)
     const { restaurantsList, totalNumRestaurants } =
-      await RestaurantsDAO.getRestaurants({
+      await estadosDAO.getRestaurants({
         filters,
         page,
         restaurantsPerPage,
@@ -37,26 +37,11 @@ export default class RestaurantsController {
     };
     res.json(response); //aqui es donde enviamos la respuesta en un formato json
   }
-  static async apiGetRestaurantById(req, res, next) {
-    //una query es lo que sigue luego de ? un param es lo que va luego de un /
-    try {
-      let id = req.params.id || {};
-      let restaurant = await RestaurantsDAO.getRestaurantByID(id);
-      if (!restaurant) {
-        res.status(404).json({ error: "Not found" });
-        return;
-      }
-      res.json(restaurant);
-    } catch (e) {
-      console.log(`api, ${e}`);
-      res.status(500).json({ error: e });
-    }
-  }
 
-  static async apiGetRestaurantCuisines(req, res, next) {
+  static async apiGetEstados(req, res, next) {
     try {
-      let cuisines = await RestaurantsDAO.getCuisines();
-      res.json(cuisines);
+      let status = await estadosDAO.getEstados();
+      res.json(status);
     } catch (e) {
       console.log(`api, ${e}`);
       res.status(500).json({ error: e });
