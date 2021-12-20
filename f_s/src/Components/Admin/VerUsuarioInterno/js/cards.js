@@ -151,11 +151,10 @@ function Section_cards() {
                   </section>
                 </section>
               </div>
-              <div className="col-6 col-md-4">
-                children
+
+              <div class="col-md-3">
                 <Outlet />
               </div>
-              {/* <div class="col-md-3"></div> */}
             </div>
           </section>
         </main>
