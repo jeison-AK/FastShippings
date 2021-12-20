@@ -60,10 +60,10 @@ function Bundles() {
 }
 function CourseId() {
   const navigate = useNavigate();
-  const { paramID } = useParams(); //-paramID porque asi es como se puso en el Route
+  const { paramsID } = useParams(); //-paramsID porque asi es como se puso en el Route
   return (
     <div>
-      <h1>El parametro de la URL es: {paramID}</h1>
+      <h1>El parametro de la URL es: {paramsID}</h1>
       <button
         onClick={() => {
           navigate("/dashboard", { state: "399" });

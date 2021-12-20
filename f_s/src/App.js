@@ -83,7 +83,7 @@ class App extends React.Component {
 
           {/* 🔏🔏🔏🔏 */}
           <Route path="card/" element={<Section_cards />}>
-            <Route path=":paramID" element={<Info_user />} />
+            <Route path=":paramsID" element={<Info_user />} />
             <Route path="Add_User" element={<Add_user />} />
             <Route path="Edit_User" element={<Edit_user />} />
           </Route>

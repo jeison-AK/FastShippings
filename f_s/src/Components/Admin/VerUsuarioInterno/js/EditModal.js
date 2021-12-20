@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import Edit_user from "../../EditarUsuarioInterno/editUI";
 
 function EditModal() {
-  const { courseId } = useParams();
+  const { paramsID } = useParams();
+  const params = { paramsID };
+  const test = params.paramsID.split(",");
   const style = {
     margin: "0.5em",
     listStyle: "none",
@@ -33,7 +35,7 @@ function EditModal() {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                Editando usuario {courseId}
+                Editando usuario {test[0]}
               </h5>
               <button
                 type="button"
