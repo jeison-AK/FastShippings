@@ -86,63 +86,6 @@ const RestaurantsList = (props) => {
 
   return (
     <div>
-      <div className="row pb-1">
-        <div className="input-group col-lg-4">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search by name"
-            value={searchName}
-            onChange={onChangeSearchName}
-          />
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByName}
-            >
-              Search
-            </button>
-          </div>
-        </div>
-        <div className="input-group col-lg-4">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search by zip"
-            value={searchZip}
-            onChange={onChangeSearchZip}
-          />
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByZip}
-            >
-              Search
-            </button>
-          </div>
-        </div>
-        <div className="input-group col-lg-4">
-          <select onChange={onChangeSearchCuisine}>
-            {estados.map((status) => {
-              return (
-                <option value={status}> {status.substring(0, 20)} </option>
-              );
-            })}
-          </select>
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByCuisine}
-            >
-              Search
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Cards */}
       <div className="row">
         {resultados.map((estadoX) => {
