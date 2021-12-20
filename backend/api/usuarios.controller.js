@@ -8,8 +8,8 @@ export default class UsuariosController {
     var { filters, page, resultsPerPage } = filtros(req);
 
     //ahora q ya tenemos los filtros (si es q se escogieron filtros) podemos pasarlos aquí
-    //esto va a retornar una lista de restaurantes (restaurantList) y el numero total de restaurantes(totalNumRestaurants)
-    const { dataList, totalNumRestaurants } = await estadosDAO.getAllData({
+    //esto va a retornar una lista de restaurantes (restaurantList) y el numero total de restaurantes(totalNumResultados)
+    const { dataList, totalNumResultados } = await estadosDAO.getAllData({
       filters,
       page,
       resultsPerPage,
@@ -21,7 +21,7 @@ export default class UsuariosController {
       page: page,
       filters: filters,
       entries_per_page: resultsPerPage,
-      total_results: totalNumRestaurants,
+      total_results: totalNumResultados,
     };
     res.json(response); //aqui es donde enviamos la respuesta en un formato json
   }
@@ -30,8 +30,8 @@ export default class UsuariosController {
     var { filters, page, resultsPerPage } = filtros(req);
 
     //ahora q ya tenemos los filtros (si es q se escogieron filtros) podemos pasarlos aquí
-    //esto va a retornar una lista de restaurantes (restaurantList) y el numero total de restaurantes(totalNumRestaurants)
-    const { dataList, totalNumRestaurants } = await RutasDAO.getAllData({
+    //esto va a retornar una lista de restaurantes (restaurantList) y el numero total de restaurantes(totalNumResultados)
+    const { dataList, totalNumResultados } = await RutasDAO.getAllData({
       filters,
       page,
       resultsPerPage,
@@ -43,7 +43,7 @@ export default class UsuariosController {
       page: page,
       filters: filters,
       entries_per_page: resultsPerPage,
-      total_results: totalNumRestaurants,
+      total_results: totalNumResultados,
     };
     res.json(response); //aqui es donde enviamos la respuesta en un formato json
   }
