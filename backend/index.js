@@ -23,6 +23,7 @@ MongoClient.connect(process.env.DB_URI, {
   })
   .then(async (client) => {
     await estadosDAO.injectDB(client); //reference to the restaurants collection in the database, lo q sigue es crear el controller
+    // await estadosDAO.injectDB(client, `status`); //reference to the restaurants collection in the database, lo q sigue es crear el controller
     // q el arichivo route usara para acceder eñ archivo DAO
     await RutasDAO.injectDB(client);
     await ReviewsDAO.injectDB(client);

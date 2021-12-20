@@ -31,12 +31,13 @@ import Separador from "./Components/Comun/Separador/separador";
 import Footer from "./Components/Comun/footer/footer";
 import PrivateAmin from "./Components/Admin/Authentication/Auth";
 import Edit_user from "./Components/Admin/EditarUsuarioInterno/editUI";
+import Section_cards from "./Components/Admin/VerUsuarioInterno/js/cards";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: false,
+      logged: true,
       username: "",
     };
     this.updateState = this.updateState.bind(this);
@@ -81,16 +82,10 @@ class App extends React.Component {
           <Route path="/Solicitud" element={<Solicitud />} />
 
           {/* 🔏🔏🔏🔏 */}
-          <Route path="/Admin-user-int" element={<PrivateAmin />}>
-            <Route path="" element={<ViewUserAdm />}>
-              <Route
-                index
-                element={<main style={{ padding: "1rem" }}></main>}
-              />
-              <Route path=":userID" element={<Info_user />} />
-              <Route path="Add_User" element={<Add_user />} />
-              <Route path="Edit_User" element={<Edit_user />} />
-            </Route>
+          <Route path="card/" element={<Section_cards />}>
+            <Route path=":courseId" element={<Info_user />} />
+            <Route path="Add_User" element={<Add_user />} />
+            <Route path="Edit_User" element={<Edit_user />} />
           </Route>
           {/* 🔏🔏🔏🔏 */}
         </Routes>
