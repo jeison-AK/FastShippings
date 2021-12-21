@@ -7,7 +7,7 @@ export function NavBar_Adm() {
   return (
     <div className="navbar navbar-expand-md navbar-light fixed-top bg-light grid navigation">
       <div className="container-fluid nav-tabs ">
-        <NavLink className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/card">
           <img clas="" src="https://i.ibb.co/2FSrXtq/LOGO-82x64.jpg" />
         </NavLink>
 
@@ -21,7 +21,7 @@ export function NavBar_Adm() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Visualizar como
+                Admin
               </a>
               <ul className="dropdown-menu" aria-labelledby="dropdown04">
                 <li className="nav-item">
@@ -33,27 +33,7 @@ export function NavBar_Adm() {
                         : "nav-link"
                     }
                   >
-                    Administrador
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    to={`/historialui`}
-                    className={({}) =>
-                      url === "/historialui" ? "nav-link active" : "nav-link"
-                    }
-                  >
-                    Usuario Interno
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    to={`/HomeUsExt`}
-                    className={({}) =>
-                      url === "/HomeUsExt" ? "nav-link active" : "nav-link"
-                    }
-                  >
-                    Usuario Externo
+                    Usuarios
                   </NavLink>
                 </li>
               </ul>
@@ -61,19 +41,9 @@ export function NavBar_Adm() {
 
             <li className="nav-item">
               <NavLink
-                to={`/`}
+                to={`/despachos`}
                 className={({}) =>
-                  url === "/" ? "nav-link active" : "nav-link "
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to={`/inicio`}
-                className={({}) =>
-                  url === "/inicio" ? "nav-link active" : "nav-link "
+                  url === "/despachos" ? "nav-link active" : "nav-link "
                 }
               >
                 Despachos
@@ -115,17 +85,6 @@ export function NavBar_Adm() {
 
             <li className="nav-item">
               <NavLink
-                to={`/about`}
-                className={({}) =>
-                  url === "/about" ? "nav-link active" : "nav-link "
-                }
-              >
-                Sobre nosotros
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
                 to={`/HomeUsExt/OrdenarDespacho`}
                 className={({}) =>
                   url === "HomeUsExt/OrdenarDespacho"
@@ -142,19 +101,19 @@ export function NavBar_Adm() {
             <a href="#">
               <button
                 type="button"
-                className="btn btn-info me-2 p-2 flex-fill bd-highlight"
+                className="btn btn-outline-info me-2 p-2 flex-fill bd-highlight"
               >
                 Mi cuenta
               </button>
             </a>
-            <a href="/login">
+            {/* <a href="/login">
               <button
                 type="button"
                 className="btn btn-outline-primary me-2 p-2 flex-fill bd-highlight"
               >
                 Iniciar sesión
               </button>
-            </a>
+            </a> 
             <a href="/registro">
               <button
                 type="button"
@@ -162,8 +121,8 @@ export function NavBar_Adm() {
               >
                 Registrarse
               </button>
-            </a>
-            <a href="/registro">
+            </a>*/}
+            <a href="#">
               <button
                 type="button"
                 className="btn btn-danger p-2 flex-fill bd-highlight"

@@ -3,69 +3,46 @@ import { Link, NavLink } from "react-router-dom";
 
 function Registro() {
   return (
-    <div class="grid">
-      <main>
-        <div class="card-header">
-          <h3 class="text-center font-weight-light my-4">Regístrese</h3>
+    <div className="grid">
+      <main className="col align-self-center">
+        <div className="card-header">
+          <h3 className="text-center font-weight-light my-4">Regístrese</h3>
         </div>
-        <div class="card-body">
-          <form>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <div class="form-floating mb-3 mb-md-0">
-                  <input
-                    class="form-control"
-                    id="inputFirstName"
-                    type="text"
-                    placeholder="Nombre"
-                    autoFocus
-                    required
-                  />
-                  <label for="inputFirstName">Nombre</label>
+        <div className="col align-self-auto">
+          <div className="card-body row mb-3">
+            <form>
+              <div className="row mb-3">
+                <div className="col-md-6">
+                  <div className="form-floating mb-3 mb-md-0">
+                    <input
+                      className="form-control"
+                      id="inputFirstName"
+                      type="text"
+                      placeholder="Nombre"
+                      autoFocus
+                      required
+                    />
+                    <label for="inputFirstName">Nombre</label>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input
-                    class="form-control"
-                    id="inputLastName"
-                    type="text"
-                    placeholder="Apellido"
-                    required
-                  />
-                  <label for="inputLastName">Apellido</label>
+              <div className="row mb-3">
+                <div className="col-md-6">
+                  <div className="form-floating">
+                    <input
+                      className="form-control"
+                      id="inputLastName"
+                      type="mail"
+                      placeholder="mail"
+                      required
+                    />
+                    <label for="inputLastName">E-mail</label>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <div class="form-floating mb-3 mb-md-0">
-                  <input
-                    class="form-control"
-                    id="inputFirstName"
-                    type="number"
-                    placeholder="Documento"
-                    required
-                  />
-                  <label for="inputFirstName">Número de documento</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input
-                    class="form-control"
-                    id="inputLastName"
-                    type="mail"
-                    placeholder="mail"
-                    required
-                  />
-                  <label for="inputLastName">E-mail</label>
-                </div>
-              </div>
-            </div>
-            <div>
+              {/* <div>
               <select
-                class="form-select"
+                className="form-select"
                 aria-label="Default select example"
                 required
               >
@@ -74,50 +51,45 @@ function Registro() {
                 <option value="2">Persona juridica</option>
                 <option value="3">Representante legal</option>
               </select>
-            </div>
-            <p />
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <div class="form-floating mb-3 mb-md-0">
-                  <input
-                    class="form-control"
-                    id="inputPassword"
-                    type="password"
-                    placeholder="Create a password"
-                    required
-                    minLength="6"
-                  />
-                  <label for="inputPassword">Password</label>
+            </div> */}
+
+              <div className="row mb-3">
+                <div className="col-md-6">
+                  <div className="form-floating mb-3 mb-md-3">
+                    <input
+                      className="form-control"
+                      id="inputPassword"
+                      type="password"
+                      placeholder="Create a password"
+                      required
+                      minLength="6"
+                    />
+                    <label for="inputPassword">Password</label>
+                  </div>
+                  <div className="form-floating mb-3 mb-md-0">
+                    <input
+                      className="form-control"
+                      id="inputPasswordConfirm"
+                      type="password"
+                      placeholder="Confirm password"
+                      required
+                    />
+                    <label for="inputPasswordConfirm">Confirmar Password</label>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-floating mb-3 mb-md-0">
-                  <input
-                    class="form-control"
-                    id="inputPasswordConfirm"
-                    type="password"
-                    placeholder="Confirm password"
-                    required
-                  />
-                  <label for="inputPasswordConfirm">Confirmar Password</label>
-                </div>
-              </div>
-            </div>
-            <div class="mt-4 mb-0">
-              <div class="d-grid">
-                <a class="btn btn-success " href="#">
+              <div className="mt-4 mb-0">
+                {/* <a className="btn btn-success " href="#">
                   Crear cuenta
-                </a>
-              </div>
-            </div>
-            <div class="mt-4 mb-0">
-              <div class="d-grid">
-                <Link class="btn btn-warning" to="/">
+                </a> */}
+                <button className="btn btn-success ">Crear cuenta</button>
+                {" | "}
+                <Link className="btn btn-warning" to="/">
                   Volver
                 </Link>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </main>
     </div>

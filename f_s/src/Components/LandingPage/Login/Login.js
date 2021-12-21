@@ -62,6 +62,7 @@ export default class Login extends Component {
                 placeholder="Nombre"
                 type="text"
                 onChange={this.handleChange}
+                requiered
               />
 
               <label className="label">CONTRASEÑA</label>
@@ -72,6 +73,7 @@ export default class Login extends Component {
                 placeholder="Contraseña"
                 type="password"
                 onChange={this.handleChange}
+                requiered
               />
 
               <input
@@ -96,8 +98,6 @@ export default class Login extends Component {
             </section>
           </section>
           <div>
-            <br></br>
-            <br></br>
             <br></br>
             <br></br>
             <footer className="footer_login">

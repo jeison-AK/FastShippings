@@ -1,16 +1,15 @@
 import Add_user from "../../AgregarUsuarioInterno/add_user";
 
-function EditModal() {
-  const style = {
-    margin: "0.5em",
-    listStyle: "none",
-  };
+function AddModal() {
+  // const style = {
+  //   margin: "0.5em",
+  //   listStyle: "none",
+  // };
 
   return (
     <div>
       {/* ---------------------------------------------- */}
       <button
-        style={style}
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
@@ -43,11 +42,11 @@ function EditModal() {
               <Add_user />
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">
+              <button type={Add_user.onSubmit} class="btn btn-success">
                 Guardar Cambios
               </button>
               <button
-                type="button"
+                type="submit"
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
@@ -62,4 +61,4 @@ function EditModal() {
   );
 }
 
-export default EditModal;
+export default AddModal;
