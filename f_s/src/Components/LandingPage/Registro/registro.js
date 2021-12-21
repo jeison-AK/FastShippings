@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Registro() {
   return (
@@ -78,8 +78,10 @@ function Registro() {
                   </div>
                 </div>
               </div>
-              <div className="mt-4 mb-0">
-                {/* <a className="btn btn-success " href="#">
+            </div>
+            <div class="mt-4 mb-0">
+              <div class="d-grid">
+                <a class="btn btn-success" href="#">
                   Crear cuenta
                 </a> */}
                 <button className="btn btn-success ">Crear cuenta</button>

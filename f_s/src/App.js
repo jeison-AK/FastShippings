@@ -59,11 +59,6 @@ class App extends React.Component {
           </Route> */}
           <Route>
             <Route path="/" element={<HomeP />} />
-
-            <Route
-              path="/Login"
-              element={<Login onTryLogin={this.updateState} />}
-            />
             <Route path="/registro" element={<Registro />} />
           </Route>
         </Routes>
@@ -77,9 +72,11 @@ class App extends React.Component {
         <NavBar_Adm />
         <Separador />
         <Routes>
-          <Route path={"/despachos"} element={<HomeList />} />
-          <Route path="/Login" element={<HomeP />} />
 
+          <Route path="/" element={<HomeP />} />
+          <Route path={"/inicio"} element={<HomeList />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/registro" element={<Registro />} />
           <Route path="/about" element={<AboutUSmain />} />
 
           {/* 🔏🔏🔏🔏 */}
