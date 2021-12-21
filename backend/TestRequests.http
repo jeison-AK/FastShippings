@@ -1,7 +1,26 @@
-@host = http://localhost:5000
+@host = http://localhost:5000/api/v1/users
 
-GET {{host}}/api/v1/users/
+GET {{host}}
 ###
-GET {{host}}/api/v1/users/rut
+GET {{host}}/rut
 ###
-GET {{host}}/api/v1/users/status HTTP/1.1
+GET {{host}}/status HTTP/1.1
+
+###
+POST {{host}}/review
+content-type: application/json
+
+{
+    "origen": "Cucuta",
+    "destino": "Bogota",
+    "valorPorKm": {
+        "$numberInt": "3500"
+    },
+    "distanciaKm": {
+        "$numberInt": "401"
+    },
+    "valorRuta": {
+        "$numberInt": "1942000"
+    },
+    "status": "⚫"
+}

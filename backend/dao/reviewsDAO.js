@@ -10,20 +10,28 @@ export default class ReviewsDAO {
       return;
     }
     try {
-      reviews = await conn.db(process.env.RESTREVIEWS_NS).collection("reviews"); //creara esta colleccion automaticamente si no existe
+      reviews = await conn.db(process.env.RESTREVIEWS_NS).collection("rutas"); //creara esta colleccion automaticamente si no existe
     } catch (e) {
       console.error(`Unable to establish collection handles in userDAO: ${e}`);
     }
   }
 
-  static async addReview(restaurantId, user, review, date) {
+  static async addReview(
+    origen,
+    destino,
+    distanciaKm,
+    valorRuta,
+    status,
+    date
+  ) {
     try {
       const reviewDoc = {
-        name: user.name,
-        user_id: user._id,
+        origen: origen,
+        destino: destino,
+        distanciaKm: distanciaKm,
+        valorRuta: valorRuta,
+        status: status,
         date: date,
-        text: review,
-        restaurant_id: ObjectId(restaurantId),
       };
 
       return await reviews.insertOne(reviewDoc); //hacemos un insert a la base de datos
