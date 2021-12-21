@@ -7,11 +7,11 @@ GET {{host}}/rut
 GET {{host}}/status HTTP/1.1
 
 ###
-POST {{host}}/review
+POST {{host}}/newRouteData
 content-type: application/json
 
 {
-    "origen": "Cucuta",
+    "origen": "Monteria",
     "destino": "Bogota",
     "valorPorKm": {
         "$numberInt": "3500"
@@ -22,5 +22,5 @@ content-type: application/json
     "valorRuta": {
         "$numberInt": "1942000"
     },
-    "status": "⚫"
+    "status": "🟢"
 }
