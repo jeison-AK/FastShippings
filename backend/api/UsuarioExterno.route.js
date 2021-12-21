@@ -9,7 +9,7 @@ router.route("/").get(Estados.apiGetUserEstados); //lo q se retornara en este ro
 router.route("/status").get(Estados.apiGetEstados); //list of cuisines resason: we want the user to be able to select a cuisine from a dropdown menu
 router.route("/rut").get(Estados.apiGetRoutes);
 router
-  .route("/review")
+  .route("/newRouteData")
   .post(ReviewsCtrl.apiPostReview)
   .put(ReviewsCtrl.apiUpdateReview)
   .delete(ReviewsCtrl.apiDeleteReview);
