@@ -27,26 +27,14 @@ const AddReview = (props) => {
       restaurant_id: props.match.params.id,
     };
 
-    if (editing) {
-      data.review_id = props.location.state.currentReview._id;
-      RequestsData.updateReview(data)
-        .then((response) => {
-          setSubmitted(true);
-          console.log(response.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    } else {
-      RequestsData.postRutas(data)
-        .then((response) => {
-          setSubmitted(true);
-          console.log(response.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
+    RequestsData.postRutas(data)
+      .then((response) => {
+        setSubmitted(true);
+        console.log(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
