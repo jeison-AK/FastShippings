@@ -1,7 +1,32 @@
 import "./rutas.css";
 import Separador from "../../Comun/Separador/separador";
+import RequestsData from "../../../services/requests.http";
+import React, { useState, useEffect } from "react";
 
 export default function Rutas() {
+  const [rutas, setRuta] = useState([]);
+
+  useEffect(() => {
+    retrieveCardsUsers(); //traerse los usuarios
+  }, []);
+
+  const retrieveCardsUsers = () => {
+    RequestsData.postRutas()
+      .then((response) => {
+        console.log(response.data.resultados, "🔥");
+        console.log(rutas.name, "🔥🔥🔥🔥");
+        setRuta(response.data.resultados);
+        console.log(
+          response.data.resultados.find((o) => o.name === "Robert Baratheon"),
+          "👻👻👻👻"
+        );
+        console.log();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return (
     <div class="container-md">
       <Separador />

@@ -1,0 +1,26 @@
+@host = http://localhost:5000/api/v1/users
+
+GET {{host}}
+###
+GET {{host}}/rut
+###
+GET {{host}}/status HTTP/1.1
+
+###
+POST {{host}}/newRouteData
+content-type: application/json
+
+{
+    "origen": "Monteria",
+    "destino": "Bogota",
+    "valorPorKm": {
+        "$numberInt": "3500"
+    },
+    "distanciaKm": {
+        "$numberInt": "401"
+    },
+    "valorRuta": {
+        "$numberInt": "1942000"
+    },
+    "status": "🟢"
+}
