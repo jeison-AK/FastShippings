@@ -59,7 +59,7 @@ function Section_cards() {
                         <h2 className="pb-3 border-bottom">Usuarios</h2>
                         <div className="input-add_user">
                           <input
-                            placeholder="Introduzca documento"
+                            placeholder="Introduzca el nombre"
                             value={searchParams.get("filter") || ""}
                             onChange={(event) => {
                               let filter = event.target.value;
