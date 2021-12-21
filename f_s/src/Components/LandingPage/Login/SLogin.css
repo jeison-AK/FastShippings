@@ -74,3 +74,16 @@
   border-radius: 8px;
   color: rgba(55, 109, 224, 0.712);
 }
+
+li {
+  list-style: none;
+}
+
+.div-img {
+  justify-content: center;
+  padding-left: 25rem;
+}
+
+.d-grid {
+  justify-content: center;
+}

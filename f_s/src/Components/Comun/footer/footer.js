@@ -13,9 +13,32 @@ export default function Footer() {
               <use href="#bootstrap"></use>
             </svg>
           </a>
-          <span class="text-muted">Despachos Certificados® 2021</span>
+          <div>
+            <ul>
+              <li>
+                <span class="text-muted">📞: 01-8000-912-3423</span>
+              </li>
+              <li>
+                <span class="text-muted">📩 atencion@despachos.com.co</span>
+              </li>
+              <li>
+                <span class="text-muted">Despachos Certificados® 2021</span>
+              </li>
+              <li>
+                <span class="text-muted">Colombia</span>
+              </li>
+            </ul>
+          </div>
         </div>
-
+        <div class="div-img">
+          <a href="https://www.supertransporte.gov.co/" target={"_blank"}>
+            <img
+              src="https://i.ibb.co/jThNWVY/vigilado-supertransporte.jpg"
+              alt="Grupo-11376-2x"
+              border="0"
+            />
+          </a>
+        </div>
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3">
             <a class="button" href="twitter.com">

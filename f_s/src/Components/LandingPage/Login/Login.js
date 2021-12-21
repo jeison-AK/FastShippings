@@ -96,13 +96,9 @@ export default class Login extends Component {
             </section>
           </section>
           <div>
+          <br></br>
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
-            <footer className="footer_login">
-              <Footer />
-            </footer>
           </div>
         </main>
       </div>
