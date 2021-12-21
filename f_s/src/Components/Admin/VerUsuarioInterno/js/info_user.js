@@ -30,8 +30,10 @@ function Info_user() {
         </li>
       </ul>
       <div class="card-body">
-        <EditModal />
-        <DeleteModal />
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <EditModal />
+          <DeleteModal />
+        </div>
       </div>
     </section>
   );

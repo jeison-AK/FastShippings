@@ -44,7 +44,8 @@ function DeleteModal() {
               ></button>
             </div>
             <div class="modal-body">
-              Estas a punto de eliminar a este usuario, estás seguro?
+              Estas a punto de eliminar al usuario <strong>{test[0]}</strong>,
+              ¿Estás seguro de lo que hace?
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger">
