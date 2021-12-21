@@ -2,17 +2,24 @@ import mongodb from "mongodb";
 
 const ObjectId = mongodb.ObjectId;
 
+let usuarios; // para guardar una referencia a nuestra base de datos
 let status; // para guardar una referencia a nuestra base de datos
 
 export default class StatusDAO {
-  static async injectDB(conn) {
+  static async injectDB(conn, collection) {
     //es como inicialmente conectamos a la base de datoss
     //llamaremos este metodo tan pronto como nuestro servidor de se corra, es decir tomaremos una referencia a nuestra base de datos
-    if (status) {
+    if (usuarios) {
       return; //si ya hay una referencia return
     }
     try {
-      status = await conn.db(process.env.DATABASE_NS).collection("status"); //intentamos obtener una conexion a la "collection resturants" de la base de datos
+      if (collection === "users") {
+        usuarios = await conn
+          .db(process.env.DATABASE_NS)
+          .collection(collection);
+      } else if (collection === "status") {
+        status = await conn.db(process.env.DATABASE_NS).collection(collection);
+      }
     } catch (e) {
       console.error(
         `Unable to establish a collection handle in statusDAO: ${e}`
@@ -45,7 +52,7 @@ export default class StatusDAO {
 
     try {
       //ejecutara la query que se tomo del filtro
-      cursor = await status.find(query);
+      cursor = await usuarios.find(query);
     } catch (e) {
       console.error(`Unable to issue find command, ${e}`);
       return { dataList: [], totalNumRestaurants: 0 }; //returns an empty list and 0 for total number of restaurants
@@ -57,7 +64,7 @@ export default class StatusDAO {
       .skip(restaurantsPerPage * page);
     try {
       const dataList = await displayCursor.toArray(); //sele hace un set a tipo array
-      const totalNumRestaurants = await status.countDocuments(query); //cuenta el numero de documentos que existen
+      const totalNumRestaurants = await usuarios.countDocuments(query); //cuenta el numero de documentos que existen
 
       return { dataList, totalNumRestaurants }; //aqui seretorna la erray
     } catch (e) {
@@ -104,7 +111,7 @@ export default class StatusDAO {
           },
         },
       ];
-      return await status.aggregate(pipeline).next();
+      return await usuarios.aggregate(pipeline).next();
     } catch (e) {
       console.error(`Something went wrong in getRestaurantByID: ${e}`);
       throw e;
@@ -113,14 +120,13 @@ export default class StatusDAO {
 
   static async getEstados() {
     //drompdown en home
-    let cuisines = [];
+    let dropdown = [];
     try {
-      console.log("🔥estados🔥");
-      cuisines = await status.distinct("status");
-      return cuisines;
+      dropdown = await status.distinct("status");
+      return dropdown;
     } catch (e) {
       console.error(`Unable to get cuisines, ${e}`);
-      return cuisines;
+      return dropdown;
     }
   }
 }

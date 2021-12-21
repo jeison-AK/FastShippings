@@ -26,9 +26,9 @@ export function NavBar_Adm() {
               <ul className="dropdown-menu" aria-labelledby="dropdown04">
                 <li className="nav-item">
                   <NavLink
-                    to={`/Admin-user-int`}
+                    to={`/card`}
                     className={({}) =>
-                      url === "/Admin-user-int" || "/Admin-user-int:userID"
+                      url === "/card/" || "/card/:paramsID"
                         ? "nav-link active"
                         : "nav-link"
                     }
@@ -59,35 +59,6 @@ export function NavBar_Adm() {
               </ul>
             </li>
 
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="dropdown04"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Perfil
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="dropdown04">
-                <li className="nav-item">
-                  <NavLink
-                    to={""}
-                    className={({}) => (url === "" ? "" : "nav-link")}
-                  >
-                    Ver Perfil
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    to={""}
-                    className={({}) => (url === "" ? "" : "nav-link")}
-                  >
-                    Editar Perfil
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
             <li className="nav-item">
               <NavLink
                 to={`/`}
@@ -100,12 +71,12 @@ export function NavBar_Adm() {
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/HomeUsExt`}
+                to={`/inicio`}
                 className={({}) =>
-                  url === "/HomeUsExt" ? "nav-link active" : "nav-link "
+                  url === "/inicio" ? "nav-link active" : "nav-link "
                 }
               >
-                HomeUsExt
+                Despachos
               </NavLink>
             </li>
 
@@ -155,14 +126,6 @@ export function NavBar_Adm() {
 
             <li className="nav-item">
               <NavLink
-                to={``}
-                className={({}) => (url === "" ? "" : "nav-link ")}
-              >
-                Contactenos
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
                 to={`/HomeUsExt/OrdenarDespacho`}
                 className={({}) =>
                   url === "HomeUsExt/OrdenarDespacho"
@@ -176,6 +139,14 @@ export function NavBar_Adm() {
           </ul>
 
           <div>
+            <a href="#">
+              <button
+                type="button"
+                className="btn btn-info me-2 p-2 flex-fill bd-highlight"
+              >
+                Mi cuenta
+              </button>
+            </a>
             <a href="/login">
               <button
                 type="button"
@@ -187,9 +158,17 @@ export function NavBar_Adm() {
             <a href="/registro">
               <button
                 type="button"
-                className="btn btn-primary p-2 flex-fill bd-highlight"
+                className="btn btn-primary me-2 p-2 flex-fill bd-highlight"
               >
                 Registrarse
+              </button>
+            </a>
+            <a href="/registro">
+              <button
+                type="button"
+                className="btn btn-danger p-2 flex-fill bd-highlight"
+              >
+                Cerrar sesión
               </button>
             </a>
           </div>
