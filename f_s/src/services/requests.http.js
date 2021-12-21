@@ -18,6 +18,9 @@ class RestaurantDataService {
   getUserRutas(id) {
     return http.get("/rut");
   }
+  postRutas(data) {
+    return http.post("/newRouteData", data);
+  }
 }
 
 export default new RestaurantDataService();
