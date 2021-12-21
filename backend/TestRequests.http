@@ -1,0 +1,5 @@
+GET http://localhost:5000/api/v1/users/
+###
+GET http://localhost:5000/api/v1/users/rut
+###
+GET http://localhost:5000/api/v1/users/status HTTP/1.1
