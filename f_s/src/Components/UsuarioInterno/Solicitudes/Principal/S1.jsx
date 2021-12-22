@@ -1,5 +1,6 @@
 import React from "react";
-import "../Principal/S1.css";
+//import "../Principal/S1.css";
+import "../Principal/s2.css";
 
 function Despliejesolicitudes() {
     return(
@@ -18,6 +19,7 @@ function Despliejesolicitudes() {
                         Usuario1
                         <small>Documento: 12345</small>
                     </h2>
+                    <p>Detalles solicitud</p>
                 </div>
                 <div class="card-flap flap1">
                     <div class="card-description">
@@ -44,6 +46,7 @@ function Despliejesolicitudes() {
                         Usuario2
                         <small>Documento 123456</small>
                     </h2>
+                    <p>Detalles solicitud</p>
                 </div>
                 <div class="card-flap flap1">
                     <div class="card-description">
@@ -70,6 +73,7 @@ function Despliejesolicitudes() {
                         Usuario3
                         <small>Documento 9974565</small>
                     </h2>
+                    <p>Detalles solicitud</p>
                 </div>
                 <div class="card-flap flap1">
                     <div class="card-description">
@@ -96,6 +100,7 @@ function Despliejesolicitudes() {
                         Usuario4
                         <small>Documento 4544565156</small>
                     </h2>
+                    <p>Detalles solicitud</p>
                 </div>
                 <div class="card-flap flap1">
                     <div class="card-description">
@@ -122,6 +127,7 @@ function Despliejesolicitudes() {
                         Usuario5
                         <small>Documento 55151556</small>
                     </h2>
+                    <p>Detalles solicitud</p>   
                 </div>
                 <div class="card-flap flap1">
                     <div class="card-description">
@@ -148,6 +154,7 @@ function Despliejesolicitudes() {
                         Usuario6
                         <small>Documento 95653531236</small>
                     </h2>
+                    <p>Detalles solicitud</p>
                 </div>
                 <div class="card-flap flap1">
                     <div class="card-description">
@@ -160,12 +167,10 @@ function Despliejesolicitudes() {
                     </div>
                 </div>
             </div>
-        
+
         </div>
         
     )
 }
-
-
 
 export default Despliejesolicitudes;
