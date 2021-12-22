@@ -19,19 +19,21 @@ export default class ReviewsDAO {
   static async addReview(
     origen,
     destino,
+    valorPorKm = 3500,
     distanciaKm,
     valorRuta,
-    status,
-    date
+    status
+    // date
   ) {
     try {
       const reviewDoc = {
         origen: origen,
         destino: destino,
+        valorPorKm: valorPorKm,
         distanciaKm: distanciaKm,
         valorRuta: valorRuta,
         status: status,
-        date: date,
+        // date: date,
       };
 
       return await reviews.insertOne(reviewDoc); //hacemos un insert a la base de datos

@@ -4,18 +4,20 @@ export default class ReviewsController {
     try {
       const origen = req.body.origen;
       const destino = req.body.destino;
-      const distanciaKm = req.body.deistanciaKm;
+      const valorPorKm = req.body.valorPorKm;
+      const distanciaKm = req.body.distanciaKm;
       const valorRuta = req.body.valorRuta;
       const status = req.body.status;
-      const date = new Date();
+      // const date = new Date();
 
       const ReviewResponse = await ReviewsDAO.addReview(
         origen,
         destino,
+        valorPorKm,
         distanciaKm,
         valorRuta,
-        status,
-        date
+        status
+        // date
       );
       res.json({ status: "success" });
     } catch (e) {

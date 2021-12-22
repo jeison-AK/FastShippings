@@ -11,8 +11,9 @@ POST {{host}}/newRouteData
 content-type: application/json
 
 {
-    "origen": "Monteria",
-    "destino": "Bogota",
+    
+    "origen": "Montería, Córdoba",
+    "destino": "Medellín, Antioquia",
     "valorPorKm": {
         "$numberInt": "3500"
     },
@@ -20,7 +21,7 @@ content-type: application/json
         "$numberInt": "401"
     },
     "valorRuta": {
-        "$numberInt": "1942000"
+        "$numberInt": "1400000"
     },
     "status": "🟢"
 }
