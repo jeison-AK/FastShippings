@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jeison-AK/FastShippings#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "react": "^17.0.2"
   }
 }
