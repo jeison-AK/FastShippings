@@ -8,6 +8,7 @@ function Solicitud() {
       <div>
         <Despliejesolicitudes />
       </div>
+      
     </main>
   );
 }
